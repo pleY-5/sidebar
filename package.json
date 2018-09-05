@@ -9,15 +9,24 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "start-dev": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch",
+    "dev": "npm run start-dev & npm run react-dev"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   }
 }
