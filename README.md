@@ -1,10 +1,10 @@
-# Project Name
+# Yelp Restaurant Page
 
 > Project description
 
 ## Related Projects
 
-  - https://github.com/yelpreactor/search-header
+  - https://github.com/yelpreactor/sidebar
   - https://github.com/yelpreactor/user-reviews
   - https://github.com/yelpreactor/photo-wheel
   - https://github.com/yelpreactor/frequent-terms
