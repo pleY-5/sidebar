@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/yelpreactor/search-header
+  - https://github.com/yelpreactor/user-reviews
+  - https://github.com/yelpreactor/photo-wheel
+  - https://github.com/yelpreactor/frequent-terms
 
 ## Table of Contents
 
