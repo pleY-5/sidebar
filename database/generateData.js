@@ -1,9 +1,20 @@
 const businessNames = require('./businessNames');
-const faker = require('./faker');
 
-// const categories = []
+const generateRandomInt = (max, min = 0) => {
+  return min + Math.floor(Math.random() * Math.floor(max - min));
+};
 
-const generateRandomInt = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
+const generateRandomBoolean = () => {
+  return Math.floor(0.5 + Math.random()) === true;
 }
 
+const data = [];
+
+generateRandomInt(4);
+generateRandomInt(101, 50);
+generateRandomBoolean();
+generateRandomBoolean();
+generateRandomBoolean();
+
+
+modules.exports = data;

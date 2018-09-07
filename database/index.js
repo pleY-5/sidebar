@@ -6,15 +6,39 @@ const db = new Sequelize('yelpReactorSidebar', 'root', 'nopass', {
 })
 
 const Restaurant = db.define('restaurant', {
-  priceRange: Sequelize.INTEGER,
-  categories: Sequelize.STRING, // [] random from array up to 3 categories
-  healthScore: Sequelize.INTEGER,
+  priceRange: Sequelize.INTEGER, // 0-3
+  healthScore: Sequelize.INTEGER, // 50-100
   certificate: Sequelize.BOOLEAN,
   reservationForm: Sequelize.BOOLEAN,
   deliveryAndTakeOutForm: Sequelize.BOOLEAN,
-  description: Sequelize.STRING,
-  firstReviewer: Sequelize.INTEGER, // user_id
-  attributes: Sequelize.INTEGER, // attr_id 
+  /******* STRETCH GOALS *******/
+  // description: Sequelize.STRING, //
+  // firstReviewer: Sequelize.INTEGER, // user_id
+  // attributes: Sequelize.INTEGER, // attr_id 
+  /******* STRETCH GOALS *******/
+});
+
+const Reservations = db.define('reservations', {
+  restaurantId: Sequelize.INTEGER,
+  date: Sequelize.DATE,
+  time: Sequelize.STRING, // random from array of times
+  numOfPeople: Sequelize.INTEGER,
+  remainingSpots: Sequelize.INTEGER // starts at 5
+});
+
+/**********************************
+ *
+ *  For Stretch Goal ONLY 
+ *
+const HourOfOperation = db.define('hours', {
+  restaurantId: Sequelize.INTEGER,
+  Mon: Sequelize.STRING,
+  Tue: Sequelize.STRING,
+  Wed: Sequelize.STRING,
+  Thu: Sequelize.STRING,
+  Fri: Sequelize.STRING,
+  Sat: Sequelize.STRING,
+  Sun: Sequelize.STRING,
 });
 
 const Attribute = db.define('attribute', {
@@ -49,7 +73,6 @@ const Attribute = db.define('attribute', {
 const User = db.define('user', {
   name: Sequelize.STRING,
   photo: Sequelize.STRING, // url
-  collections: Array // bookmarked restaurant_ids
 });
 
 const Pageview = db.define('view', {
@@ -61,12 +84,21 @@ const Bookmark = db.define('bookmark', {
   userId: Sequelize.INTEGER,
   restaurantId: Sequelize.INTEGER
 })
+ *
+ *  For Stretch Goal ONLY 
+ *
+ **********************************/
 
-modules.exports = {
+
+ modules.exports = {
+  db: db,
   Restaurant: Restaurant,
-  User: User,
-  Attribute: Attribute,
-  Pageview: Pageview,
-  Bookmark: Bookmark,
-  db: db
+  Reservations: Reservations,
+  /******* STRETCH GOALS *******/
+  // User: User,
+  // HourOfOperation: HourOfOperation,
+  // Attribute: Attribute,
+  // Pageview: Pageview,
+  // Bookmark: Bookmark
+  /******* STRETCH GOALS *******/
 };
