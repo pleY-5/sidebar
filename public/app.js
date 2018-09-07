@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('This is connected');//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jbGllbnQvYXBwLmpzeC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2NsaWVudC9hcHAuanN4PzJjNTUiXSwic291cmNlc0NvbnRlbnQiOlsiY29uc29sZS5sb2coJ1RoaXMgaXMgY29ubmVjdGVkJykiXSwibWFwcGluZ3MiOiJBQUFBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./client/app.jsx\n");
+eval("console.log('This is connected');\n\nvar Sidebar = function Sidebar() {\n  return React.createElement(\"h1\", null, \"Hello World\");\n};\n\nReactDOM.render(React.createElement(Sidebar, null), document.getElementById('sidebar'));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jbGllbnQvYXBwLmpzeC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2NsaWVudC9hcHAuanN4PzJjNTUiXSwic291cmNlc0NvbnRlbnQiOlsiY29uc29sZS5sb2coJ1RoaXMgaXMgY29ubmVjdGVkJylcblxuY29uc3QgU2lkZWJhciA9ICgpID0+IHtcbiAgXG4gIHJldHVybiAoXG4gICAgPGgxPkhlbGxvIFdvcmxkPC9oMT5cbiAgKVxufTtcblxuUmVhY3RET00ucmVuZGVyKDxTaWRlYmFyIC8+LCBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc2lkZWJhcicpKTsiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUVBO0FBR0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./client/app.jsx\n");
 
 /***/ })
 

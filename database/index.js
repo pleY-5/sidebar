@@ -1,4 +1,3 @@
-const data = require('./generateData.js');
 const Sequelize = require('sequelize');
 
 const db = new Sequelize('YelpReactorSidebar', 'root', 'nopass', {
@@ -27,16 +26,10 @@ const Reservation = db.define('reservation', {
   remainingSpots: Sequelize.INTEGER // starts at 5
 });
 
-/**************** Data Generation ****************/
-// db.sync()
-//   .then(() => Restaurant.bulkCreate(data))
-//   .catch(err => console.log(err));
-/**************** Data Generation ****************/
-
-
 module.exports = {
+  db: db,
   Restaurant: Restaurant,
-  Reservation: Reservation,
+  Reservation: Reservation
   /******* STRETCH GOALS *******/
   // User: User,
   // HourOfOperation: HourOfOperation,
@@ -45,9 +38,6 @@ module.exports = {
   // Bookmark: Bookmark
   /******* STRETCH GOALS *******/
 };
-
-
-
 
 /**********************************
  *

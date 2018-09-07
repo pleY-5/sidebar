@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const controller = require('./controller.js');
 
-router.get('/api/restaurant', controller.api.restaurant.get);
+router.get('/api/restaurant?:id', controller.api.restaurant.get);
 
-router.get('/api/reservations', controller.api.reservations.get);
+router.get('/api/reservation?:id', controller.api.reservation.get);
 
-router.post('/api/reservations', controller.api.reservations.post);
+router.post('/api/reservation', controller.api.reservation.post);
 
 module.exports = router;

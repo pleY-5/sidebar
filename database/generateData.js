@@ -1,4 +1,5 @@
 const businessNames = require('./businessNames');
+const { db, Restaurant } = require('./index.js');
 
 const generateRandomInt = (max, min = 0) => {
   return min + Math.floor(Math.random() * Math.floor(max - min));
@@ -21,4 +22,6 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-module.exports = data;
+db.sync()
+  .then(() => Restaurant.bulkCreate(data))
+  .catch(err => console.log(err));
