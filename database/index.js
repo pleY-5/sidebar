@@ -1,9 +1,9 @@
 const data = require('./generateData.js');
 const Sequelize = require('sequelize');
 
-const db = new Sequelize('yelpReactorSidebar', 'root', 'nopass', {
+const db = new Sequelize('YelpReactorSidebar', 'root', 'nopass', {
   dialect: mysql
-})
+});
 
 const Restaurant = db.define('restaurant', {
   priceRange: Sequelize.INTEGER, // 0-3
@@ -18,7 +18,7 @@ const Restaurant = db.define('restaurant', {
   /******* STRETCH GOALS *******/
 });
 
-const Reservations = db.define('reservations', {
+const Reservation = db.define('reservation', {
   restaurantId: Sequelize.INTEGER,
   date: Sequelize.DATE,
   time: Sequelize.STRING, // random from array of times
@@ -89,11 +89,11 @@ const Bookmark = db.define('bookmark', {
  *
  **********************************/
 
+db.sync();
 
- modules.exports = {
-  db: db,
+modules.exports = {
   Restaurant: Restaurant,
-  Reservations: Reservations,
+  Reservation: Reservation,
   /******* STRETCH GOALS *******/
   // User: User,
   // HourOfOperation: HourOfOperation,

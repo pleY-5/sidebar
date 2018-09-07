@@ -5,8 +5,8 @@ const generateRandomInt = (max, min = 0) => {
 };
 
 const generateRandomBoolean = () => {
-  return Math.floor(0.5 + Math.random()) === true;
-}
+  return Math.floor(0.5 + Math.random()) > 0;
+};
 
 const data = [];
 
@@ -15,6 +15,5 @@ generateRandomInt(101, 50);
 generateRandomBoolean();
 generateRandomBoolean();
 generateRandomBoolean();
-
 
 modules.exports = data;
