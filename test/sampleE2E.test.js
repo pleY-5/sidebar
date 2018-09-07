@@ -31,10 +31,10 @@ describe('Test', () => {
     expect(title).toEqual('Hello World');
   });
 
-  test('can search', async () => {
-    const selector = 'input.form-control[type=text]';
-    await page.click(selector);
-    await page.type(selector, 'cats');
-  });
+  // test('can search', async () => {
+  //   const selector = 'input.form-control[type=text]';
+  //   await page.click(selector);
+  //   await page.type(selector, 'cats');
+  // });
 
 });
