@@ -2,10 +2,11 @@ const data = require('./generateData.js');
 const Sequelize = require('sequelize');
 
 const db = new Sequelize('YelpReactorSidebar', 'root', 'nopass', {
-  dialect: mysql
+  dialect: 'mysql'
 });
 
 const Restaurant = db.define('restaurant', {
+  name: Sequelize.STRING,
   priceRange: Sequelize.INTEGER, // 0-3
   healthScore: Sequelize.INTEGER, // 50-100
   certificate: Sequelize.BOOLEAN,
@@ -25,6 +26,28 @@ const Reservation = db.define('reservation', {
   numOfPeople: Sequelize.INTEGER,
   remainingSpots: Sequelize.INTEGER // starts at 5
 });
+
+/**************** Data Generation ****************/
+// db.sync()
+//   .then(() => Restaurant.bulkCreate(data))
+//   .catch(err => console.log(err));
+/**************** Data Generation ****************/
+
+
+module.exports = {
+  Restaurant: Restaurant,
+  Reservation: Reservation,
+  /******* STRETCH GOALS *******/
+  // User: User,
+  // HourOfOperation: HourOfOperation,
+  // Attribute: Attribute,
+  // Pageview: Pageview,
+  // Bookmark: Bookmark
+  /******* STRETCH GOALS *******/
+};
+
+
+
 
 /**********************************
  *
@@ -88,17 +111,3 @@ const Bookmark = db.define('bookmark', {
  *  For Stretch Goal ONLY 
  *
  **********************************/
-
-db.sync();
-
-modules.exports = {
-  Restaurant: Restaurant,
-  Reservation: Reservation,
-  /******* STRETCH GOALS *******/
-  // User: User,
-  // HourOfOperation: HourOfOperation,
-  // Attribute: Attribute,
-  // Pageview: Pageview,
-  // Bookmark: Bookmark
-  /******* STRETCH GOALS *******/
-};

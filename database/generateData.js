@@ -10,10 +10,15 @@ const generateRandomBoolean = () => {
 
 const data = [];
 
-generateRandomInt(4);
-generateRandomInt(101, 50);
-generateRandomBoolean();
-generateRandomBoolean();
-generateRandomBoolean();
+for (let i = 0; i < 100; i++) {
+  data.push({
+    name: businessNames[i],
+    priceRange: generateRandomInt(4),
+    healthScore: generateRandomInt(101, 50),
+    certificate: generateRandomBoolean(),
+    reservationForm: generateRandomBoolean(),
+    deliveryAndTakeOutForm: generateRandomBoolean()
+  });
+}
 
-modules.exports = data;
+module.exports = data;

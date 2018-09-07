@@ -1,4 +1,4 @@
-const { Restaurant, Reservation } = require('../database');
+const { Restaurant, Reservation } = require('./../database');
 
 const model = {
   api: {
@@ -23,3 +23,5 @@ const model = {
     }
   }
 };
+
+module.exports = model;
