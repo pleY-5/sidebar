@@ -11,7 +11,7 @@ jobs:
       - image: circleci/mysql:5.7.23
         command: mysql -u root -p
         environment:
-          MYSQL_HOST: 127.0.0.1
+          MYSQL_ROOT_HOST: 127.0.0.1
           MYSQL_DB: YelpReactorSidebar
           MYSQL_USER: root
           MYSQL_ALLOW_EMPTY_PASSWORD: true
@@ -27,8 +27,9 @@ jobs:
     steps:
       - checkout
       
-      - run: sudo apt install mysql-client
-      - run: sudo apt service mysql start
+      - run: sudo apt-get install mysql-client
+      - run: sudo apt-get install mysql-server
+      - run: sudo service mysql start
 
       # Download and cache dependencies
       - restore_cache:
