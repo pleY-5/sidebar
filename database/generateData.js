@@ -1,4 +1,4 @@
-const businessNames = require('./businessNames');
+const businessNames = require('./businessNames.js');
 const { db, Restaurant } = require('./index.js');
 
 const generateRandomInt = (max, min = 0) => {
