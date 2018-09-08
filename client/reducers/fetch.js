@@ -6,6 +6,4 @@ const fetchSuccessReducer = (state = [], action) => {
   }
 };
 
-module.exports = {
-  restaurantData: fetchSuccessReducer
-};
+export default fetchSuccessReducer;

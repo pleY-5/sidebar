@@ -1,6 +1,7 @@
-const { fetchData } = require('../action/getRestarauntData.js');
-const store = require('../store');
-const ReservationContainer = require('../container/ReservationContainer.jsx');
+import React from 'react';
+import store from '../store';
+import fetchData from '../action/getRestarauntData.js';
+import ReservationContainer from '../container/ReservationContainer.jsx';
 
 class Sidebar extends React.Component {
   componentDidMount() {
@@ -14,4 +15,4 @@ class Sidebar extends React.Component {
   }
 };
 
-module.exports = Sidebar;
+export default Sidebar;

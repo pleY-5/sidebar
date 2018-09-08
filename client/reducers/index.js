@@ -1,8 +1,8 @@
-const { combineReducers } = Redux;
-const { restaurantData } = require('./fetch.js');
+import { combineReducers } from 'redux';
+import restaurantData from './fetch.js';
 
 const rootRuducer = combineReducers({
   restaurantData
 });
 
-module.exports = rootRuducer;
+export default rootRuducer;

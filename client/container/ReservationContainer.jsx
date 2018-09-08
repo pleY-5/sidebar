@@ -1,8 +1,9 @@
-const { connect } = ReactRedux;
-const Reservation = require('../component/Reservation.jsx')
+import React from 'react';
+import { connect } from 'react-redux';
+import Reservation from '../component/Reservation.jsx';
 
 const mapStateToProps = state => ({
   restaurantData: state.restaurantData
 });
 
-module.exports = connect(mapStateToProps)(Reservation);
+export default connect(mapStateToProps)(Reservation);

@@ -12,6 +12,4 @@ const fetchData = (url) => {
   }
 };
 
-module.exports = {
-  fetchData
-};
+export default fetchData;
