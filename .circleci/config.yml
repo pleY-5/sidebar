@@ -8,14 +8,14 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11.3-browsers
-      - image: circleci/mysql:5.7.23
+      - image: circleci/mysql:latest
         command: mysql -u root -p
         environment:
           MYSQL_HOST: 127.0.0.1
           MYSQL_DB: YelpReactorSidebar
           MYSQL_USER: root
-          MYSQL_ALLOW_EMPTY_PASSWORD: false
-          MYSQL_PASSWORD: nopass
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          # MYSQL_PASSWORD: nopass
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -35,7 +35,6 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run: npm run seed
       - run: npm run start && sleep 30
 
       - save_cache:
