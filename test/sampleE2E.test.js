@@ -14,7 +14,7 @@ beforeAll(async () => {
   });
   page = await browser.newPage();
   await page.setViewport({ width, height });
-});
+}, 15000);
 
 afterAll(() => {
   browser.close();
