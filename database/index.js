@@ -11,27 +11,29 @@ const Restaurant = db.define('restaurant', {
   certificate: Sequelize.BOOLEAN,
   reservationForm: Sequelize.BOOLEAN,
   deliveryAndTakeOutForm: Sequelize.BOOLEAN,
-  Mon: Sequelize.STRING,
-  Tue: Sequelize.STRING,
-  Wed: Sequelize.STRING,
-  Thu: Sequelize.STRING,
-  Fri: Sequelize.STRING,
-  Sat: Sequelize.STRING,
-  Sun: Sequelize.STRING
+  Monday: Sequelize.STRING,
+  Tuesday: Sequelize.STRING,
+  Wednesday: Sequelize.STRING,
+  Thursday: Sequelize.STRING,
+  Friday: Sequelize.STRING,
+  Saturday: Sequelize.STRING,
+  Sunday: Sequelize.STRING
   /******* STRETCH GOALS *******/
   // description: Sequelize.STRING, //
   // firstReviewer: Sequelize.INTEGER, // user_id
   // attributes: Sequelize.INTEGER, // attr_id 
   /******* STRETCH GOALS *******/
-});
+}, { timestamps: false });
 
 const Reservation = db.define('reservation', {
-  restaurantId: Sequelize.INTEGER,
   date: Sequelize.DATE,
   time: Sequelize.STRING, // random from array of times
   numOfPeople: Sequelize.INTEGER,
-  remainingSpots: Sequelize.INTEGER // starts at 5
-});
+  remainingSpots: Sequelize.INTEGER, // starts at 5
+}, { timestamps: false });
+
+Restaurant.hasMany(Reservation, { foreignKey: 'restaurantId' });
+Reservation.belongsTo(Restaurant, {foreignKey: 'reservationId'});
 
 module.exports = {
   db: db,

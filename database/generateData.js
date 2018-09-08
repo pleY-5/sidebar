@@ -6,7 +6,7 @@ const generateRandomInt = (max, min = 0) => {
 };
 
 const generateRandomBoolean = (offset = 0.5) => {
-  return Math.floor(offset + Math.random()) < 1;
+  return Math.floor(offset + Math.random()) > 0;
 };
 
 const data = [];
@@ -24,14 +24,14 @@ for (let i = 0; i < 100; i++) {
     weekday = `${open[generateRandomInt(open.length)]} - ${close[generateRandomInt(close.length)]}`;
   } else {
     weekday = `${open[generateRandomInt(open.length)]} - ${midDayClose[generateRandomInt(midDayClose.length)]}, ` +
-              `${midDayOpen[generateRandomInt(midDayOpen.length)]} - ${close[generateRandomInt(close.length)]}}`;
+              `${midDayOpen[generateRandomInt(midDayOpen.length)]} - ${close[generateRandomInt(close.length)]}`;
   }
   if (generateRandomBoolean()) {
     weekend = weekday;
   } else {
     weekend = `${open[generateRandomInt(open.length)]} - ${close[generateRandomInt(close.length)]}`;
   }
-  if (generateRandomBoolean(0.75)) {
+  if (generateRandomBoolean(0.65)) {
     sunday = weekend;
   } else {
     sunday = 'Closed';
@@ -43,13 +43,13 @@ for (let i = 0; i < 100; i++) {
     certificate: generateRandomBoolean(),
     reservationForm: generateRandomBoolean(),
     deliveryAndTakeOutForm: generateRandomBoolean(),
-    Mon: weekday,
-    Tue: weekday,
-    Wed: weekday,
-    Thu: weekday,
-    Fri: weekday,
-    Sat: weekend,
-    Sun: sunday
+    Monday: weekday,
+    Tuesday: weekday,
+    Wednesday: weekday,
+    Thursday: weekday,
+    Friday: weekday,
+    Saturday: weekend,
+    Sunday: sunday
   });
 }
 
