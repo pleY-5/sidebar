@@ -3,22 +3,16 @@ const { Restaurant, Reservation } = require('./../database');
 const model = {
   api: {
     restaurant: {
-      get: ({ id }) => {
-        return Restaurant.findAll()
-          .then()
-          .catch();
+      get: (id) => {
+        return Restaurant.findAll({ where: { id }});
       }
     },
     reservation: {
-      get: ({ id }) => {
-        return Reservation.findAll()
-          .then()
-          .catch();
+      get: (id) => {
+        return Reservation.findAll({ where: { restaurantId: id }});
       },
       post: (body) => {
-        return Reservation.findOrCreate()
-          .then()
-          .catch();
+        return Reservation.create(body);
       }
     }
   }

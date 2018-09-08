@@ -1,4 +1,3 @@
-const data = require('./generateData.js');
 const Sequelize = require('sequelize');
 
 const db = new Sequelize('YelpReactorSidebar', 'root', 'nopass', {
@@ -12,6 +11,13 @@ const Restaurant = db.define('restaurant', {
   certificate: Sequelize.BOOLEAN,
   reservationForm: Sequelize.BOOLEAN,
   deliveryAndTakeOutForm: Sequelize.BOOLEAN,
+  Mon: Sequelize.STRING,
+  Tue: Sequelize.STRING,
+  Wed: Sequelize.STRING,
+  Thu: Sequelize.STRING,
+  Fri: Sequelize.STRING,
+  Sat: Sequelize.STRING,
+  Sun: Sequelize.STRING
   /******* STRETCH GOALS *******/
   // description: Sequelize.STRING, //
   // firstReviewer: Sequelize.INTEGER, // user_id
@@ -27,43 +33,23 @@ const Reservation = db.define('reservation', {
   remainingSpots: Sequelize.INTEGER // starts at 5
 });
 
-/**************** Data Generation ****************/
-// db.sync()
-//   .then(() => Restaurant.bulkCreate(data))
-//   .catch(err => console.log(err));
-/**************** Data Generation ****************/
-
-
 module.exports = {
+  db: db,
   Restaurant: Restaurant,
-  Reservation: Reservation,
+  Reservation: Reservation
   /******* STRETCH GOALS *******/
   // User: User,
   // HourOfOperation: HourOfOperation,
   // Attribute: Attribute,
   // Pageview: Pageview,
-  // Bookmark: Bookmark
+  // Collection: Collection
   /******* STRETCH GOALS *******/
 };
-
-
-
 
 /**********************************
  *
  *  For Stretch Goal ONLY 
  *
-const HourOfOperation = db.define('hours', {
-  restaurantId: Sequelize.INTEGER,
-  Mon: Sequelize.STRING,
-  Tue: Sequelize.STRING,
-  Wed: Sequelize.STRING,
-  Thu: Sequelize.STRING,
-  Fri: Sequelize.STRING,
-  Sat: Sequelize.STRING,
-  Sun: Sequelize.STRING,
-});
-
 const Attribute = db.define('attribute', {
   reservations: Sequelize.BOOLEAN,
   delivery: Sequelize.BOOLEAN,
@@ -103,7 +89,7 @@ const Pageview = db.define('view', {
   restaurantId: Sequelize.INTEGER
 })
 
-const Bookmark = db.define('bookmark', {
+const Collection = db.define('collection', {
   userId: Sequelize.INTEGER,
   restaurantId: Sequelize.INTEGER
 })

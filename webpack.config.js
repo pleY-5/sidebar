@@ -3,9 +3,9 @@ const clientDIR = path.join(__dirname, '/client');
 const publicDIR = path.join(__dirname, '/public');
 
 module.exports = {
-  entry: `${clientDIR}/app.jsx`,
+  entry: `${clientDIR}/App.jsx`,
   output: {
-    filename: 'app.js',
+    filename: 'bundle.js',
     path: publicDIR
   },
   module: {
@@ -15,9 +15,9 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ["@babel/preset-env", "@babel/preset-react"],
+          presets: ['@babel/preset-env', '@babel/preset-react'],
         }
       }
     ]
   }
- };
+};
