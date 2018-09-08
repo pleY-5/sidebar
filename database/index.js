@@ -11,6 +11,13 @@ const Restaurant = db.define('restaurant', {
   certificate: Sequelize.BOOLEAN,
   reservationForm: Sequelize.BOOLEAN,
   deliveryAndTakeOutForm: Sequelize.BOOLEAN,
+  Mon: Sequelize.STRING,
+  Tue: Sequelize.STRING,
+  Wed: Sequelize.STRING,
+  Thu: Sequelize.STRING,
+  Fri: Sequelize.STRING,
+  Sat: Sequelize.STRING,
+  Sun: Sequelize.STRING
   /******* STRETCH GOALS *******/
   // description: Sequelize.STRING, //
   // firstReviewer: Sequelize.INTEGER, // user_id
@@ -35,7 +42,7 @@ module.exports = {
   // HourOfOperation: HourOfOperation,
   // Attribute: Attribute,
   // Pageview: Pageview,
-  // Bookmark: Bookmark
+  // Collection: Collection
   /******* STRETCH GOALS *******/
 };
 
@@ -43,17 +50,6 @@ module.exports = {
  *
  *  For Stretch Goal ONLY 
  *
-const HourOfOperation = db.define('hours', {
-  restaurantId: Sequelize.INTEGER,
-  Mon: Sequelize.STRING,
-  Tue: Sequelize.STRING,
-  Wed: Sequelize.STRING,
-  Thu: Sequelize.STRING,
-  Fri: Sequelize.STRING,
-  Sat: Sequelize.STRING,
-  Sun: Sequelize.STRING,
-});
-
 const Attribute = db.define('attribute', {
   reservations: Sequelize.BOOLEAN,
   delivery: Sequelize.BOOLEAN,
@@ -93,7 +89,7 @@ const Pageview = db.define('view', {
   restaurantId: Sequelize.INTEGER
 })
 
-const Bookmark = db.define('bookmark', {
+const Collection = db.define('collection', {
   userId: Sequelize.INTEGER,
   restaurantId: Sequelize.INTEGER
 })

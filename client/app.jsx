@@ -1,4 +1,6 @@
 console.log('This is connected');
+const store = require('./store');
+const { Provider } = ReactRedux;
 
 const Sidebar = () => {
   
@@ -7,4 +9,9 @@ const Sidebar = () => {
   );
 };
 
-ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Sidebar />
+  </Provider>, 
+  document.getElementById('sidebar')
+);
