@@ -28,6 +28,7 @@ jobs:
       - checkout
       
       - run: sudo apt install mysql-client
+      - run: sudo service mysql start
       
       # Download and cache dependencies
       - restore_cache:
