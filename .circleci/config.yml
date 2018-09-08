@@ -35,7 +35,8 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run: npm run start
+      - run: npm run seed
+      - run: npm run start && sleep 30
 
       - save_cache:
           paths:
