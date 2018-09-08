@@ -27,8 +27,8 @@ describe('Test', () => {
   });
 
   test('inital title is correct', async () => {
-    const title = await page.$eval('h1', e => e.innerHTML);
-    expect(title).toEqual('Hello World');
+    const title = await page.$eval('.reservation', e => e.innerHTML);
+    expect(title).toEqual('Make a Reservation');
   });
 
   // test('can search', async () => {

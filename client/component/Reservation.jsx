@@ -20,7 +20,7 @@ const Reservation = ({ restaurantData }) => {
 
   return (
     <label>
-      <div>Make a Reservation</div><br/>
+      <div className='reservation'>Make a Reservation</div><br/>
       <select>
         <option value='date'>{dateString}</option>
       </select><br/>
