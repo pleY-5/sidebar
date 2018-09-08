@@ -1,7 +1,6 @@
 console.log('This is connected');
 const { Provider } = ReactRedux;
-const { configureStore } = require('./store');
-const store = configureStore();
+const store = require('./store');
 const Sidebar = require('./component/Sidebar.jsx');
 
 ReactDOM.render(
