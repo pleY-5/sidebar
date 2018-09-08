@@ -8,7 +8,7 @@ const height = 720;
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
-    headless: false,
+    // headless: false,
     slowMo: 80,
     args: [`--window-size=${width},${height}`]
   });
@@ -26,7 +26,7 @@ describe('Test', () => {
     await page.goto(pageUrl, { waitUntil: 'networkidle2' })
   });
 
-  test('inital title is correct', async () => {
+  test('Check for reservation header', async () => {
     const title = await page.$eval('.reservation', e => e.innerHTML);
     expect(title).toEqual('Make a Reservation');
   });
