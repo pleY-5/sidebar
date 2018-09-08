@@ -14,7 +14,7 @@ const loadingDataReducer = (state = false, action) => {
   }
 };
 
-const fetchSuccessReducer = (state = false, action) => {
+const fetchSuccessReducer = (state = [], action) => {
   if (action.type === 'FETCH_SUCCESS') {
     return action.data;
   } else {

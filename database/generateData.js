@@ -34,7 +34,7 @@ for (let i = 0; i < 100; i++) {
   if (generateRandomBoolean(0.75)) {
     sunday = weekend;
   } else {
-    sunday = 'Closed'
+    sunday = 'Closed';
   }
   data.push({
     name: businessNames[i],

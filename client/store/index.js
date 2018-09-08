@@ -1,3 +1,13 @@
-const store = {};
+const { createStore, applyMiddleware } = Redux;
+const thunk = ReduxThunk;
+const rootReducer = require('./../reducers');
 
-module.exports = store;
+const configureStore = (initialState) => {
+  return createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(thunk)
+  );
+};
+
+module.exports = configureStore;
