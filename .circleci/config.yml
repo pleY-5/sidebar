@@ -47,5 +47,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: npm run test
+      - run: 
+          name: tests
+          command: npm run test
             timeout: 1800
