@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:latest-browsers
+      - image: circleci/node:9.4-browsers
       - image: circleci/mysql:5.7.23
         command: mysql -u root -p
         environment:
