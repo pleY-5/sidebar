@@ -1,4 +1,22 @@
 .reservation {
+  margin-bottom: 12px;
   font-family: Verdana;
   font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
 } 
+
+.reservation-container {
+  display: block;
+  border: 1px solid #e6e6e6;
+  width: 274px;
+  height: 137px;
+  padding: 14px 11px 11px;
+}
+
+.disable {
+  text-decoration: none;
+  color: #333;
+}

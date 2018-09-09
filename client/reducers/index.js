@@ -6,7 +6,7 @@ import reservationForm from './reservationForm.js';
 const rootRuducer = combineReducers({
   currentDate,
   hoursOfOperation,
-  reservationForm
+  reservationForm,
 });
 
 export default rootRuducer;

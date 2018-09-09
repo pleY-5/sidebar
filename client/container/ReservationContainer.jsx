@@ -4,6 +4,7 @@ import Reservation from '../component/Reservation.jsx';
 
 const mapStateToProps = state => ({
   currentDate: state.currentDate,
+  hoursOfOperation: state.hoursOfOperation,
   reservationForm: state.reservationForm
 });
 

@@ -1,20 +1,22 @@
 import '../sidebar.css';
 import React from 'react';
 
-const Reservation = ({ reservationForm, currentDate }) => (
-  <div>
+const Reservation = ({ reservationForm, hoursOfOperation, currentDate }) => (
+  <div className='reservation-container'>
     {reservationForm && (
       <label>
-        <div className='reservation'>Make a Reservation</div><br/>
+        <h3 className='reservation'><a href='' className='disable'>Make a Reservation</a></h3><br/>
         <select>
-          <option defaultValue='date'>{currentDate}</option>
+          <option value='date'>{currentDate}</option>
         </select><br/>
-        <select>
-          
+        <select defaultValue='7:00 PM'>
+          {hoursOfOperation.map(timeSlot => (
+              <option key={timeSlot} value={timeSlot}>{timeSlot}</option>
+          ))}
         </select>
-        <select>
+        <select defaultValue='two'>
           <option value='one'>1 Person</option>
-          <option defaultValue='two'>2 People</option>
+          <option value='two'>2 People</option>
           <option value='three'>3 People</option>
           <option value='four'>4 People</option>
           <option value='five'>5 People</option>
