@@ -1,9 +1,10 @@
 const currentDateReducer = (state = '', action) => {
+  console.log(action)
   if (action.type === 'CHANGE_CURRENT_DATE') {
+    console.log(action.currentDate)
     return action.currentDate;
-  } else {
-    return state;
   }
+  return state;
 };
 
 export default currentDateReducer;

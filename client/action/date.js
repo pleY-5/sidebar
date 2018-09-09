@@ -1,6 +1,6 @@
-const changeCurrentDate = (currentdate) => ({
+const changeCurrentDate = (currentDate) => ({
   type: 'CHANGE_CURRENT_DATE',
-  currentdate
+  currentDate
 });
 
 export default changeCurrentDate;
