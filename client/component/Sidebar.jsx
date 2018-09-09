@@ -1,6 +1,6 @@
 import React from 'react';
 import store from '../store';
-import fetchData from '../action/getRestarauntData.js';
+import fetchData from '../action/fetch.js';
 import ReservationContainer from '../container/ReservationContainer.jsx';
 
 class Sidebar extends React.Component {

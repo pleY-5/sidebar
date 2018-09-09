@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import restaurantData from './fetch.js';
+import currentDate from './date.js';
+import hoursOfOperation from './hoursOfOperation.js';
+import reservationForm from './reservationForm.js';
 
 const rootRuducer = combineReducers({
-  restaurantData
+  currentDate,
+  hoursOfOperation,
+  reservationForm
 });
 
 export default rootRuducer;
