@@ -1,3 +1,4 @@
+import '../sidebar.css';
 import React from 'react';
 
 const Reservation = ({ reservationForm, currentDate }) => (
@@ -6,10 +7,10 @@ const Reservation = ({ reservationForm, currentDate }) => (
       <label>
         <div className='reservation'>Make a Reservation</div><br/>
         <select>
-          <option value='date'>{currentDate}</option>
+          <option defaultValue='date'>{currentDate}</option>
         </select><br/>
         <select>
-
+          
         </select>
         <select>
           <option value='one'>1 Person</option>
