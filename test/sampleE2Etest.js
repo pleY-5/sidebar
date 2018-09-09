@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const pageUrl = 'http://localhost:7878/';
+const pageUrl = 'http://localhost:7878?id=1';
 
 let page;
 let browser;
@@ -8,13 +8,13 @@ const height = 720;
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
-    // headless: false,
+    headless: false,
     slowMo: 80,
-    args: [`--window-size=${width},${height}`]
+    args: [`--window-size=${width},${height}`, '--no-sanbox', '–disable-setuid-sandbox']
   });
   page = await browser.newPage();
   await page.setViewport({ width, height });
-});
+}, 15000);
 
 afterAll(() => {
   browser.close();
@@ -26,9 +26,9 @@ describe('Test', () => {
     await page.goto(pageUrl, { waitUntil: 'networkidle2' })
   });
 
-  test('inital title is correct', async () => {
-    const title = await page.$eval('h1', e => e.innerHTML);
-    expect(title).toEqual('Hello World');
+  test('Check for reservation header', async () => {
+    const title = await page.$eval('.reservation', e => e.innerHTML);
+    expect(title).toEqual('Make a Reservation');
   });
 
   // test('can search', async () => {

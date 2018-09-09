@@ -1,19 +1,17 @@
-const { Restaurant, Reservation } = require('./../database');
+const { Restaurant, Reservation } = require('../database');
 
 const model = {
-  api: {
-    restaurant: {
-      get: (id) => {
-        return Restaurant.findAll({ where: { id }});
-      }
+  restaurant: {
+    get: (id) => {
+      return Restaurant.findAll({ where: { id }});
+    }
+  },
+  reservation: {
+    get: (id) => {
+      return Reservation.findAll({ where: { restaurantId: id }});
     },
-    reservation: {
-      get: (id) => {
-        return Reservation.findAll({ where: { restaurantId: id }});
-      },
-      post: (body) => {
-        return Reservation.create(body);
-      }
+    post: (body) => {
+      return Reservation.create(body);
     }
   }
 };

@@ -1,10 +1,12 @@
-const { combineReducers } = Redux;
-const { fetchErrorReducer, loadingDataReducer, fetchSuccessReducer } = require('./fetch.js');
+import { combineReducers } from 'redux';
+import currentDate from './date.js';
+import hoursOfOperation from './hoursOfOperation.js';
+import reservationForm from './reservationForm.js';
 
 const rootRuducer = combineReducers({
-  fetchErrorReducer,
-  loadingDataReducer,
-  fetchSuccessReducer
+  currentDate,
+  hoursOfOperation,
+  reservationForm
 });
 
-module.exports = rootRuducer;
+export default rootRuducer;
