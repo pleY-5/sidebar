@@ -27,9 +27,9 @@ jobs:
     steps:
       - checkout
       
-      - run: sudo apt-get install mysql-client
-      - run: sudo apt-get install mysql-server
-      - run: sudo service mysql start
+      # - run: sudo apt-get install mysql-client
+      # - run: sudo apt-get install mysql-server
+      # - run: sudo service mysql start
 
       # Download and cache dependencies
       - restore_cache:
@@ -39,7 +39,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run: npm run start-cci
+      # - run: npm run start-cci
 
       - save_cache:
           paths:
