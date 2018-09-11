@@ -7,7 +7,7 @@ describe('Reservation header contains correct text', () => {
   test('contains Make a Reservation', () => {
     const component = shallow(<ReservationHeader />);
     const text = component.find('span').text();
-    expect(text).toEqual('Make a Reservation');
+    expect(text).toBe('Make a Reservation');
   });
   
 });

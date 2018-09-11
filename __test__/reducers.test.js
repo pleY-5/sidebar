@@ -24,7 +24,7 @@ describe('Reducers', () => {
       expect(hasReservationReducer(undefined, { type: null })).toEqual(false);
     });
     test('should change state when given "CHANGE_HAS_RESERVATION', () => {
-      expect(hasReservationReducer(undefined, changeReservation(true))).toEqual(true);
+      expect(hasReservationReducer(undefined, changeReservation(true))).toBe(true);
     });
     
   });
@@ -35,7 +35,7 @@ describe('Reducers', () => {
       expect(timeslotsReducer(undefined, { type: null })).toEqual([]);
     });
     test('should change state when given "CHANGE_TIMESLOTS" action', () => {
-      expect(timeslotsReducer(undefined, changeTime(['8:00 PM']))).toEqual(['8:00 PM']);
+      expect(timeslotsReducer(undefined, changeTime(['8:00 PM']))).toBe(['8:00 PM']);
     });
     
   });
