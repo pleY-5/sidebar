@@ -3,6 +3,6 @@ const get = (url) => {
     .then(response => response.json())
     .then(data => data[0])
     .catch(err => console.log(err));
-}
+};
 
 export default get;

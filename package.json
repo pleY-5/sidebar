@@ -14,7 +14,7 @@
     "react-dev": "webpack -d --watch",
     "test-dev": "jest --watch",
     "dev": "npm run start-dev & npm run react-dev",
-    "test": "jest --coverage --verbose --detectOpenHandles",
+    "test": "jest --coverage --verbose --bail",
     "seed": "mysql -u root -pnopass < schema.sql && node database/generateData.js"
   },
   "dependencies": {
@@ -43,7 +43,7 @@
     "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "fetch-mock": "^7.0.0-alpha.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",

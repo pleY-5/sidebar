@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:latest-browsers
       - image: circleci/mysql:5.7.23
-        command: mysql -u root -pnopass
+        command: mysql -u root
         environment:
           MYSQL_ROOT_HOST: 127.0.0.1
           MYSQL_DB: YelpReactorSidebar
