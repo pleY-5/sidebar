@@ -1,11 +1,10 @@
 import React from 'react';
+import styles from '../sidebar.css';
 
 const DateSelect = ({ currentDate }) => (
-  <div className='date-container'>
-    <img src='images/calendar.PNG'/>
-    <select>
-      <option value='date'>{currentDate}</option>
-    </select>
+  <div className={styles.dateContainer}>
+    <img src='images/calendar.PNG' className={styles.dateIcon}/>
+    <input type='text' value={currentDate} readOnly className={styles.dateText}></input>
     <img src='images/downarrow.PNG'/>
   </div>
 );

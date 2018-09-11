@@ -33,7 +33,26 @@
 .header-title:hover {
   text-decoration: underline;
 }
-/************* RESERVATION HEADER *************/
+/************* DATE SELECT *************/
+.date-container {
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.date-text {
+  color: #333;
+  border: none;
+  width: 200px;
+  font-size: 14px;
+  position: relative;
+  bottom: 5px;
+  cursor: pointer;
+}
+
+.date-icon {
+  position: relative;
+  left: 3px;
+}
 
 select {
   -webkit-appearance: none;
