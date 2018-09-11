@@ -9,13 +9,13 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:latest-browsers
       - image: circleci/mysql:5.7.23
-        command: mysql -u root -p
+        command: mysql -u root
         environment:
           MYSQL_ROOT_HOST: 127.0.0.1
           MYSQL_DB: YelpReactorSidebar
           MYSQL_USER: root
           MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_PASSWORD: 12345
+          MYSQL_PASSWORD: nopass
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
