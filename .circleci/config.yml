@@ -15,7 +15,7 @@ jobs:
           MYSQL_DB: YelpReactorSidebar
           MYSQL_USER: root
           MYSQL_ALLOW_EMPTY_PASSWORD: true
-          # MYSQL_PASSWORD: nopass
+          MYSQL_PASSWORD: 12345
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
