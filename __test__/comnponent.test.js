@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import Reservation from '../client/component/Reservation.jsx';
 import ReservationHeader from '../client/component/ReservationHeader.jsx';
-import FindTable from '../client/component/FindTable.jsx'
+import FindTable from '../client/component/FindTable.jsx';
 import NumOfPeopleSelect from '../client/component/NumOfPeopleSelect.jsx';
 import DateSelect from '../client/component/DateSelect.jsx';
 import TimeSelect from '../client/component/TimeSelect.jsx';

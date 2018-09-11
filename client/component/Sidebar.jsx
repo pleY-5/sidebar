@@ -15,6 +15,6 @@ class Sidebar extends React.Component {
       <ReservationContainer />
     );
   }
-};
+}
 
 export default Sidebar;

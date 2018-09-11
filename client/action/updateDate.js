@@ -6,6 +6,6 @@ const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', '
 const updateDate = (currentDate = new Date()) => {
   let formattedDate = `${days[currentDate.getDay()]}, ${months[currentDate.getMonth()]} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
   return dispatch => dispatch(changeCurrentDate(formattedDate));
-}
+};
 
 export default updateDate;

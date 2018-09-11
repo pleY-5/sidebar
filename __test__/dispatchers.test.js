@@ -6,10 +6,10 @@ describe('Dispatchers', () => {
 
   const reducer = jest.fn().mockImplementation(action => {
     return { lastAction: action.type };
-  })
+  });
   const store = {};
   store.dispatch = jest.fn().mockImplementation(callback => {
-    return callback(data => reducer(data))
+    return callback(data => reducer(data));
   });
 
   describe('fetch', () => {
