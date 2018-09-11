@@ -11,6 +11,7 @@ describe('get request', () => {
   });
   test('should be able to get a status code 200 from the server', () => {
     request('http://127.0.0.1:7878/restaurant?id=1', function (err, res, body) {
+      if(err) { console.log(err) };
       expect(res.statusCode).toBe(200);
     });
   });
