@@ -9,10 +9,10 @@ describe('Reducers', () => {
 
   describe('currentDate', () => {
 
-    test('default state of empty string', () => {
+    test('should have a default state of empty string', () => {
       expect(currentDateReducer(undefined, { type: null })).toBe('');
     });
-    test('default state of empty string', () => {
+    test('should change state when given "CHANGE_CURRENT_DATE" action', () => {
       expect(currentDateReducer(undefined, changeDate('September 20, 2018'))).toBe('September 20, 2018');
     });
 
@@ -20,10 +20,10 @@ describe('Reducers', () => {
 
   describe('hasReservation', () => {
 
-    test('default state of empty string', () => {
+    test('should have a default state of false', () => {
       expect(hasReservationReducer(undefined, { type: null })).toEqual(false);
     });
-    test('default state of empty string', () => {
+    test('should change state when given "CHANGE_HAS_RESERVATION', action, () => {
       expect(hasReservationReducer(undefined, changeReservation(true))).toEqual(true);
     });
     
@@ -31,10 +31,10 @@ describe('Reducers', () => {
 
   describe('currentDate', () => {
 
-    test('default state of empty string', () => {
+    test('should have a default state of empty array', () => {
       expect(timeslotsReducer(undefined, { type: null })).toEqual([]);
     });
-    test('default state of empty string', () => {
+    test('should change state when given "CHANGE_TIMESLOTS" action', () => {
       expect(timeslotsReducer(undefined, changeTime(['8:00 PM']))).toEqual(['8:00 PM']);
     });
     
