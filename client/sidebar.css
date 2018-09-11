@@ -1,22 +1,43 @@
-.reservation {
+.reservation-container {
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  width: 274px;
+  height: 140px;
+  padding: 14px 11px 11px;
+}
+
+/************* RESERVATION HEADER *************/
+.header-container {
+  height: 40px;
+}
+
+.header {
   margin-bottom: 12px;
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 16px;
   margin: 0;
   padding: 0;
   border: 0;
 } 
 
-.reservation-container {
-  display: block;
-  border: 1px solid #e6e6e6;
-  width: 274px;
-  height: 137px;
-  padding: 14px 11px 11px;
-}
-
-.disable {
-  text-decoration: none;
+.header-title {
   color: #333;
+  font-family: Verdana;
+  font-size: 15px;
+  font-weight: 600;
+  word-spacing: -2px;
+  position: relative;
+  bottom: 6px;
+  left: 3px;
+  vertical-align: center;
+  cursor: pointer;
+}
+.header-title:hover {
+  text-decoration: underline;
+}
+/************* RESERVATION HEADER *************/
+
+select {
+  -webkit-appearance: none;
+  border: none;
+  background-color: white;
+  font-size: 14px;
 }

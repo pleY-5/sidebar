@@ -8,9 +8,10 @@ const Restaurant = db.define('restaurant', {
   name: Sequelize.STRING,
   priceRange: Sequelize.INTEGER, // 0-3
   healthScore: Sequelize.INTEGER, // 50-100
-  certificate: Sequelize.BOOLEAN,
-  reservationForm: Sequelize.BOOLEAN,
-  deliveryAndTakeOutForm: Sequelize.BOOLEAN,
+  hasCertificate: Sequelize.BOOLEAN,
+  takesReservation: Sequelize.BOOLEAN,
+  hasTakeout: Sequelize.BOOLEAN,
+  hasDelivery: Sequelize.BOOLEAN,
   Monday: Sequelize.STRING,
   Tuesday: Sequelize.STRING,
   Wednesday: Sequelize.STRING,

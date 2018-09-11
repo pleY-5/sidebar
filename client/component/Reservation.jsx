@@ -1,27 +1,20 @@
 import '../sidebar.css';
 import React from 'react';
+import ReservationHeader from './ReservationHeader.jsx';
+import NumOfPeopleSelect from './NumOfPeopleSelect.jsx';
+import FindTable from './findTable.jsx';
+import DateSelectContainer from '../container/DateSelectContainer.jsx';
+import TimeSelectContainer from '../container/TimeSelectContainer.jsx';
 
-const Reservation = ({ reservationForm, hoursOfOperation, currentDate }) => (
+const Reservation = ({ hasReservation }) => (
   <div className='reservation-container'>
-    {reservationForm && (
+    {hasReservation && (
       <label>
-        <h3 className='reservation'><a href='' className='disable'>Make a Reservation</a></h3><br/>
-        <select>
-          <option value='date'>{currentDate}</option>
-        </select><br/>
-        <select defaultValue='7:00 PM'>
-          {hoursOfOperation.map(timeSlot => (
-              <option key={timeSlot} value={timeSlot}>{timeSlot}</option>
-          ))}
-        </select>
-        <select defaultValue='two'>
-          <option value='one'>1 Person</option>
-          <option value='two'>2 People</option>
-          <option value='three'>3 People</option>
-          <option value='four'>4 People</option>
-          <option value='five'>5 People</option>
-        </select><br/>
-        <input type='submit' value='Find a Table' onClick={e => e.preventDefault()}></input>
+        <ReservationHeader/>
+        <DateSelectContainer/>
+        <TimeSelectContainer/>
+        <NumOfPeopleSelect/>
+        <FindTable/>
       </label>
     )}
   </div>

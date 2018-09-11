@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import Reservation from '../component/Reservation.jsx';
 
 const mapStateToProps = state => ({
-  currentDate: state.currentDate,
-  hoursOfOperation: state.hoursOfOperation,
-  reservationForm: state.reservationForm
+  hasReservation: state.hasReservation
 });
 
 export default connect(mapStateToProps)(Reservation);
