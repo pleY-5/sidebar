@@ -28,8 +28,7 @@ describe('Dispatchers', () => {
         Saturday: '7:00 PM - 8:00 PM',
         Sunday: '7:00 PM - 8:00 PM',
       }]);
-      const data = await fetch('/restaurant?id=1');
-      await store.dispatch(data);
+      await store.dispatch(fetch('/restaurant?id=1'));
       expect(reducer).toBeCalled();
     });
 
