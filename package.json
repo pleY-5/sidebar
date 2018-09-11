@@ -9,7 +9,7 @@
   },
   "scripts": {
     "seed-cci": "mysql -h 127.0.0.1 -u root -p12345 < schema.sql && node database/generateData.js",
-    "start-cci": "npm run seed-cci & node server/index.js & sleep 30",
+    "start-cci": "node server/index.js & sleep 10 && npm run seed-cci",
     "start-dev": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "test-dev": "jest --watch",
