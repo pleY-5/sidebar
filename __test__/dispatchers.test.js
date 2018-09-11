@@ -17,10 +17,20 @@ describe('Dispatchers', () => {
     test('should be a function', () => {
       expect(typeof fetch('/restaurant?id=1')).toEqual('function');
     });
-    test('should dispatch changeTimeslots', async () => {
-      fetchMock.get('/restaurant?id=1', [{ hasReservation: true, Monday: '7:00 PM - 8:00 PM' }]);
-      store.dispatch(await fetch('/restaurant?id=1'));
-      // expect(reducer).toBeCalled();
+    test('should call mock reducer at least once', async () => {
+      fetchMock.get('/restaurant?id=1', [{
+        hasReservation: true,
+        Monday: '7:00 PM - 8:00 PM',
+        Tuesday: '7:00 PM - 8:00 PM',
+        Wednesday: '7:00 PM - 8:00 PM',
+        Thursday: '7:00 PM - 8:00 PM',
+        Friday: '7:00 PM - 8:00 PM',
+        Saturday: '7:00 PM - 8:00 PM',
+        Sunday: '7:00 PM - 8:00 PM',
+      }]);
+      const data = await fetch('/restaurant?id=1');
+      await store.dispatch(data);
+      expect(reducer).toBeCalled();
     });
 
   });

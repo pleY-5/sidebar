@@ -37,11 +37,12 @@ const getTimeslots = (restaurantInfo, date = new Date()) => {
 
 const fetch = url => {
   return dispatch => {
-    get(url) 
+    return get(url) 
       .then(data => {
         dispatch(changeHasReservation(data.takesReservation));
         dispatch(changeTimeslots(getTimeslots(data)));
-      });
+      })
+      .catch(err => console.log(err));
   }
 };
 
