@@ -7,15 +7,17 @@ import DateSelectContainer from '../container/DateSelectContainer.jsx';
 import TimeSelectContainer from '../container/TimeSelectContainer.jsx';
 
 const Reservation = ({ hasReservation }) => (
-  <div className={styles.reservationContainer}>
+  <div>
     {hasReservation && (
-      <label>
-        <ReservationHeader/>
-        <DateSelectContainer/>
-        <TimeSelectContainer/>
-        <NumOfPeopleSelect/>
-        <FindTable/>
-      </label>
+      <div className={styles.reservationContainer}>
+        <label>
+          <ReservationHeader/>
+          <DateSelectContainer/>
+          <TimeSelectContainer/>
+          <NumOfPeopleSelect/>
+          <FindTable/>
+        </label>
+      </div>
     )}
   </div>
 );
