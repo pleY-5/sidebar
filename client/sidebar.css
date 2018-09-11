@@ -8,7 +8,7 @@
 
 /************* RESERVATION HEADER *************/
 .header-container {
-  height: 40px;
+  height: 35px;
 }
 
 .header {
@@ -35,8 +35,11 @@
 }
 /************* DATE SELECT *************/
 .date-container {
-  border: 1px solid #999;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  height: 25px;
+  padding-top: 3px;
+  padding-left: 4px;
 }
 
 .date-text {
@@ -45,13 +48,15 @@
   width: 200px;
   font-size: 14px;
   position: relative;
-  bottom: 5px;
+  bottom: 6px;
+  left: 4px;
   cursor: pointer;
 }
 
-.date-icon {
+.date-arrow-icon {
   position: relative;
-  left: 3px;
+  bottom: 3px;
+  left: 25px;
 }
 
 select {

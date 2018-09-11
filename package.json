@@ -14,7 +14,7 @@
     "react-dev": "webpack -d --watch",
     "test-dev": "jest --watch",
     "dev": "npm run start-dev & npm run react-dev",
-    "test": "jest --coverage --verbose",
+    "test": "jest --coverage --verbose --detectOpenHandles",
     "seed": "mysql -u root -pnopass < schema.sql && node database/generateData.js"
   },
   "dependencies": {
