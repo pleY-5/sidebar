@@ -23,13 +23,13 @@ describe('Reducers', () => {
     test('should have a default state of false', () => {
       expect(hasReservationReducer(undefined, { type: null })).toEqual(false);
     });
-    test('should change state when given "CHANGE_HAS_RESERVATION', action, () => {
+    test('should change state when given "CHANGE_HAS_RESERVATION', () => {
       expect(hasReservationReducer(undefined, changeReservation(true))).toEqual(true);
     });
     
   });
 
-  describe('currentDate', () => {
+  describe('timeSlots', () => {
 
     test('should have a default state of empty array', () => {
       expect(timeslotsReducer(undefined, { type: null })).toEqual([]);
