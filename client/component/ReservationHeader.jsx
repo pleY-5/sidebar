@@ -1,11 +1,11 @@
 import React from 'react';
-import '../sidebar.css';
+import styles from '../sidebar.css';
 
 const ReservationHeader = () => (
-  <div className='header-container'>
-    <h3 className='header'>
+  <div className={styles.headerContainer}>
+    <h3 className={styles.header}>
       <img src='images/header.PNG'/>
-      <span className='header-title'>Make a Reservation</span>
+      <span className={styles.headerTitle} id='header-title'>Make a Reservation</span>
     </h3>
   </div>
 );

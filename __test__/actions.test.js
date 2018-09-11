@@ -16,7 +16,7 @@ describe('Actions', () => {
       expect(hasReservation(true).type).toBe('CHANGE_HAS_RESERVATION');
     });
     test('should return object with "hasReservation" key to equal true', () => {
-      expect(hasReservation(true).hasReservation).toEqual(true);
+      expect(hasReservation(true).hasReservation).toBe(true);
     });
 
   });

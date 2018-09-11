@@ -7,6 +7,6 @@ import Sidebar from './component/Sidebar.jsx';
 ReactDOM.render(
   <Provider store={store}>
     <Sidebar/>
-  </Provider>, 
+  </Provider>,
   document.getElementById('app')
 );

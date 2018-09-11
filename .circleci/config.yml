@@ -9,27 +9,27 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:latest-browsers
       - image: circleci/mysql:5.7.23
-        command: mysql -u root -p
+        command: mysql -u root
         environment:
           MYSQL_ROOT_HOST: 127.0.0.1
           MYSQL_DB: YelpReactorSidebar
           MYSQL_USER: root
           MYSQL_ALLOW_EMPTY_PASSWORD: true
-          # MYSQL_PASSWORD: nopass
+          MYSQL_PASSWORD: nopass
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/Documents/HackReactor/front-end-capstone/sidebar
+    working_directory: ~/repos
 
     steps:
       - checkout
       
-      # - run: sudo apt-get install mysql-client
-      # - run: sudo apt-get install mysql-server
-      # - run: sudo service mysql start
+      - run: sudo apt-get install mysql-client
+      - run: sudo apt-get install mysql-server
+      - run: sudo service mysql start
 
       # Download and cache dependencies
       - restore_cache:
@@ -39,7 +39,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      # - run: npm run start-cci
+      - run: npm run start-cci
 
       - save_cache:
           paths:

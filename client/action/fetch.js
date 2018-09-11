@@ -10,8 +10,8 @@ const getTimeslots = (restaurantInfo, date = new Date()) => {
   for (let i = 0; i < openCloseTimes.length; i += 2) {
     let open = openCloseTimes[i];
     let close = openCloseTimes[i + 1];
-    timeslots.push(open);
     while(!close.includes(open)) {
+      timeslots.push(open);
       open = open.split(':')
       if (open[1].match(/^30/)) {
         open[0] = (Number(open[0]) + 1).toString();
@@ -29,7 +29,6 @@ const getTimeslots = (restaurantInfo, date = new Date()) => {
         open[1] = open[1].replace(/^00/, '30')
         open = open.join(':')
       }
-      timeslots.push(open);
     }
   }
   return timeslots;

@@ -24,7 +24,7 @@ describe('Reducers', () => {
       expect(hasReservationReducer(undefined, { type: null })).toEqual(false);
     });
     test('should change state when given "CHANGE_HAS_RESERVATION', () => {
-      expect(hasReservationReducer(undefined, changeReservation(true))).toEqual(true);
+      expect(hasReservationReducer(undefined, changeReservation(true))).toBe(true);
     });
     
   });
