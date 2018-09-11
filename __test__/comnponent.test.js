@@ -58,12 +58,13 @@ describe('React Component Testing', () => {
 
   });
 
-  describe('Mount Resevation', () => {
+  describe('Resevation', () => {
 
-    // test('should have 3 options when given an array of 3 timeslots', () => {
-    //   const wrapper = shallow(<Reservation/>);
-    //   expect(wrapper).toBe(1);
-    // });
+    test('should have 5 components in the reservation field', () => {
+      const wrapper = shallow(<Reservation hasReservation='true' />);
+      const label = wrapper.find('label').children();
+      expect(label).toHaveLength(5);
+    });
 
   });
 
