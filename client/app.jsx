@@ -4,9 +4,13 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Sidebar from './component/Sidebar.jsx';
 
-ReactDOM.render(
+const App = () => (
   <Provider store={store}>
     <Sidebar/>
-  </Provider>, 
+  </Provider>
+);
+
+ReactDOM.render(
+  <App/>,
   document.getElementById('app')
 );

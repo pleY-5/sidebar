@@ -27,7 +27,7 @@ describe('Test', () => {
   });
 
   test('Check for reservation header', async () => {
-    const title = await page.$eval('.reservation', e => e.innerHTML);
+    const title = await page.$eval('#header-title', e => e.innerHTML);
     expect(title).toEqual('Make a Reservation');
   });
 

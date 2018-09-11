@@ -19,8 +19,17 @@ module.exports = {
         }
       },
       {
-        test: [/\.css$/],
-        loader: ['style-loader', 'css-loader']
+        test: /\.css$/,
+        loader: 'style-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader',
+        query: {
+          modules: true,
+          camelCase: 'dashes',
+          localIdentName: '[name]__[local]___[hash:base64:5]'
+        }
       }
     ]
   }

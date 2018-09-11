@@ -1,4 +1,4 @@
-import '../sidebar.css';
+import styles from '../sidebar.css';
 import React from 'react';
 import ReservationHeader from './ReservationHeader.jsx';
 import NumOfPeopleSelect from './NumOfPeopleSelect.jsx';
@@ -7,7 +7,7 @@ import DateSelectContainer from '../container/DateSelectContainer.jsx';
 import TimeSelectContainer from '../container/TimeSelectContainer.jsx';
 
 const Reservation = ({ hasReservation }) => (
-  <div className='reservation-container'>
+  <div className={styles.reservationContainer}>
     {hasReservation && (
       <label>
         <ReservationHeader/>

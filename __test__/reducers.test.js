@@ -35,7 +35,7 @@ describe('Reducers', () => {
       expect(timeslotsReducer(undefined, { type: null })).toEqual([]);
     });
     test('should change state when given "CHANGE_TIMESLOTS" action', () => {
-      expect(timeslotsReducer(undefined, changeTime(['8:00 PM']))).toBe(['8:00 PM']);
+      expect(timeslotsReducer(undefined, changeTime(['8:00 PM']))).toEqual(['8:00 PM']);
     });
     
   });
