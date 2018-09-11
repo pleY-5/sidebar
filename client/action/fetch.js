@@ -4,9 +4,9 @@ import changeTimeslots from './timeslots.js'
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-const getTimeslots = restaurantInfo => {
+const getTimeslots = (restaurantInfo, date = new Date()) => {
   const timeslots = [];
-  let openCloseTimes = restaurantInfo[days[(new Date).getDay()]].split(/ - |, /g);
+  let openCloseTimes = restaurantInfo[days[date.getDay()]].split(/ - |, /g);
   for (let i = 0; i < openCloseTimes.length; i += 2) {
     let open = openCloseTimes[i];
     let close = openCloseTimes[i + 1];

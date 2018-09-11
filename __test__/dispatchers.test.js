@@ -1,5 +1,6 @@
 import fetch from '../client/action/fetch.js'
 import updateDate from '../client/action/updateDate.js'
+import fetchMock from 'fetch-mock';
 
 describe('Dispatchers', () => {
 
@@ -8,7 +9,7 @@ describe('Dispatchers', () => {
   })
   const store = {};
   store.dispatch = jest.fn().mockImplementation(callback => {
-    return callback(date => reducer(date))
+    return callback(data => reducer(data))
   });
 
   describe('fetch', () => {
@@ -16,7 +17,11 @@ describe('Dispatchers', () => {
     test('should be a function', () => {
       expect(typeof fetch('/restaurant?id=1')).toEqual('function');
     });
-    // having issue with js fetch request, suspecting promise handling in jest
+    test('should dispatch changeTimeslots', async () => {
+      fetchMock.get('/restaurant?id=1', [{ hasReservation: true, Monday: '7:00 PM - 8:00 PM' }]);
+      store.dispatch(await fetch('/restaurant?id=1'));
+      // expect(reducer).toBeCalled();
+    });
 
   });
 
