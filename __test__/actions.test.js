@@ -1,5 +1,6 @@
 import hasReservation from '../client/action/hasReservation.js';
 import selectedDate from '../client/action/selectedDate.js';
+import calendarDate from '../client/action/calendarDate.js';
 import timeslots from '../client/action/timeslots.js';
 
 describe('Actions', () => {
@@ -51,6 +52,23 @@ describe('Actions', () => {
     });
     test('should return object with "timeslots" key to equal true', () => {
       expect(timeslots(['7:00 PM', '7:30 PM']).timeslots).toEqual(['7:00 PM', '7:30 PM']);
+    });
+
+  });
+
+  describe('calendarDate', () => {
+
+    test('should be a function', () => {
+      expect(typeof calendarDate).toBe('function');
+    });
+    test('should return an object', () => {
+      expect(typeof calendarDate(['7:00 PM', '7:30 PM'])).toBe('object');
+    });
+    test('should return object with "type" key to equal "CHANGE_CALENDAR_DATE"', () => {
+      expect(calendarDate().type).toBe('CHANGE_CALENDAR_DATE');
+    });
+    test('should return object with "calendarDate" key to equal true', () => {
+      expect(calendarDate(new Date()).calendarDate).toEqual(new Date());
     });
 
   });

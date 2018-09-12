@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import DateSelectContainer from '../client/container/DateSelectContainer.jsx';
 import ReservationContainer from '../client/container/ReservationContainer.jsx';
 import TimeSelectContainer from '../client/container/TimeSelectContainer.jsx';
+import CalendarHeaderContainer from '../client/container/CalendarHeaderContainer.jsx';
 
 describe('Container Testing', () => {
 
@@ -36,4 +37,15 @@ describe('Container Testing', () => {
     });
 
   });
+
+  describe('Calendar Header Container', () => {
+
+    test('should contain contain a timeslots prop', () => {
+      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.calendarDate).toBeDefined();
+    });
+
+  });
+
 });

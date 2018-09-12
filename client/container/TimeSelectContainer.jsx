@@ -6,6 +6,4 @@ const mapStateToProps = state => ({
   timeslots: state.timeslots,
 });
 
-const mapDispatchToProps = dispatch => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(TimeSelect);
+export default connect(mapStateToProps)(TimeSelect);

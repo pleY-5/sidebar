@@ -6,6 +6,4 @@ const mapStateToProps = state => ({
   selectedDate: state.selectedDate,
 });
 
-const mapDispatchToProps = dispatch => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(DateSelect);
+export default connect(mapStateToProps)(DateSelect);

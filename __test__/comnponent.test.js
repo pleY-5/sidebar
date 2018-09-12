@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import Reservation from '../client/component/Reservation.jsx';
 import ReservationHeader from '../client/component/ReservationHeader.jsx';
 import FindTable from '../client/component/FindTable.jsx';
@@ -8,6 +8,7 @@ import DateSelect from '../client/component/DateSelect.jsx';
 import TimeSelect from '../client/component/TimeSelect.jsx';
 import Calendar from '../client/component/Calendar.jsx';
 import CalendarHeader from '../client/component/CalendarHeader.jsx';
+import CalendarBody from '../client/component/CalendarBody.jsx';
 
 describe('React Component Testing', () => {
 
@@ -96,6 +97,14 @@ describe('React Component Testing', () => {
         const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
         const days = wrapper.find('#days').children();
         expect(days).toHaveLength(7);
+      });
+
+    });
+
+    describe('Calendar Body', () => {
+
+      test('', () => {
+        
       });
 
     });
