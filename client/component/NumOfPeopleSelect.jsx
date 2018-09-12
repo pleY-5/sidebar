@@ -1,16 +1,17 @@
 import React from 'react';
+import styles from '../sidebar.css';
 
 const NumOfPeopleSelect = () => (
-  <span className='people-container'>
-    <img src='images/people.PNG'/>
-    <select defaultValue='two'>
-      <option value='one'>1 Person</option>
-      <option value='two'>2 People</option>
-      <option value='three'>3 People</option>
-      <option value='four'>4 People</option>
-      <option value='five'>5 People</option>
+  <span className={styles.peopleContainer}>
+    <img src='images/people.PNG' className={styles.icon}/>
+    <select defaultValue='two' className={styles.select}>
+      <option value='one'>1 person</option>
+      <option value='two'>2 people</option>
+      <option value='three'>3 people</option>
+      <option value='four'>4 people</option>
+      <option value='five'>5 people</option>
     </select>
-    <img src='images/downarrow.PNG'/>
+    <img src='images/downarrow.PNG' className={styles.arrowIcon}/>
   </span>
 );
 

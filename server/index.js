@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const router = require('./routes.js');
 
-app.use(express.static('public'));
+app.use('/:id', express.static('public'));
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());

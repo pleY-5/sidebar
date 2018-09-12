@@ -1,7 +1,7 @@
 import currentDateReducer from '../client/reducers/currentDate.js';
 import hasReservationReducer from '../client/reducers/hasReservation.js';
 import timeslotsReducer from '../client/reducers/timeslots.js';
-import changeDate from '../client/action/currentDate.js'
+import changeDate from '../client/action/currentDate.js';
 import changeReservation from '../client/action/hasReservation.js';
 import changeTime from '../client/action/timeslots.js';
 

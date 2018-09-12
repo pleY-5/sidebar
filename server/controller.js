@@ -1,21 +1,21 @@
 const model = require('./model.js');
 
 const controller = {
-  restaurant: {
+  restaurants: {
     get: (req, res) => {
-      model.restaurant.get(req.query.id)
+      model.restaurants.get(req.params.id)
         .then(data => res.send(data))
         .catch(err => res.send(err));
     }
   },
-  reservation: {
+  reservations: {
     get: (req, res) => {
-      model.reservation.get(req.query.id)
+      model.reservations.get(req.params.id)
         .then(data => res.send(data))
         .catch(err => res.send(err));
     },
-    post: (req, res) => {
-      model.reservation.post(req.body)
+    put: (req, res) => {
+      model.reservations.put(req.body)
         .then(() => res.send())
         .catch(err => res.send(err));
     }

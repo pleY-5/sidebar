@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from '../sidebar.css';
 
 const FindTable = () => (
-  <div>
-    <input type='submit' value='Find a Table' onClick={e => e.preventDefault()}></input>
+  <div className={styles.buttonContainer}>
+    <a className={styles.button}>Find a Table</a>
   </div>
 );
 

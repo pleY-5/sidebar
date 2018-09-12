@@ -1,16 +1,16 @@
 const { Restaurant, Reservation } = require('../database');
 
 const model = {
-  restaurant: {
+  restaurants: {
     get: (id) => {
       return Restaurant.findAll({ where: { id }});
     }
   },
-  reservation: {
+  reservations: {
     get: (id) => {
       return Reservation.findAll({ where: { restaurantId: id }});
     },
-    post: (body) => {
+    put: (body) => {
       return Reservation.create(body);
     }
   }

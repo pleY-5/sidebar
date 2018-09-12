@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import Reservation from '../client/component/Reservation.jsx';
 import ReservationHeader from '../client/component/ReservationHeader.jsx';
-import FindTable from '../client/component/FindTable.jsx'
+import FindTable from '../client/component/FindTable.jsx';
 import NumOfPeopleSelect from '../client/component/NumOfPeopleSelect.jsx';
 import DateSelect from '../client/component/DateSelect.jsx';
 import TimeSelect from '../client/component/TimeSelect.jsx';
@@ -23,8 +23,8 @@ describe('React Component Testing', () => {
 
     test('should contain value "Find a Table"', () => {
       const wrapper = shallow(<FindTable/>);
-      const value = wrapper.find('input[type="submit"]').prop('value');
-      expect(value).toBe('Find a Table');
+      const text = wrapper.find('a').text();
+      expect(text).toBe('Find a Table');
     });
 
   });
