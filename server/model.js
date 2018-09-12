@@ -10,7 +10,7 @@ const model = {
     get: (id) => {
       return Reservation.findAll({ where: { restaurantId: id }});
     },
-    post: (body) => {
+    put: (body) => {
       return Reservation.create(body);
     }
   }

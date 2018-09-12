@@ -10,12 +10,12 @@ const controller = {
   },
   reservations: {
     get: (req, res) => {
-      model.reservations.get(req.query.id)
+      model.reservations.get(req.params.id)
         .then(data => res.send(data))
         .catch(err => res.send(err));
     },
-    post: (req, res) => {
-      model.reservations.post(req.body)
+    put: (req, res) => {
+      model.reservations.put(req.body)
         .then(() => res.send())
         .catch(err => res.send(err));
     }

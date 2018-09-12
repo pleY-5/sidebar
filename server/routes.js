@@ -5,6 +5,6 @@ router.get('/restaurants/:id', controller.restaurants.get);
 
 router.get('/reservations/:id', controller.reservations.get);
 
-router.post('/reservations', controller.reservations.post);
+router.put('/reservations', controller.reservations.put);
 
 module.exports = router;
