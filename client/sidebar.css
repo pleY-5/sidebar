@@ -16,11 +16,10 @@ select {
 /************* RESERVATION HEADER *************/
 .header-container {
   height: 35px;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
 }
 
 .header {
-  margin-bottom: 12px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -73,14 +72,14 @@ select {
 /************* TIME SELECT *************/
 .time-container {
   display: inline-block;
-  height: 24px;
+  height: 25px;
   width: 130px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin-top: 7px;
+  margin-top: 6px;
   margin-bottom: 6px;
   padding-left: 4px;
-  padding-top: 2px;
+  padding-top: 3px;
   cursor: pointer;
 }
 
@@ -103,15 +102,15 @@ select {
 .people-container {
   display: inline-block;
   position: relative;
-  top: 1px;
-  height: 24.2px;
+  top: 2px;
+  height: 24px;
   width: 126px;
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-bottom: 6px;
   margin-left: 6px;
   padding-left: 4px;
-  padding-top: 2px;
+  padding-top: 4px;
   cursor: pointer;
 }
 
@@ -133,13 +132,14 @@ select {
 /************* BUTTON SELECT *************/
 .button-container {
   width: 272px;
-  height: 23px;
+  height: 21px;
   border: 1px solid #28781E;
-  border-radius: 3px;
+  border-radius: 4px;
   text-align: center;
-  padding-top: 6px;
+  padding-top: 7px;
   background-color: #3cb52e;
   cursor: pointer;
+  box-shadow: 0px 1px 0px #c5c5c5;
 }
 
 .button-container:hover {
