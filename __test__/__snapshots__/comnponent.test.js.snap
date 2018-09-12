@@ -27,27 +27,27 @@ ShallowWrapper {
           <option
             value="one"
           >
-            1 Person
+            1 person
           </option>
           <option
             value="two"
           >
-            2 People
+            2 people
           </option>
           <option
             value="three"
           >
-            3 People
+            3 people
           </option>
           <option
             value="four"
           >
-            4 People
+            4 people
           </option>
           <option
             value="five"
           >
-            5 People
+            5 people
           </option>
         </select>,
         <img
@@ -78,27 +78,27 @@ ShallowWrapper {
             <option
               value="one"
             >
-              1 Person
+              1 person
             </option>,
             <option
               value="two"
             >
-              2 People
+              2 people
             </option>,
             <option
               value="three"
             >
-              3 People
+              3 people
             </option>,
             <option
               value="four"
             >
-              4 People
+              4 people
             </option>,
             <option
               value="five"
             >
-              5 People
+              5 people
             </option>,
           ],
           "defaultValue": "two",
@@ -110,11 +110,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1 Person",
+              "children": "1 person",
               "value": "one",
             },
             "ref": null,
-            "rendered": "1 Person",
+            "rendered": "1 person",
             "type": "option",
           },
           Object {
@@ -122,11 +122,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2 People",
+              "children": "2 people",
               "value": "two",
             },
             "ref": null,
-            "rendered": "2 People",
+            "rendered": "2 people",
             "type": "option",
           },
           Object {
@@ -134,11 +134,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3 People",
+              "children": "3 people",
               "value": "three",
             },
             "ref": null,
-            "rendered": "3 People",
+            "rendered": "3 people",
             "type": "option",
           },
           Object {
@@ -146,11 +146,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "4 People",
+              "children": "4 people",
               "value": "four",
             },
             "ref": null,
-            "rendered": "4 People",
+            "rendered": "4 people",
             "type": "option",
           },
           Object {
@@ -158,11 +158,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "5 People",
+              "children": "5 people",
               "value": "five",
             },
             "ref": null,
-            "rendered": "5 People",
+            "rendered": "5 people",
             "type": "option",
           },
         ],
@@ -198,27 +198,27 @@ ShallowWrapper {
             <option
               value="one"
             >
-              1 Person
+              1 person
             </option>
             <option
               value="two"
             >
-              2 People
+              2 people
             </option>
             <option
               value="three"
             >
-              3 People
+              3 people
             </option>
             <option
               value="four"
             >
-              4 People
+              4 people
             </option>
             <option
               value="five"
             >
-              5 People
+              5 people
             </option>
           </select>,
           <img
@@ -249,27 +249,27 @@ ShallowWrapper {
               <option
                 value="one"
               >
-                1 Person
+                1 person
               </option>,
               <option
                 value="two"
               >
-                2 People
+                2 people
               </option>,
               <option
                 value="three"
               >
-                3 People
+                3 people
               </option>,
               <option
                 value="four"
               >
-                4 People
+                4 people
               </option>,
               <option
                 value="five"
               >
-                5 People
+                5 people
               </option>,
             ],
             "defaultValue": "two",
@@ -281,11 +281,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1 Person",
+                "children": "1 person",
                 "value": "one",
               },
               "ref": null,
-              "rendered": "1 Person",
+              "rendered": "1 person",
               "type": "option",
             },
             Object {
@@ -293,11 +293,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2 People",
+                "children": "2 people",
                 "value": "two",
               },
               "ref": null,
-              "rendered": "2 People",
+              "rendered": "2 people",
               "type": "option",
             },
             Object {
@@ -305,11 +305,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3 People",
+                "children": "3 people",
                 "value": "three",
               },
               "ref": null,
-              "rendered": "3 People",
+              "rendered": "3 people",
               "type": "option",
             },
             Object {
@@ -317,11 +317,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "4 People",
+                "children": "4 people",
                 "value": "four",
               },
               "ref": null,
-              "rendered": "4 People",
+              "rendered": "4 people",
               "type": "option",
             },
             Object {
@@ -329,11 +329,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "5 People",
+                "children": "5 people",
                 "value": "five",
               },
               "ref": null,
-              "rendered": "5 People",
+              "rendered": "5 people",
               "type": "option",
             },
           ],

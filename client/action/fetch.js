@@ -17,9 +17,9 @@ const getTimeslots = (restaurantInfo, date = new Date()) => {
         open[0] = (Number(open[0]) + 1).toString();
         open[1] = open[1].replace(/^30/, '00');
         if (open[0].match(/^12/)) {
-          open[1].match(/AM$/)
-            ? open[1] = open[1].replace(/AM$/, 'PM')
-            : open[1] = open[1].replace(/PM$/, 'AM');
+          open[1].match(/am$/)
+            ? open[1] = open[1].replace(/am$/, 'pm')
+            : open[1] = open[1].replace(/pm$/, 'am');
         }
         if (open[0].match(/^13/)) {
           open[0] = open[0].replace(/^13/, '1');

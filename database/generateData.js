@@ -115,10 +115,10 @@ const generateRandomBoolean = (offset = 0.5) => {
 
 const data = [];
 
-const open = ['7:00 AM', '7:30 AM', '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM'];
-const midDayClose = ['1:30 PM', '2:00 PM', '2:30 PM'];
-const midDayOpen = ['4:00 PM', '4:30 PM', '5:30 PM', '6:00 PM'];
-const close = ['10:00 PM', '10:30 PM', '11:00 PM', '11:30 PM', '12:00 AM'];
+const open = ['7:00 am', '7:30 am', '8:00 am', '8:30 am', '9:00 am', '9:30 am', '10:00 am'];
+const midDayClose = ['1:30 pm', '2:00 pm', '2:30 pm'];
+const midDayOpen = ['4:00 pm', '4:30 pm', '5:30 pm', '6:00 pm'];
+const close = ['10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm', '12:00 am'];
 
 for (let i = 0; i < 100; i++) {
   let weekday;

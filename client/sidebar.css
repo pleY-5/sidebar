@@ -6,9 +6,17 @@
   padding: 14px 11px 11px;
 }
 
+select {
+  -webkit-appearance: none;
+  border: none;
+  background-color: white;
+  font-size: 14px;
+}
+
 /************* RESERVATION HEADER *************/
 .header-container {
   height: 35px;
+  padding-bottom: 5px;
 }
 
 .header {
@@ -23,16 +31,18 @@
   font-family: Verdana;
   font-size: 15px;
   font-weight: 600;
-  word-spacing: -2px;
+  letter-spacing: -0.5px;
   position: relative;
-  bottom: 6px;
+  bottom: 7px;
   left: 3px;
   vertical-align: center;
   cursor: pointer;
 }
+
 .header-title:hover {
   text-decoration: underline;
 }
+
 /************* DATE SELECT *************/
 .date-container {
   border: 1px solid #ccc;
@@ -40,6 +50,7 @@
   height: 25px;
   padding-top: 3px;
   padding-left: 4px;
+  cursor: pointer;
 }
 
 .date-text {
@@ -50,18 +61,99 @@
   position: relative;
   bottom: 6px;
   left: 4px;
-  cursor: pointer;
+  cursor: inherit;
 }
 
 .date-arrow-icon {
   position: relative;
   bottom: 3px;
-  left: 25px;
+  left: 26px;
 }
 
-select {
-  -webkit-appearance: none;
-  border: none;
-  background-color: white;
+/************* TIME SELECT *************/
+.time-container {
+  display: inline-block;
+  height: 24px;
+  width: 130px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 7px;
+  margin-bottom: 6px;
+  padding-left: 4px;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.time-select {
+  position: relative;
+  bottom: 5px;
+  left: 4px;
   font-size: 14px;
+  cursor: inherit;
+  letter-spacing: -0.5px;
+}
+
+.time-arrow-icon {
+  position: relative;
+  bottom: 3px;
+  left: 30px;
+}
+
+/************* PEOPLE SELECT *************/
+.people-container {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  height: 24.2px;
+  width: 126px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  padding-left: 4px;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.people-select {
+  position: relative;
+  bottom: 6px;
+  left: 4px;
+  font-size: 14px;
+  cursor: inherit;
+  letter-spacing: -0.5px;
+}
+
+.people-arrow-icon {
+  position: relative;
+  bottom: 3px;
+  left: 30px;
+}
+
+/************* BUTTON SELECT *************/
+.button-container {
+  width: 272px;
+  height: 23px;
+  border: 1px solid #28781E;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 6px;
+  background-color: #3cb52e;
+  cursor: pointer;
+}
+
+.button-container:hover {
+  background-color: #41c532;
+}
+
+.button-container:active {
+  background-color: #37a52a;
+}
+
+.button {
+  font-family: Verdana;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.5px;
 }
