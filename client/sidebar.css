@@ -8,6 +8,7 @@
 
 select {
   -webkit-appearance: none;
+  outline: none;
   border: none;
   background-color: white;
   font-size: 14px;
@@ -17,6 +18,10 @@ select {
 .header-container {
   height: 35px;
   padding-bottom: 3px;
+}
+
+.header-icon {
+  user-select: none;
 }
 
 .header {
@@ -46,10 +51,17 @@ select {
 .date-container {
   border: 1px solid #ccc;
   border-radius: 3px;
-  height: 25px;
   padding-top: 3px;
   padding-left: 4px;
   cursor: pointer;
+}
+.date-container:active,
+.date-container:focus-within {
+  border: 1px solid #0073bb;
+}
+
+.date-icon {
+  user-select: none;
 }
 
 .date-text {
@@ -67,10 +79,12 @@ select {
   position: relative;
   bottom: 3px;
   left: 26px;
+  user-select: none;
 }
 
-/************* TIME SELECT *************/
+/************* SELECT *************/
 .time-container {
+  position: relative;
   display: inline-block;
   height: 25px;
   width: 130px;
@@ -82,27 +96,9 @@ select {
   padding-top: 3px;
   cursor: pointer;
 }
-
-.time-select {
-  position: relative;
-  bottom: 5px;
-  left: 4px;
-  font-size: 14px;
-  cursor: inherit;
-  letter-spacing: -0.5px;
-}
-
-.time-arrow-icon {
-  position: relative;
-  bottom: 3px;
-  left: 30px;
-}
-
-/************* PEOPLE SELECT *************/
 .people-container {
   display: inline-block;
   position: relative;
-  top: 2px;
   height: 24px;
   width: 126px;
   border: 1px solid #ccc;
@@ -113,23 +109,38 @@ select {
   padding-top: 4px;
   cursor: pointer;
 }
+.time-container:active,
+.time-container:focus-within,
+.people-container:active,
+.people-container:focus-within {
+  border: 1px solid #0073bb;
+}
 
-.people-select {
-  position: relative;
-  bottom: 6px;
-  left: 4px;
+.icon {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.select {
+  width: 100%;
+  height: 100%;
   font-size: 14px;
+  padding-left: 27px;
+  padding-bottom: 6px;
   cursor: inherit;
   letter-spacing: -0.5px;
+  background: transparent;
 }
 
-.people-arrow-icon {
-  position: relative;
-  bottom: 3px;
-  left: 30px;
+.arrow-icon {
+  position: absolute;
+  pointer-events: none;
+  right: 5px;
+  user-select: none;
 }
 
-/************* BUTTON SELECT *************/
+/************* BUTTON *************/
 .button-container {
   width: 272px;
   height: 21px;
@@ -156,4 +167,5 @@ select {
   font-weight: 600;
   color: white;
   letter-spacing: -0.5px;
+  user-select: none;
 }
