@@ -73,6 +73,7 @@ select {
   bottom: 6px;
   left: 4px;
   cursor: inherit;
+  letter-spacing: -0.5px;
 }
 
 .date-arrow-icon {
