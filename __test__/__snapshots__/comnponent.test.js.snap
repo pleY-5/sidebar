@@ -19,9 +19,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <img
+          className="icon"
           src="images/people.PNG"
         />,
         <select
+          className="select"
           defaultValue="two"
         >
           <option
@@ -51,10 +53,11 @@ ShallowWrapper {
           </option>
         </select>,
         <img
+          className="arrowIcon"
           src="images/downarrow.PNG"
         />,
       ],
-      "className": "people-container",
+      "className": "peopleContainer",
     },
     "ref": null,
     "rendered": Array [
@@ -63,6 +66,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "icon",
           "src": "images/people.PNG",
         },
         "ref": null,
@@ -101,6 +105,7 @@ ShallowWrapper {
               5 people
             </option>,
           ],
+          "className": "select",
           "defaultValue": "two",
         },
         "ref": null,
@@ -173,6 +178,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "arrowIcon",
           "src": "images/downarrow.PNG",
         },
         "ref": null,
@@ -190,9 +196,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
+            className="icon"
             src="images/people.PNG"
           />,
           <select
+            className="select"
             defaultValue="two"
           >
             <option
@@ -222,10 +230,11 @@ ShallowWrapper {
             </option>
           </select>,
           <img
+            className="arrowIcon"
             src="images/downarrow.PNG"
           />,
         ],
-        "className": "people-container",
+        "className": "peopleContainer",
       },
       "ref": null,
       "rendered": Array [
@@ -234,6 +243,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "icon",
             "src": "images/people.PNG",
           },
           "ref": null,
@@ -272,6 +282,7 @@ ShallowWrapper {
                 5 people
               </option>,
             ],
+            "className": "select",
             "defaultValue": "two",
           },
           "ref": null,
@@ -344,6 +355,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "arrowIcon",
             "src": "images/downarrow.PNG",
           },
           "ref": null,

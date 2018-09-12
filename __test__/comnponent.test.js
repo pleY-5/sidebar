@@ -23,8 +23,8 @@ describe('React Component Testing', () => {
 
     test('should contain value "Find a Table"', () => {
       const wrapper = shallow(<FindTable/>);
-      const value = wrapper.find('input[type="submit"]').prop('value');
-      expect(value).toBe('Find a Table');
+      const text = wrapper.find('a').text();
+      expect(text).toBe('Find a Table');
     });
 
   });
