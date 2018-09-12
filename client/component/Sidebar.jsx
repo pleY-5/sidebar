@@ -7,7 +7,7 @@ import ReservationContainer from '../container/ReservationContainer.jsx';
 class Sidebar extends React.Component {
   componentDidMount() {
     store.dispatch(updateDate());
-    store.dispatch(fetch(`/restaurant${window.location.href.slice(22)}`));
+    store.dispatch(fetch(`/restaurants/${window.location.href.slice(22)}`));
   }
 
   render() {
