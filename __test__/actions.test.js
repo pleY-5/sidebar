@@ -29,8 +29,8 @@ describe('Actions', () => {
     test('should return an object', () => {
       expect(typeof currentDate('September 10, 2018')).toBe('object');
     });
-    test('should return object with "type" key to equal "CHANGE_CURRENT_DATE"', () => {
-      expect(currentDate('September 10, 2018').type).toBe('CHANGE_CURRENT_DATE');
+    test('should return object with "type" key to equal "CHANGE_SELECTED_DATE"', () => {
+      expect(currentDate('September 10, 2018').type).toBe('CHANGE_SELECTED_DATE');
     });
     test('should return object with "currentDate" key to equal true', () => {
       expect(currentDate('September 10, 2018').currentDate).toBe('September 10, 2018');

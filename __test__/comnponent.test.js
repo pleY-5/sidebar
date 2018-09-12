@@ -6,6 +6,8 @@ import FindTable from '../client/component/FindTable.jsx';
 import NumOfPeopleSelect from '../client/component/NumOfPeopleSelect.jsx';
 import DateSelect from '../client/component/DateSelect.jsx';
 import TimeSelect from '../client/component/TimeSelect.jsx';
+import Calendar from '../client/component/Calendar.jsx';
+import CalendarHeader from '../client/component/CalendarHeader.jsx';
 
 describe('React Component Testing', () => {
 
@@ -60,10 +62,42 @@ describe('React Component Testing', () => {
 
   describe('Resevation', () => {
 
-    test('should have 5 components in the reservation field', () => {
-      const wrapper = shallow(<Reservation hasReservation='true' />);
-      const label = wrapper.find('label').children();
-      expect(label).toHaveLength(5);
+    test('should have 5 components in the reservation container field', () => {
+      const wrapper = shallow(<Reservation hasReservation={true} />);
+      const tree = wrapper.find('#reservation-container').children();
+      expect(tree).toHaveLength(5); 
+    });
+
+  });
+
+  describe('Calendar', () => {
+
+    test('should have 2 components in the calendar container field', () => {
+      const wrapper = shallow(<Calendar/>);
+      const tree = wrapper.find('#calendar-container table').children();
+      expect(tree).toHaveLength(2); // header, body
+    });
+
+    describe('Calendar Header', () => {
+
+      test('should have title display :month, :year', () => {
+        const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
+        const title = wrapper.find('#calendar-header-title').text();
+        expect(title).toBe('September 2018');
+      });
+      test('should contain a foward and back button', () => {
+        const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
+        const forward = wrapper.find('#forward').prop('value');
+        expect(forward).toBeDefined();
+        const back = wrapper.find('#back').prop('value');
+        expect(back).toBeDefined();
+      });
+      test('should contain 7 days of the week', () => {
+        const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
+        const days = wrapper.find('#days').children();
+        expect(days).toHaveLength(7);
+      });
+
     });
 
   });

@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const pageUrl = 'http://127.0.0.1:7878?id=1';
+const pageUrl = 'http://127.0.0.1:7878/1';
 
 let page;
 let browser;
