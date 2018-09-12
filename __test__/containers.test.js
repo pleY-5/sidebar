@@ -12,7 +12,7 @@ describe('Container Testing', () => {
     test('should contain contain a currentDate prop', () => {
       const wrapper = shallow(<DateSelectContainer store={store}/>);
       const props = wrapper.props();
-      expect(props.currentDate).toBeDefined();
+      expect(props.selectedDate).toBeDefined();
     });
 
   });

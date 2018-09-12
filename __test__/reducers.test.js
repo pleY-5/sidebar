@@ -1,7 +1,7 @@
-import currentDateReducer from '../client/reducers/currentDate.js';
+import selectedDateReducer from '../client/reducers/selectedDate.js';
 import hasReservationReducer from '../client/reducers/hasReservation.js';
 import timeslotsReducer from '../client/reducers/timeslots.js';
-import changeDate from '../client/action/currentDate.js';
+import changeDate from '../client/action/selectedDate';
 import changeReservation from '../client/action/hasReservation.js';
 import changeTime from '../client/action/timeslots.js';
 
@@ -10,10 +10,10 @@ describe('Reducers', () => {
   describe('currentDate', () => {
 
     test('should have a default state of empty string', () => {
-      expect(currentDateReducer(undefined, { type: null })).toBe('');
+      expect(selectedDateReducer(undefined, { type: null })).toBe('');
     });
     test('should change state when given "CHANGE_CURRENT_DATE" action', () => {
-      expect(currentDateReducer(undefined, changeDate('September 20, 2018'))).toBe('September 20, 2018');
+      expect(selectedDateReducer(undefined, changeDate('September 20, 2018'))).toBe('September 20, 2018');
     });
 
   });

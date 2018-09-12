@@ -43,7 +43,7 @@ describe('React Component Testing', () => {
   describe('Date select', () => {
 
     test('should match current date that was given as a prop', () => {
-      const wrapper = shallow(<DateSelect currentDate='September 20, 2018'/>);
+      const wrapper = shallow(<DateSelect selectedDate='September 20, 2018'/>);
       const text = wrapper.find('input[type="text"]').prop('value');
       expect(text).toBe('September 20, 2018');
     });

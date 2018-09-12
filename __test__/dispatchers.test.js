@@ -15,10 +15,10 @@ describe('Dispatchers', () => {
   describe('fetch', () => {
 
     test('should be a function', () => {
-      expect(typeof fetch('/restaurant?id=1')).toEqual('function');
+      expect(typeof fetch('/restaurants/1')).toEqual('function');
     });
     test('should call mock reducer at least once', async () => {
-      fetchMock.get('/restaurant?id=1', [{
+      fetchMock.get('/restaurants/1', [{
         hasReservation: true,
         Monday: '7:00 PM - 8:00 PM',
         Tuesday: '7:00 PM - 8:00 PM',
@@ -28,7 +28,7 @@ describe('Dispatchers', () => {
         Saturday: '7:00 PM - 8:00 PM',
         Sunday: '7:00 PM - 8:00 PM',
       }]);
-      await store.dispatch(fetch('/restaurant?id=1'));
+      await store.dispatch(fetch('/restaurants/1'));
       expect(reducer).toBeCalled();
     });
 
@@ -39,10 +39,10 @@ describe('Dispatchers', () => {
     test('should return a function', () => {
       expect(typeof updateDate()).toBe('function');
     });
-    test('should dispatch changeCurrentDate', () => {
+    test('should dispatch changeSelectedDate', () => {
       let result = store.dispatch(updateDate(new Date('September 20, 2018')));
       expect(reducer).toBeCalled();
-      expect(result.lastAction).toBe('CHANGE_CURRENT_DATE');
+      expect(result.lastAction).toBe('CHANGE_SELECTED_DATE');
     });
 
   });

@@ -1,5 +1,5 @@
 import hasReservation from '../client/action/hasReservation.js';
-import currentDate from '../client/action/currentDate.js';
+import selectedDate from '../client/action/selectedDate.js';
 import timeslots from '../client/action/timeslots.js';
 
 describe('Actions', () => {
@@ -21,19 +21,19 @@ describe('Actions', () => {
 
   });
  
-  describe('currentDate', () => {
+  describe('selectedDate', () => {
 
     test('should be a function', () => {
-      expect(typeof currentDate).toBe('function');
+      expect(typeof selectedDate).toBe('function');
     });
     test('should return an object', () => {
-      expect(typeof currentDate('September 10, 2018')).toBe('object');
+      expect(typeof selectedDate('September 10, 2018')).toBe('object');
     });
     test('should return object with "type" key to equal "CHANGE_SELECTED_DATE"', () => {
-      expect(currentDate('September 10, 2018').type).toBe('CHANGE_SELECTED_DATE');
+      expect(selectedDate('September 10, 2018').type).toBe('CHANGE_SELECTED_DATE');
     });
-    test('should return object with "currentDate" key to equal true', () => {
-      expect(currentDate('September 10, 2018').currentDate).toBe('September 10, 2018');
+    test('should return object with "selectedDate" key to equal true', () => {
+      expect(selectedDate('September 10, 2018').selectedDate).toBe('September 10, 2018');
     });
 
   });
