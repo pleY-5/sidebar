@@ -13,33 +13,33 @@ describe('get request', () => {
     fetchMock.get('/apple', { throws: 'Invalid URI /apple' });
     expect(await get('/apple')).toBe('Invalid URI /apple');
   });
-  // test('should be able to get a status code 200 from the server', done => {
-  //   request('http://127.0.0.1:7878/restaurants/1', function (err, res, body) {
-  //     if (err) { expect(err).toBe(); }
-  //     expect(res.statusCode).toBe(200);
-  //     done();
-  //   });
-  // });
-  // test('should be able to get id 1 with endpoint 1', done => {
-  //   request('http://127.0.0.1:7878/restaurants/1', function (err, res, body) {
-  //     if (err) { expect(err).toBe(); }
-  //     expect(JSON.parse(body)[0].id).toBe(1);
-  //     done();
-  //   });
-  // });
-  // test('should be able to get id 2 with endpoint 2', done => {
-  //   request('http://127.0.0.1:7878/restaurants/2', function (err, res, body) {
-  //     if (err) { expect(err).toBe(); }
-  //     expect(JSON.parse(body)[0].id).toBe(2);
-  //     done();
-  //   });
-  // });
-  // test('should be able to get a correct restaurant name', done => {
-  //   request('http://127.0.0.1:7878/restaurants/1',  function (err, res, body) {
-  //     if (err) { expect(err).toBe(); }
-  //     expect(JSON.parse(body)[0].name).toBe('Minhas Micro Brewery');
-  //     done();
-  //   });
-  // });
+  test('should be able to get a status code 200 from the server', done => {
+    request('http://127.0.0.1:7878/restaurants/1', function (err, res, body) {
+      if (err) { expect(err).toBe(); }
+      expect(res.statusCode).toBe(200);
+      done();
+    });
+  });
+  test('should be able to get id 1 with endpoint 1', done => {
+    request('http://127.0.0.1:7878/restaurants/1', function (err, res, body) {
+      if (err) { expect(err).toBe(); }
+      expect(JSON.parse(body)[0].id).toBe(1);
+      done();
+    });
+  });
+  test('should be able to get id 2 with endpoint 2', done => {
+    request('http://127.0.0.1:7878/restaurants/2', function (err, res, body) {
+      if (err) { expect(err).toBe(); }
+      expect(JSON.parse(body)[0].id).toBe(2);
+      done();
+    });
+  });
+  test('should be able to get a correct restaurant name', done => {
+    request('http://127.0.0.1:7878/restaurants/1',  function (err, res, body) {
+      if (err) { expect(err).toBe(); }
+      expect(JSON.parse(body)[0].name).toBe('Minhas Micro Brewery');
+      done();
+    });
+  });
 
 });

@@ -2,11 +2,12 @@ import { combineReducers } from 'redux';
 import selectedDate from './selectedDate';
 import timeslots from './timeslots.js';
 import hasReservation from './hasReservation.js';
-import calendarDate from './calendarDate.js';
+import { calendarDateReducer, calendarWeeksReducer } from './calendar.js';
 
 const rootRuducer = combineReducers({
   selectedDate,
-  calendarDate,
+  calendarDate: calendarDateReducer,
+  calendarWeeks: calendarWeeksReducer,
   timeslots,
   hasReservation,
 });

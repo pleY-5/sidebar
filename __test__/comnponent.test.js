@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount, render } from 'enzyme';
 import Reservation from '../client/component/Reservation.jsx';
 import ReservationHeader from '../client/component/ReservationHeader.jsx';
 import FindTable from '../client/component/FindTable.jsx';
@@ -100,7 +100,8 @@ describe('React Component Testing', () => {
             calendarDate={new Date('Wednesday, September 19, 2018')}
             handleIncreaseMonthClick={mockClickHandler}
             handleDecreaseMonthClick={mockClickHandler}
-          />);
+          />
+        );
         wrapper.find('#forward').simulate('click');
         wrapper.find('#back').simulate('click');
         expect(mockClickHandler.mock.calls.length).toBe(2);
@@ -116,7 +117,7 @@ describe('React Component Testing', () => {
     describe('Calendar Body', () => {
 
       test('', () => {
-        
+        const wrapper = shallow(<CalendarBody calendarWeeks={[[0, 0, 0, 1, 2, 3, 4], [5, 6, 7, 8, 9, 0, 0]]}/>);
       });
 
     });

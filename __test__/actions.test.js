@@ -1,6 +1,6 @@
 import hasReservation from '../client/action/hasReservation.js';
 import selectedDate from '../client/action/selectedDate.js';
-import calendarDate from '../client/action/calendarDate.js';
+import { changeCalendarDate, changeCalendarWeeks } from '../client/action/calendar.js';
 import timeslots from '../client/action/timeslots.js';
 
 describe('Actions', () => {
@@ -56,20 +56,42 @@ describe('Actions', () => {
 
   });
 
-  describe('calendarDate', () => {
+  describe('calendar', () => {
 
-    test('should be a function', () => {
-      expect(typeof calendarDate).toBe('function');
+    describe('changeCalendarDate', () => {
+
+      test('should be a function', () => {
+        expect(typeof changeCalendarDate).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeCalendarDate()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_CALENDAR_DATE"', () => {
+        expect(changeCalendarDate().type).toBe('CHANGE_CALENDAR_DATE');
+      });
+      test('should return object with "changeCalendarDate" key to equal true', () => {
+        const date = new Date();
+        expect(changeCalendarDate(date).calendarDate).toEqual(date);
+      });
+
     });
-    test('should return an object', () => {
-      expect(typeof calendarDate(['7:00 PM', '7:30 PM'])).toBe('object');
-    });
-    test('should return object with "type" key to equal "CHANGE_CALENDAR_DATE"', () => {
-      expect(calendarDate().type).toBe('CHANGE_CALENDAR_DATE');
-    });
-    test('should return object with "calendarDate" key to equal true', () => {
-      const date = new Date();
-      expect(calendarDate(date).calendarDate).toEqual(date);
+
+    describe('changeCalendarWeeks', () => {
+
+      test('should be a function', () => {
+        expect(typeof changeCalendarWeeks).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeCalendarWeeks()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_CALENDAR_WEEKS"', () => {
+        expect(changeCalendarWeeks().type).toBe('CHANGE_CALENDAR_WEEKS');
+      });
+      test('should return object with "changeCalendarWeeks" key to equal true', () => {
+        const date = new Date();
+        expect(changeCalendarWeeks(date).calendarWeeks).toEqual(date);
+      });
+
     });
 
   });
