@@ -68,7 +68,8 @@ describe('Actions', () => {
       expect(calendarDate().type).toBe('CHANGE_CALENDAR_DATE');
     });
     test('should return object with "calendarDate" key to equal true', () => {
-      expect(calendarDate(new Date()).calendarDate).toEqual(new Date());
+      const date = new Date();
+      expect(calendarDate(date).calendarDate).toEqual(date);
     });
 
   });
