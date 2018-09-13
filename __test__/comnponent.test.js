@@ -54,7 +54,7 @@ describe('React Component Testing', () => {
   describe('Time select', () => {
 
     test('should have 3 options when given an array of 3 timeslots', () => {
-      const wrapper = shallow(<TimeSelect timeslots={['7:00 PM', '7:30 PM', '8:00 PM']}/>);
+      const wrapper = shallow(<TimeSelect timeslots={['7:00 pm', '7:30 pm', '8:00 pm']}/>);
       const select = wrapper.find('select').children();
       expect(select).toHaveLength(3);
     });
@@ -92,6 +92,18 @@ describe('React Component Testing', () => {
         expect(forward).toBeDefined();
         const back = wrapper.find('#back').prop('value');
         expect(back).toBeDefined();
+      });
+      test('should have a click listener to two buttons', () => {
+        const mockClickHandler = jest.fn();
+        const wrapper = shallow(
+          <CalendarHeader 
+            calendarDate={new Date('Wednesday, September 19, 2018')}
+            handleIncreaseMonthClick={mockClickHandler}
+            handleDecreaseMonthClick={mockClickHandler}
+          />);
+        wrapper.find('#forward').simulate('click');
+        wrapper.find('#back').simulate('click');
+        expect(mockClickHandler.mock.calls.length).toBe(2);
       });
       test('should contain 7 days of the week', () => {
         const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);

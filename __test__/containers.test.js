@@ -40,12 +40,25 @@ describe('Container Testing', () => {
 
   describe('Calendar Header Container', () => {
 
-    test('should contain contain a timeslots prop', () => {
+    test('should contain a calendarDate prop', () => {
       const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
       const props = wrapper.props();
       expect(props.calendarDate).toBeDefined();
     });
-
+    test('should contains month increase and decrease functions', () => {
+      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
+      const props = wrapper.props();
+      expect(typeof props.handleDecreaseMonthClick).toBe('function');
+      expect(typeof props.handleIncreaseMonthClick).toBe('function');
+    });
+    test('should return action objects', () => {
+      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
+      const props = wrapper.props();
+      expect(typeof props.handleDecreaseMonthClick(new Date)).toBe('object');
+      expect(props.handleDecreaseMonthClick(new Date).type).toBeDefined();
+      expect(typeof props.handleIncreaseMonthClick(new Date)).toBe('object');
+      expect(props.handleIncreaseMonthClick(new Date).type).toBeDefined();
+    });
   });
 
 });
