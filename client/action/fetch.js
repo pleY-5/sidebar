@@ -41,7 +41,6 @@ const fetch = url => {
         dispatch(changeHasReservation(data.takesReservation));
         dispatch(changeTimeslots(getTimeslots(data)));
       })
-      .catch(err => console.log(err));
   };
 };
 

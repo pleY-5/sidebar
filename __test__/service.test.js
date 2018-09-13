@@ -9,6 +9,10 @@ describe('get request', () => {
     get('/restaurants/1')
       .then(data => expect(data.hasReservation).toBe(true));
   });
+  test('should throw error at wrong url', async () => {
+    fetchMock.get('/apple', { throws: 'Invalid URI /apple' });
+    expect(await get('/apple')).toBe('Invalid URI /apple');
+  });
   test('should be able to get a status code 200 from the server', done => {
     request('http://127.0.0.1:7878/restaurants/1', function (err, res, body) {
       if (err) { expect(err).toBe(); }
