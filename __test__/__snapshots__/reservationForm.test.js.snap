@@ -1,6 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`React Component Testing Number of People select should match previous snapshots 1`] = `
+exports[`Reservation Form React Component Testing Find a Table Button should match Find A Table snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FindTable />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <a
+        className="button"
+      >
+        Find a Table
+      </a>,
+      "className": "buttonContainer",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Find a Table",
+        "className": "button",
+      },
+      "ref": null,
+      "rendered": "Find a Table",
+      "type": "a",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <a
+          className="button"
+        >
+          Find a Table
+        </a>,
+        "className": "buttonContainer",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Find a Table",
+          "className": "button",
+        },
+        "ref": null,
+        "rendered": "Find a Table",
+        "type": "a",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Reservation Form React Component Testing Number of People select should match Num of People snapshots 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <NumOfPeopleSelect />,
@@ -364,6 +454,188 @@ ShallowWrapper {
         },
       ],
       "type": "span",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Reservation Form React Component Testing Reservation Header should match Reservation header snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReservationHeader />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <h3
+        className="header"
+      >
+        <img
+          className="headerIcon"
+          src="images/header.PNG"
+        />
+        <span
+          className="headerTitle"
+          id="header-title"
+        >
+          Make a Reservation
+        </span>
+      </h3>,
+      "className": "headerContainer",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            className="headerIcon"
+            src="images/header.PNG"
+          />,
+          <span
+            className="headerTitle"
+            id="header-title"
+          >
+            Make a Reservation
+          </span>,
+        ],
+        "className": "header",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "headerIcon",
+            "src": "images/header.PNG",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Make a Reservation",
+            "className": "headerTitle",
+            "id": "header-title",
+          },
+          "ref": null,
+          "rendered": "Make a Reservation",
+          "type": "span",
+        },
+      ],
+      "type": "h3",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <h3
+          className="header"
+        >
+          <img
+            className="headerIcon"
+            src="images/header.PNG"
+          />
+          <span
+            className="headerTitle"
+            id="header-title"
+          >
+            Make a Reservation
+          </span>
+        </h3>,
+        "className": "headerContainer",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              className="headerIcon"
+              src="images/header.PNG"
+            />,
+            <span
+              className="headerTitle"
+              id="header-title"
+            >
+              Make a Reservation
+            </span>,
+          ],
+          "className": "header",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "headerIcon",
+              "src": "images/header.PNG",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Make a Reservation",
+              "className": "headerTitle",
+              "id": "header-title",
+            },
+            "ref": null,
+            "rendered": "Make a Reservation",
+            "type": "span",
+          },
+        ],
+        "type": "h3",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -8,5 +8,5 @@ ReactDOM.render(
   <Provider store={store}>
     <Sidebar/>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('sb-app')
 );

@@ -1,0 +1,62 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import Calendar from '../client/component/Calendar';
+import CalendarHeader from '../client/component/CalendarHeader';
+import CalendarBody from '../client/component/CalendarBody';
+
+describe('Calendar React Component Testing', () => {
+
+  describe('Calendar', () => {
+
+    test('should have 2 components in the calendar container field', () => {
+      const wrapper = shallow(<Calendar/>);
+      const tree = wrapper.find('#calendar-container table').children();
+      expect(tree).toHaveLength(2); // header, body
+    });
+
+    describe('Calendar Header', () => {
+
+      test('should have title display :month, :year', () => {
+        const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
+        const title = wrapper.find('#calendar-header-title').text();
+        expect(title).toBe('September 2018');
+      });
+      test('should contain a foward and back button', () => {
+        const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
+        const forward = wrapper.find('#forward').prop('value');
+        expect(forward).toBeDefined();
+        const back = wrapper.find('#back').prop('value');
+        expect(back).toBeDefined();
+      });
+      test('should have a click listener to two buttons', () => {
+        const mockClickHandler = jest.fn();
+        const wrapper = shallow(
+          <CalendarHeader 
+            calendarDate={new Date('Wednesday, September 19, 2018')}
+            handleIncreaseMonthClick={mockClickHandler}
+            handleDecreaseMonthClick={mockClickHandler}
+          />
+        );
+        wrapper.find('#forward').simulate('click');
+        wrapper.find('#back').simulate('click');
+        expect(mockClickHandler.mock.calls.length).toBe(2);
+      });
+      test('should contain 7 days of the week', () => {
+        const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
+        const days = wrapper.find('#days').children();
+        expect(days).toHaveLength(7);
+      });
+
+    });
+
+    describe('Calendar Body', () => {
+
+      test('', () => {
+        const wrapper = shallow(<CalendarBody calendarWeeks={[[0, 0, 0, 1, 2, 3, 4], [5, 6, 7, 8, 9, 0, 0]]}/>);
+      });
+
+    });
+
+  });
+
+});
