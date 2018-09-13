@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import DateSelectContainer from '../client/container/DateSelectContainer.jsx';
 import ReservationContainer from '../client/container/ReservationContainer.jsx';
 import TimeSelectContainer from '../client/container/TimeSelectContainer.jsx';
+import CalendarHeaderContainer from '../client/container/CalendarHeaderContainer.jsx';
 
 describe('Container Testing', () => {
 
@@ -12,7 +13,7 @@ describe('Container Testing', () => {
     test('should contain contain a currentDate prop', () => {
       const wrapper = shallow(<DateSelectContainer store={store}/>);
       const props = wrapper.props();
-      expect(props.currentDate).toBeDefined();
+      expect(props.selectedDate).toBeDefined();
     });
 
   });
@@ -36,4 +37,28 @@ describe('Container Testing', () => {
     });
 
   });
+
+  describe('Calendar Header Container', () => {
+
+    test('should contain a calendarDate prop', () => {
+      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.calendarDate).toBeDefined();
+    });
+    test('should contains month increase and decrease functions', () => {
+      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
+      const props = wrapper.props();
+      expect(typeof props.handleDecreaseMonthClick).toBe('function');
+      expect(typeof props.handleIncreaseMonthClick).toBe('function');
+    });
+    test('should return action objects', () => {
+      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
+      const props = wrapper.props();
+      expect(typeof props.handleDecreaseMonthClick(new Date)).toBe('object');
+      expect(props.handleDecreaseMonthClick(new Date).type).toBeDefined();
+      expect(typeof props.handleIncreaseMonthClick(new Date)).toBe('object');
+      expect(props.handleIncreaseMonthClick(new Date).type).toBeDefined();
+    });
+  });
+
 });

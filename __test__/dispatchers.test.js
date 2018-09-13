@@ -1,5 +1,5 @@
 import fetch from '../client/action/fetch.js'
-import updateDate from '../client/action/updateDate.js'
+import { updateCalendarDate, updateSelectedDate } from '../client/action/updateDate.js'
 import fetchMock from 'fetch-mock';
 
 describe('Dispatchers', () => {
@@ -15,34 +15,47 @@ describe('Dispatchers', () => {
   describe('fetch', () => {
 
     test('should be a function', () => {
-      expect(typeof fetch('/restaurant?id=1')).toEqual('function');
+      expect(typeof fetch('/restaurants/1')).toEqual('function');
     });
     test('should call mock reducer at least once', async () => {
-      fetchMock.get('/restaurant?id=1', [{
+      fetchMock.get('/restaurants/1', [{
         hasReservation: true,
-        Monday: '7:00 PM - 8:00 PM',
-        Tuesday: '7:00 PM - 8:00 PM',
-        Wednesday: '7:00 PM - 8:00 PM',
-        Thursday: '7:00 PM - 8:00 PM',
-        Friday: '7:00 PM - 8:00 PM',
-        Saturday: '7:00 PM - 8:00 PM',
-        Sunday: '7:00 PM - 8:00 PM',
+        Monday: '7:00 am - 1:00 am',
+        Tuesday: '7:00 am - 1:00 am',
+        Wednesday: '7:00 am - 1:00 am',
+        Thursday: '7:00 am - 1:00 am',
+        Friday: '7:00 am - 1:00 am',
+        Saturday: '7:00 am - 1:00 am',
+        Sunday: '7:00 am - 1:00 am',
       }]);
-      await store.dispatch(fetch('/restaurant?id=1'));
+      await store.dispatch(fetch('/restaurants/1'));
       expect(reducer).toBeCalled();
     });
 
   });
 
-  describe('updateDate', () => {
+  describe('updateSelectedDate', () => {
 
     test('should return a function', () => {
-      expect(typeof updateDate()).toBe('function');
+      expect(typeof updateSelectedDate()).toBe('function');
     });
-    test('should dispatch changeCurrentDate', () => {
-      let result = store.dispatch(updateDate(new Date('September 20, 2018')));
+    test('should dispatch changeSelectedDate', () => {
+      let result = store.dispatch(updateSelectedDate(new Date('September 20, 2018')));
       expect(reducer).toBeCalled();
-      expect(result.lastAction).toBe('CHANGE_CURRENT_DATE');
+      expect(result.lastAction).toBe('CHANGE_SELECTED_DATE');
+    });
+
+  });
+
+  describe('updateCalendarDate', () => {
+
+    test('should return a function', () => {
+      expect(typeof updateCalendarDate()).toBe('function');
+    });
+    test('should dispatch changeSelectedDate', () => {
+      let result = store.dispatch(updateCalendarDate(new Date('September 20, 2018')));
+      expect(reducer).toBeCalled();
+      expect(result.lastAction).toBe('CHANGE_CALENDAR_DATE');
     });
 
   });

@@ -3,7 +3,7 @@ import styles from '../sidebar.css';
 
 const NumOfPeopleSelect = () => (
   <span className={styles.peopleContainer}>
-    <img src='images/people.PNG' className={styles.icon}/>
+    <img src='images/people.PNG' className={styles.peopleIcon}/>
     <select defaultValue='two' className={styles.select}>
       <option value='one'>1 person</option>
       <option value='two'>2 people</option>
