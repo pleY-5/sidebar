@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CalendarBody = ({ calendarRows }) => (
+const CalendarBody = ({ calendarWeeks }) => (
   <tbody>
   </tbody>
 );
