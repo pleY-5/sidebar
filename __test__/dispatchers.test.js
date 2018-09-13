@@ -20,13 +20,13 @@ describe('Dispatchers', () => {
     test('should call mock reducer at least once', async () => {
       fetchMock.get('/restaurants/1', [{
         hasReservation: true,
-        Monday: '7:00 am - 8:00 pm',
-        Tuesday: '7:00 am - 8:00 pm',
-        Wednesday: '7:00 am - 8:00 pm',
-        Thursday: '7:00 am - 8:00 pm',
-        Friday: '7:00 am - 8:00 pm',
-        Saturday: '7:00 am - 8:00 pm',
-        Sunday: '7:00 am - 8:00 pm',
+        Monday: '7:00 am - 1:00 am',
+        Tuesday: '7:00 am - 1:00 am',
+        Wednesday: '7:00 am - 1:00 am',
+        Thursday: '7:00 am - 1:00 am',
+        Friday: '7:00 am - 1:00 am',
+        Saturday: '7:00 am - 1:00 am',
+        Sunday: '7:00 am - 1:00 am',
       }]);
       await store.dispatch(fetch('/restaurants/1'));
       expect(reducer).toBeCalled();
