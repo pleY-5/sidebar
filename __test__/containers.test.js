@@ -88,6 +88,16 @@ describe('Container Testing', () => {
       const props = wrapper.props();
       expect(props.calendarWeeks).toBeDefined();
     });
+    test('should contain a selectedDate prop', () => {
+      const wrapper = shallow(<CalendarBodyContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.selectedDate).toBeDefined();
+    });
+    test('should contain a calendarDate prop', () => {
+      const wrapper = shallow(<CalendarBodyContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.calendarDate).toBeDefined();
+    });
   
   });
 
