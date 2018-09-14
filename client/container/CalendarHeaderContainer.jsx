@@ -12,13 +12,13 @@ const mapDispatchToProps = dispatch => ({
     date = new Date(date);
     const prev = date.setMonth(date.getMonth() - 1);
     dispatch(updateCalendarWeeks(new Date(prev)));
-    return dispatch(updateCalendarDate(new Date(prev)));
+    dispatch(updateCalendarDate(new Date(prev)));
   },
   handleIncreaseMonthClick: date => {
     date = new Date(date);
     const next = date.setMonth(date.getMonth() + 1);
     dispatch(updateCalendarWeeks(new Date(next)));
-    return dispatch(updateCalendarDate(new Date(next)));
+    dispatch(updateCalendarDate(new Date(next)));
   }
 });
 
