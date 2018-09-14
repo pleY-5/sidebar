@@ -70,14 +70,6 @@ describe('Container Testing', () => {
       expect(typeof props.handleDecreaseMonthClick).toBe('function');
       expect(typeof props.handleIncreaseMonthClick).toBe('function');
     });
-    test('should return action objects', () => {
-      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
-      const props = wrapper.props();
-      expect(typeof props.handleDecreaseMonthClick(new Date)).toBe('object');
-      expect(props.handleDecreaseMonthClick(new Date).type).toBeDefined();
-      expect(typeof props.handleIncreaseMonthClick(new Date)).toBe('object');
-      expect(props.handleIncreaseMonthClick(new Date).type).toBeDefined();
-    });
 
   });
 
