@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import Calendar from '../client/component/Calendar';
 import CalendarHeader from '../client/component/CalendarHeader';
 import CalendarBody from '../client/component/CalendarBody';
+import CalendarWeek from '../client/component/CalendarWeek';
 
 describe('Calendar React Component Testing', () => {
 
@@ -51,8 +52,20 @@ describe('Calendar React Component Testing', () => {
 
     describe('Calendar Body', () => {
 
-      test('', () => {
+      test('should have 2 weeks when given 2 weeks', () => {
         const wrapper = shallow(<CalendarBody calendarWeeks={[[0, 0, 0, 1, 2, 3, 4], [5, 6, 7, 8, 9, 0, 0]]}/>);
+        const body = wrapper.find('tbody').children();
+        expect(body).toHaveLength(2);
+      });
+
+    });
+
+    describe('Calendar Week', () => {
+
+      test('should have 7 days in a week when given an array with length 7', () => {
+        const wrapper = shallow(<CalendarWeek calendarWeek={[1, 2, 3, 4, 5, 6, 7]}/>);
+        const body = wrapper.find('tr').children();
+        expect(body).toHaveLength(7);
       });
 
     });

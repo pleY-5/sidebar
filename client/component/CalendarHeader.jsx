@@ -14,7 +14,7 @@ const CalendarHeader = ({ calendarDate, handleIncreaseMonthClick, handleDecrease
           onClick={() => handleDecreaseMonthClick(calendarDate)}
           id='back'>
         </input>
-        </th>
+      </th>
       <th className={styles.calendarHeaderTitle} id='calendar-header-title' colSpan='5'>
         {`${months[calendarDate.getMonth()]} ${calendarDate.getFullYear()}`}
       </th>

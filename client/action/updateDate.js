@@ -18,19 +18,19 @@ const updateCalendarWeeks = (date = new Date()) => {
     let month = date.getMonth();
     let year = date.getFullYear();
     return new Date(year, month + 1, 0).getDate();
-  }
+  };
   const weeks = [];
   let week = [0, 0, 0, 0, 0, 0, 0];
-  const lastDay = getLastDay(date)
+  const lastDay = getLastDay(date);
   for (let day = 1; day <= lastDay; day++) {
-    date.setDate(day)
+    date.setDate(day);
     if (!date.getDay()) { week = [0, 0, 0, 0, 0, 0, 0]; }
     week[date.getDay()] = day;
     if (date.getDay() === 6 || day === lastDay) {
-      weeks.push(week.slice());
+      weeks.push(week);
     }
   }
-  return dispatch => dispatch(changeCalendarWeeks(weeks))
-}
+  return dispatch => dispatch(changeCalendarWeeks(weeks));
+};
 
 export { updateSelectedDate, updateCalendarDate, updateCalendarWeeks };

@@ -186,12 +186,13 @@ select {
 .calendar-container {
   position: absolute;
   left: -1px;
-  top: 36px;
+  top: 35px;
   width: 273px;
   z-index: 2;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: white;
+  box-shadow: 0px 1px 0px #ebebeb;
 }
 .calendar-container:after, .calendar-container:before {
 	bottom: 100%;
@@ -253,5 +254,17 @@ table {
   font-size: 12px;
   color: #d32300;
   padding-top: 7.5px;
+  padding-bottom: 5px;
   cursor: default;
+}
+
+.calendar-day {
+  font-family: Helvetica;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 20px;
+  height: 36.5px;
+  border-radius: 5px;
 }

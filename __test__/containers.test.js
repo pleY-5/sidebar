@@ -5,6 +5,7 @@ import DateSelectContainer from '../client/container/DateSelectContainer.jsx';
 import ReservationContainer from '../client/container/ReservationContainer.jsx';
 import TimeSelectContainer from '../client/container/TimeSelectContainer.jsx';
 import CalendarHeaderContainer from '../client/container/CalendarHeaderContainer.jsx';
+import CalendarBodyContainer from '../client/container/CalendarBodyContainer.jsx';
 
 describe('Container Testing', () => {
 
@@ -59,6 +60,17 @@ describe('Container Testing', () => {
       expect(typeof props.handleIncreaseMonthClick(new Date)).toBe('object');
       expect(props.handleIncreaseMonthClick(new Date).type).toBeDefined();
     });
+
+  });
+
+  describe('Calendar Body Container', () => {
+  
+    test('should contain a calendarWeeks prop', () => {
+      const wrapper = shallow(<CalendarBodyContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.calendarWeeks).toBeDefined();
+    });
+  
   });
 
 });
