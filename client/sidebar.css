@@ -276,15 +276,27 @@ th {
   height: 36.5px;
   border-radius: 5px;
 }
+.calendar-day:hover {
+  background-color: #f0f3f8;
+}
 
 .selected-date {
-  /* font-family: Helvetica; */
   background-color: #cf1200cc; 
-  /* border: 1px solid #ccc; */
   color: white;
   border-radius: 0px;
+}
+.selected-date:hover {
+  background-color: #cf1200cc;
 }
 
 .today {
   font-weight: bold;
+}
+
+.invalid-date {
+  cursor: not-allowed;
+  color: #ccc;
+}
+.invalid-date:hover {
+  background-color: white;
 }

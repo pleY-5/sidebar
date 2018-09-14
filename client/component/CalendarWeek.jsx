@@ -5,24 +5,25 @@ const CalendarWeek = ({ calendarWeek, selectedDate, calendarDate }) => {
   const selected = new Date(selectedDate);
   const thisMonth = new Date().getMonth();
   const today = new Date().getDate();
-  const selectDay = selected.getDate();
-  const selectMonth = selected.getMonth();
-  const calendarMonth = calendarDate.getMonth();
+  const selDay = selected.getDate();
+  const selMonth = selected.getMonth();
+  const calMonth = calendarDate.getMonth();
 
   return (
     <tr>
       {calendarWeek.map((day, idx) => {
-        if (thisMonth === calendarMonth && day === today) {
-          return ( <td key={idx} className={[styles.selectedDate, styles.calendarDay, styles.today].join(' ')}>{day}</td> );
-        } else if (selectMonth === calendarMonth && day === selectDay) {
-          return ( <td key={idx} className={[styles.selectedDate, styles.calendarDay].join(' ')}>{day}</td> );
-        } else if (day === today) {
-          return ( <td key={idx} className={[styles.calendarDay, styles.today].join(' ')}>{day}</td> );
-        } else if (day !== 0) {
-          return ( <td key={idx} className={styles.calendarDay}>{day}</td> );
-        } else {
-          return ( <td key={idx} className={styles.calendarDay}></td> );
+        let classes = [styles.calendarDay];
+        let text = day;
+        if (thisMonth === calMonth && day === today) { classes.push(styles.today); }
+        if (selMonth === calMonth && day === selDay) { classes.push(styles.selectedDate); } 
+        if ((thisMonth === calMonth && day < today) || 
+            (thisMonth + 1 === calMonth && day > today) || 
+            (thisMonth !== calMonth && thisMonth + 1 !== calMonth)) { 
+          classes.push(styles.invalidDate); 
+          // dateClickHandler = null;
         }
+        if (day === 0) { text = ''; }
+        return ( <td key={idx} className={classes.join(' ')}>{text}</td> );
       })}
     </tr>
   );

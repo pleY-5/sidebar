@@ -7,10 +7,7 @@ const updateDisplayCalendar = (bool, date) => dispatch => {
       dispatch(changeDisplayCalendar(false)); 
     }
   };
-  if (bool) { 
-    document.addEventListener('click', documentClickHandler);
-  }
-
+  if (bool) { document.addEventListener('click', documentClickHandler); }
   dispatch(changeCalendarDate(new Date(date)));
   return dispatch(changeDisplayCalendar(bool));
 };
