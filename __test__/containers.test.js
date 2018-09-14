@@ -11,22 +11,35 @@ describe('Container Testing', () => {
 
   describe('Date Select Container', () => {
 
-    test('should contain contain a currentDate prop', () => {
+    test('should contain a currentDate prop', () => {
       const wrapper = shallow(<DateSelectContainer store={store}/>);
       const props = wrapper.props();
       expect(props.selectedDate).toBeDefined();
     });
-    test('should contain contain a displayCalendar prop', () => {
+    test('should contain a displayCalendar prop', () => {
       const wrapper = shallow(<DateSelectContainer store={store}/>);
       const props = wrapper.props();
       expect(props.displayCalendar).toBeDefined();
     });
+    test('should contain a handler for click date div', () => {
+      const wrapper = shallow(<DateSelectContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.handleDateClick).toBeDefined();
+      expect(typeof props.handleDateClick).toBe('function');
+    });
+    test('should contain a handler that returns an action object', () => {
+      const wrapper = shallow(<DateSelectContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.handleDateClick).toBeDefined();
+      expect(typeof props.handleDateClick()).toBe('object');
+    });
+
 
   });
 
   describe('Reservation Container', () => {
 
-    test('should contain contain a hasReservation prop', () => {
+    test('should contain a hasReservation prop', () => {
       const wrapper = shallow(<ReservationContainer store={store}/>);
       const props = wrapper.props();
       expect(props.hasReservation).toBeDefined();
@@ -36,7 +49,7 @@ describe('Container Testing', () => {
 
   describe('Time Select Container', () => {
 
-    test('should contain contain a timeslots prop', () => {
+    test('should contain a timeslots prop', () => {
       const wrapper = shallow(<TimeSelectContainer store={store}/>);
       const props = wrapper.props();
       expect(props.timeslots).toBeDefined();

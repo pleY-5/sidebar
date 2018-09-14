@@ -20,16 +20,25 @@ afterAll(() => {
   browser.close();
 });
 
-describe('Test', () => {
+describe('End to end tests', () => {
 
   beforeEach(async () => {
     await page.goto(pageUrl, { waitUntil: 'networkidle2' })
   });
 
-  test('Check for reservation header', async () => {
+  test('should have correct reservation header', async () => {
     const title = await page.$eval('#header-title', e => e.innerHTML);
-    expect(title).toEqual('Make a Reservation');
+    expect(title).toBe('Make a Reservation');
   });
+
+  // test('Check for reservation header', async () => {
+  //   const date = '#date-container';
+  //   await page.click(date);
+  //   const title = await page.$eval('#calendar-header-title', e => e.textContent);
+  //   expect(title).toBe('September 2018');
+  //   await page.click('body');
+  //   await page.$eval('#calendar-header-title');
+  // });
 
   // test('can search', async () => {
   //   const selector = 'input.form-control[type=text]';

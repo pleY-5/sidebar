@@ -68,6 +68,12 @@ describe('Reservation Form React Component Testing', () => {
       const calendar = wrapper.find('div').children();
       expect(calendar).toHaveLength(4);
     });
+    test('should simulate a click to the text area to toggle calendar display', () => {
+      const mockHandler = jest.fn();
+      const wrapper = shallow(<DateSelect handleDateClick={mockHandler}/>);
+      wrapper.find('input[type="text"]').simulate('click');
+      expect(mockHandler.mock.calls.length).toBe(1);
+    });
 
   });
 

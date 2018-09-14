@@ -1,5 +1,6 @@
 import fetch from '../client/action/fetch.js'
 import { updateCalendarDate, updateSelectedDate, updateCalendarWeeks } from '../client/action/updateDate.js'
+import updateDisplayCalendar from '../client/action/displayCalendar.js'
 import fetchMock from 'fetch-mock';
 
 describe('Dispatchers', () => {
@@ -69,6 +70,19 @@ describe('Dispatchers', () => {
       let result = store.dispatch(updateCalendarWeeks(new Date('September 20, 2018')));
       expect(reducer).toBeCalled();
       expect(result.lastAction).toBe('CHANGE_CALENDAR_WEEKS');
+    });
+
+  });
+
+  describe('updateDisplayCalendar', () => {
+
+    test('should return a function', () => {
+      expect(typeof updateDisplayCalendar()).toBe('function');
+    });
+    test('should dispatch changeSelectedDate', () => {
+      let result = store.dispatch(updateDisplayCalendar(true));
+      expect(reducer).toBeCalled();
+      expect(result.lastAction).toBe('CHANGE_DISPLAY_CALENDAR');
     });
 
   });

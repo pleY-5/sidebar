@@ -9,9 +9,7 @@ const updateSelectedDate = (date = new Date()) => {
   return dispatch => dispatch(changeSelectedDate(formattedDate));
 };
 
-const updateCalendarDate = (date = new Date()) => {
-  return dispatch => dispatch(changeCalendarDate(date));
-};
+const updateCalendarDate = (date = new Date()) => dispatch => dispatch(changeCalendarDate(date));
 
 const updateCalendarWeeks = (date = new Date()) => {
   const getLastDay = (date) => {
