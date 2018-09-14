@@ -224,6 +224,10 @@ table {
   text-align: center;
 }
 
+th {
+  cursor: default;
+}
+
 .calendar-header-title {
   height: 39px;
   width: 107px;
@@ -233,6 +237,10 @@ table {
   cursor: default;
 }
 
+.scale-x {
+  transform: scaleX(0.5);
+}
+
 .forward, .back {
   position: relative;
   right: 1.5px;
@@ -240,7 +248,6 @@ table {
   font-family: Helvetica;
   font-size: 9px;
   font-weight: 600;
-  transform: scaleX(0.50);
   width: 20px;
   height: 100%;
   cursor: pointer;

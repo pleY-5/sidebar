@@ -24,10 +24,10 @@ describe('Calendar React Component Testing', () => {
       });
       test('should contain a foward and back button', () => {
         const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
-        const forward = wrapper.find('#forward').prop('value');
-        expect(forward).toBeDefined();
-        const back = wrapper.find('#back').prop('value');
-        expect(back).toBeDefined();
+        const forward = wrapper.find('#forward').text();
+        expect(forward).toBe('>>');
+        const back = wrapper.find('#back').text();
+        expect(back).toBe('<<');
       });
       test('should have a click listener to two buttons', () => {
         const mockClickHandler = jest.fn();
@@ -63,7 +63,7 @@ describe('Calendar React Component Testing', () => {
     describe('Calendar Week', () => {
 
       test('should have 7 days in a week when given an array with length 7', () => {
-        const wrapper = shallow(<CalendarWeek calendarWeek={[1, 2, 3, 4, 5, 6, 7]}/>);
+        const wrapper = shallow(<CalendarWeek calendarWeek={[1, 2, 3, 4, 5, 6, 0]}/>);
         const body = wrapper.find('tr').children();
         expect(body).toHaveLength(7);
       });

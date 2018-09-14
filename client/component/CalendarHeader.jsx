@@ -6,26 +6,23 @@ const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', '
 const CalendarHeader = ({ calendarDate, handleIncreaseMonthClick, handleDecreaseMonthClick }) => (
   <thead>
     <tr>
-      <th>
-        <input 
-          type='button' 
+      <th className={styles.scaleX}>
+        <a 
           value='<<' 
           className={styles.back} 
           onClick={() => handleDecreaseMonthClick(calendarDate)}
-          id='back'>
-        </input>
+          id='back'>&lt;&lt;
+        </a>
       </th>
       <th className={styles.calendarHeaderTitle} id='calendar-header-title' colSpan='5'>
         {`${months[calendarDate.getMonth()]} ${calendarDate.getFullYear()}`}
       </th>
-      <th>
-        <input 
-          type='button' 
-          value='>>' 
+      <th className={styles.scaleX}>
+        <a 
           className={styles.forward} 
           onClick={() => handleIncreaseMonthClick(calendarDate)}
-          id='forward'>
-        </input>
+          id='forward'>&gt;&gt;
+        </a>
       </th>
     </tr>
     <tr id={styles.days}>
