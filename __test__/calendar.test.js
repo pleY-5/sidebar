@@ -65,9 +65,9 @@ describe('Calendar React Component Testing', () => {
       test('should have 7 days in a week when given an array with length 7', () => {
         const wrapper = shallow(
           <CalendarWeek 
-            calendarWeek={[1, 2, 3, 4, 5, 6, 0]}
-            calendarDate={new Date('September 3, 2018')}
-            sslectedDate={'September 3, 2018'}
+            calendarWeek={[0, 0, 13, 14, 15, 16, 17]}
+            calendarDate={new Date('September 15, 2018')}
+            selectedDate={'September 15, 2018'}
           />
         );
         const body = wrapper.find('tr').children();

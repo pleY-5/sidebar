@@ -278,9 +278,13 @@ th {
 }
 
 .selected-date {
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   background-color: #cf1200cc; 
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   color: white;
+  border-radius: 0px;
+}
+
+.today {
   font-weight: bold;
 }
