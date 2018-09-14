@@ -8,4 +8,9 @@ const changeCalendarWeeks = (calendarWeeks) => ({
   calendarWeeks
 });
 
-export { changeCalendarDate, changeCalendarWeeks };
+const changeDisplayCalendar = (bool) => ({
+  type: 'CHANGE_DISPLAY_CALENDAR',
+  displayCalendar: bool
+});
+
+export { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar };

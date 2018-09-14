@@ -16,6 +16,11 @@ describe('Container Testing', () => {
       const props = wrapper.props();
       expect(props.selectedDate).toBeDefined();
     });
+    test('should contain contain a displayCalendar prop', () => {
+      const wrapper = shallow(<DateSelectContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.displayCalendar).toBeDefined();
+    });
 
   });
 

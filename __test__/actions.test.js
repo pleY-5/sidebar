@@ -1,6 +1,6 @@
 import hasReservation from '../client/action/hasReservation.js';
 import selectedDate from '../client/action/selectedDate.js';
-import { changeCalendarDate, changeCalendarWeeks } from '../client/action/calendar.js';
+import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
 import timeslots from '../client/action/timeslots.js';
 
 describe('Actions', () => {
@@ -90,6 +90,23 @@ describe('Actions', () => {
       test('should return object with "changeCalendarWeeks" key to equal true', () => {
         const date = new Date();
         expect(changeCalendarWeeks(date).calendarWeeks).toEqual(date);
+      });
+
+    });
+
+    describe('changeDisplayCalendar', () => {
+
+      test('should be a function', () => {
+        expect(typeof changeDisplayCalendar).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeDisplayCalendar()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_DISPLAY_CALENDAR"', () => {
+        expect(changeDisplayCalendar().type).toBe('CHANGE_DISPLAY_CALENDAR');
+      });
+      test('should return object with "changeDisplayCalendar" key to equal true', () => {
+        expect(changeDisplayCalendar(true).displayCalendar).toEqual(true);
       });
 
     });

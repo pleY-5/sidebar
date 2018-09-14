@@ -1,12 +1,12 @@
 import selectedDateReducer from '../client/reducers/selectedDate.js';
 import hasReservationReducer from '../client/reducers/hasReservation.js';
 import timeslotsReducer from '../client/reducers/timeslots.js';
-import { calendarDateReducer, calendarWeeksReducer } from '../client/reducers/calendar.js';
+import { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer } from '../client/reducers/calendar.js';
 import rootReducer from '../client/reducers';
 import changeDate from '../client/action/selectedDate';
 import changeReservation from '../client/action/hasReservation.js';
 import changeTime from '../client/action/timeslots.js';
-import { changeCalendarDate, changeCalendarWeeks } from '../client/action/calendar.js';
+import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
 
 describe('Reducers', () => {
 
@@ -25,6 +25,7 @@ describe('Reducers', () => {
       expect(rootReducer(undefined, {}).calendarWeeks).toBeDefined();
       expect(rootReducer(undefined, {}).timeslots).toBeDefined();
       expect(rootReducer(undefined, {}).hasReservation).toBeDefined();
+      expect(rootReducer(undefined, {}).displayCalendar).toBeDefined();
     });
 
   });
@@ -82,6 +83,17 @@ describe('Reducers', () => {
       });
       test('should change state when given "CHANGE_CALENDAR_WEEKS" action', () => {
         expect(calendarWeeksReducer(undefined, changeCalendarWeeks([1, 2, 3, 4, 5, 6, 7]))).toEqual([1, 2, 3, 4, 5, 6, 7]);
+      });
+    
+    });
+
+    describe('displayCalendar', () => {
+  
+      test('should have a default state of false', () => {
+        expect(displayCalendarReducer(undefined, { type: null })).toEqual(false);
+      });
+      test('should change state when given "CHANGE_DISPLAY_CALENDAR" action', () => {
+        expect(displayCalendarReducer(undefined, changeDisplayCalendar(true))).toBe(true);
       });
     
     });

@@ -12,4 +12,11 @@ const calendarWeeksReducer = (state = [], action) => {
   return state;
 };
 
-export { calendarDateReducer, calendarWeeksReducer };
+const displayCalendarReducer = (state = false, action) => {
+  if (action.type === 'CHANGE_DISPLAY_CALENDAR') {
+    return action.displayCalendar;
+  }
+  return state;
+};
+
+export { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer };

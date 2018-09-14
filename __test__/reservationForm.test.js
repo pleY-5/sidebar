@@ -58,6 +58,16 @@ describe('Reservation Form React Component Testing', () => {
       const text = wrapper.find('input[type="text"]').prop('value');
       expect(text).toBe('September 20, 2018');
     });
+    test('should not display calendar when displayCalendar is false', () => {
+      const wrapper = shallow(<DateSelect displayCalendar={false}/>);
+      const calendar = wrapper.find('div').children();
+      expect(calendar).toHaveLength(3);
+    });
+    test('should display calendar when displayCalendar is true', () => {
+      const wrapper = shallow(<DateSelect displayCalendar={true}/>);
+      const calendar = wrapper.find('div').children();
+      expect(calendar).toHaveLength(4);
+    });
 
   });
 
