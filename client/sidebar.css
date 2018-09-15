@@ -252,6 +252,7 @@ th {
   width: 20px;
   height: 100%;
   cursor: pointer;
+  user-select: none;
 }
 .forward:focus, .back:focus {
   outline: none;
