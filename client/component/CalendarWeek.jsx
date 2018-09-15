@@ -32,7 +32,10 @@ const CalendarWeek = ({ calendarWeek, selectedDate, calendarDate, handleDateClic
           classes.push(styles.invalidDate); 
           onClick = () => {};
         }
-        if (day === 0) { text = ''; }
+        if (day === 0) { 
+          text = ''; 
+          onClick = () => {};
+        }
         return ( 
           <td 
             key={idx} 
