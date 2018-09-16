@@ -7,22 +7,25 @@ const CalendarHeader = ({ calendarDate, handleIncreaseMonthClick, handleDecrease
   <thead>
     <tr>
       <th className={styles.scaleX}>
-        <a 
+        <input
+          type='button' 
           value='<<' 
           className={styles.back} 
           onClick={() => handleDecreaseMonthClick(calendarDate)}
-          id='back'>&lt;&lt;
-        </a>
+          id='back'>
+        </input>
       </th>
       <th className={styles.calendarHeaderTitle} id='calendar-header-title' colSpan='5'>
         {`${months[calendarDate.getMonth()]} ${calendarDate.getFullYear()}`}
       </th>
       <th className={styles.scaleX}>
-        <a 
+        <input
+          type='button' 
+          value='>>' 
           className={styles.forward} 
           onClick={() => handleIncreaseMonthClick(calendarDate)}
-          id='forward'>&gt;&gt;
-        </a>
+          id='forward'>
+        </input>
       </th>
     </tr>
     <tr id={styles.days}>
