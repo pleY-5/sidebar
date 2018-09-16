@@ -1,15 +1,13 @@
 import { combineReducers } from 'redux';
-import selectedDate from './selectedDate';
-import timeslots from './timeslots.js';
-import hasReservation from './hasReservation.js';
+import { hasReservationReducer, selectedDateReducer, timeslotsReducer } from './reservation';
 import { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer } from './calendar.js';
 
 const rootRuducer = combineReducers({
-  selectedDate,
+  selectedDate, selectedDateReducer,
   calendarDate: calendarDateReducer,
   calendarWeeks: calendarWeeksReducer,
-  timeslots,
-  hasReservation,
+  timeslots, timeslotsReducer,
+  hasReservation: hasReservationReducer,
   displayCalendar: displayCalendarReducer
 });
 

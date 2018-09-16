@@ -1,6 +1,6 @@
 import get from '../service/fetch.js';
-import changeHasReservation from './hasReservation.js';
-import changeTimeslots from './timeslots.js';
+import { changeHasReservation, changeTimeslots } from './reservation.js';
+import { changeTodaysHours, changePriceRange, changeHealthScore } from './status.js';
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -40,6 +40,9 @@ const fetch = url => {
       .then(data => {
         dispatch(changeHasReservation(data.takesReservation));
         dispatch(changeTimeslots(getTimeslots(data)));
+        dispatch(changeTodaysHours(data[days[(new Date).getDay()]]));
+        dispatch(changePriceRange(data.priceRange));
+        dispatch(changeHealthScore(data.healthScore));
       })
   };
 };

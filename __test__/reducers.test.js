@@ -3,9 +3,7 @@ import hasReservationReducer from '../client/reducers/hasReservation.js';
 import timeslotsReducer from '../client/reducers/timeslots.js';
 import { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer } from '../client/reducers/calendar.js';
 import rootReducer from '../client/reducers';
-import changeDate from '../client/action/selectedDate';
-import changeReservation from '../client/action/hasReservation.js';
-import changeTime from '../client/action/timeslots.js';
+import { changeHasReservation, changeSelectedDate, changeTimeslots } from '../client/action/reservation';
 import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
 
 describe('Reducers', () => {
@@ -32,7 +30,7 @@ describe('Reducers', () => {
       expect(selectedDateReducer(undefined, { type: null })).toBe('');
     });
     test('should change state when given "CHANGE_CURRENT_DATE" action', () => {
-      expect(selectedDateReducer(undefined, changeDate('September 20, 2018'))).toBe('September 20, 2018');
+      expect(selectedDateReducer(undefined, changeSelectedDate ('September 20, 2018'))).toBe('September 20, 2018');
     });
   });
 
@@ -41,7 +39,7 @@ describe('Reducers', () => {
       expect(hasReservationReducer(undefined, { type: null })).toEqual(false);
     });
     test('should change state when given "CHANGE_HAS_RESERVATION', () => {
-      expect(hasReservationReducer(undefined, changeReservation(true))).toBe(true);
+      expect(hasReservationReducer(undefined, changeHasReservation(true))).toBe(true);
     });
   });
 
@@ -50,7 +48,7 @@ describe('Reducers', () => {
       expect(timeslotsReducer(undefined, { type: null })).toEqual([]);
     });
     test('should change state when given "CHANGE_TIMESLOTS" action', () => {
-      expect(timeslotsReducer(undefined, changeTime(['8:00 PM']))).toEqual(['8:00 PM']);
+      expect(timeslotsReducer(undefined, changeTimeslots(['8:00 PM']))).toEqual(['8:00 PM']);
     });
   });
 

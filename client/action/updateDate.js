@@ -1,4 +1,4 @@
-import changeSelectedDate from './selectedDate.js';
+import { changeSelectedDate } from './reservation';
 import { changeCalendarDate, changeCalendarWeeks } from './calendar.js';
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
