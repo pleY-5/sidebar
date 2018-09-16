@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../sidebar.css';
 
-const price = ['under $10', '$11-$30', '$31-$60', 'above $61'];
+const price = ['under $10', '$11-30', '$31-60', 'above $61'];
 
 const Status = ({ hours, priceRange, healthScore }) => {
   const dollarSigns = ['greySign', 'greySign', 'greySign', 'greySign'];

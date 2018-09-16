@@ -123,7 +123,6 @@ const close = ['10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm', '12:00 am'];
 for (let i = 0; i < 100; i++) {
   let weekday;
   let weekend;
-  let sunday;
   if (generateRandomBoolean()) {
     weekday = `${open[generateRandomInt(open.length)]} - ${close[generateRandomInt(close.length)]}`;
   } else {
@@ -134,11 +133,6 @@ for (let i = 0; i < 100; i++) {
     weekend = weekday;
   } else {
     weekend = `${open[generateRandomInt(open.length)]} - ${close[generateRandomInt(close.length)]}`;
-  }
-  if (generateRandomBoolean(0.65)) {
-    sunday = weekend;
-  } else {
-    sunday = 'Closed';
   }
   data.push({
     name: businessNames[i],
@@ -154,7 +148,7 @@ for (let i = 0; i < 100; i++) {
     Thursday: weekday,
     Friday: weekday,
     Saturday: weekend,
-    Sunday: sunday
+    Sunday: weekend
   });
 }
 
