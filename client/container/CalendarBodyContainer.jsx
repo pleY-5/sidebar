@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
     const date = new Date(calendar);
     date.setDate(day);
     dispatch(updateSelectedDate(date)); 
-    dispatch(changeDisplayCalendar(false)); 
+    return dispatch(changeDisplayCalendar(false)); 
   }
 });
 

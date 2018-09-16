@@ -8,7 +8,6 @@ import CalendarWeek from '../client/component/CalendarWeek';
 describe('Calendar React Component Testing', () => {
 
   describe('Calendar', () => {
-
     test('should have 2 components in the calendar container field', () => {
       const wrapper = shallow(<Calendar/>);
       const tree = wrapper.find('#calendar-container table').children();
@@ -16,7 +15,6 @@ describe('Calendar React Component Testing', () => {
     });
 
     describe('Calendar Header', () => {
-
       test('should have title display :month, :year', () => {
         const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
         const title = wrapper.find('#calendar-header-title').text();
@@ -24,9 +22,9 @@ describe('Calendar React Component Testing', () => {
       });
       test('should contain a foward and back button', () => {
         const wrapper = shallow(<CalendarHeader calendarDate={new Date('Wednesday, September 19, 2018')}/>);
-        const forward = wrapper.find('#forward').text();
+        const forward = wrapper.find('#forward').prop('value');
         expect(forward).toBe('>>');
-        const back = wrapper.find('#back').text();
+        const back = wrapper.find('#back').prop('value');
         expect(back).toBe('<<');
       });
       test('should have a click listener to two buttons', () => {
@@ -47,21 +45,17 @@ describe('Calendar React Component Testing', () => {
         const days = wrapper.find('#days').children();
         expect(days).toHaveLength(7);
       });
-
     });
 
     describe('Calendar Body', () => {
-
       test('should have 2 weeks when given 2 weeks', () => {
         const wrapper = shallow(<CalendarBody calendarWeeks={[[0, 0, 0, 1, 2, 3, 4], [5, 6, 7, 8, 9, 0, 0]]}/>);
         const body = wrapper.find('tbody').children();
         expect(body).toHaveLength(2);
       });
-
     });
 
     describe('Calendar Week', () => {
-
       test('should have 7 days in a week when given an array with length 7', () => {
         const wrapper = shallow(
           <CalendarWeek 
@@ -73,9 +67,6 @@ describe('Calendar React Component Testing', () => {
         const body = wrapper.find('tr').children();
         expect(body).toHaveLength(7);
       });
-
     });
-
   });
-
 });

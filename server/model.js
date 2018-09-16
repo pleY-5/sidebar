@@ -6,14 +6,14 @@ const model = {
       return Restaurant.findAll({ where: { id }});
     }
   },
-  reservations: {
-    get: (id) => {
-      return Reservation.findAll({ where: { restaurantId: id }});
-    },
-    put: (body) => {
-      return Reservation.create(body);
-    }
-  }
+  // reservations: {
+  //   get: (id) => {
+  //     return Reservation.findAll({ where: { restaurantId: id }});
+  //   },
+  //   put: (body) => {
+  //     return Reservation.create(body);
+  //   }
+  // }
 };
 
 module.exports = model;

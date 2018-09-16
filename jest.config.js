@@ -19,7 +19,6 @@ module.exports = {
     'config.js',
     'rc.js',
     'bundle.js',
-    '/database/',
-    '/server/'
+    '/database/'
   ]
 };

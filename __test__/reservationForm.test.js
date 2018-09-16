@@ -8,9 +8,7 @@ import DateSelect from '../client/component/DateSelect.jsx';
 import TimeSelect from '../client/component/TimeSelect.jsx';
 
 describe('Reservation Form React Component Testing', () => {
-
   describe('Reservation Header', () => {
-
     test('should contain text "Make a Reservation"', () => {
       const wrapper = shallow(<ReservationHeader/>);
       const text = wrapper.find('span').text();
@@ -20,11 +18,9 @@ describe('Reservation Form React Component Testing', () => {
       const wrapper = shallow(<ReservationHeader/>);
       expect(wrapper).toMatchSnapshot();
     });
-
   });
 
   describe('Find a Table Button', () => {
-
     test('should contain value "Find a Table"', () => {
       const wrapper = shallow(<FindTable/>);
       const text = wrapper.find('a').text();
@@ -34,11 +30,9 @@ describe('Reservation Form React Component Testing', () => {
       const wrapper = shallow(<FindTable/>);
       expect(wrapper).toMatchSnapshot();
     });
-
   });
 
   describe('Number of People select', () => {
-
     test('should have 5 options for number of people', () => {
       const wrapper = shallow(<NumOfPeopleSelect/>);
       const options = wrapper.find('select').children();
@@ -48,11 +42,9 @@ describe('Reservation Form React Component Testing', () => {
       const wrapper = shallow(<NumOfPeopleSelect/>);
       expect(wrapper).toMatchSnapshot();
     });
-
   });
 
   describe('Date select', () => {
-
     test('should match current date that was given as a prop', () => {
       const wrapper = shallow(<DateSelect selectedDate='September 20, 2018'/>);
       const text = wrapper.find('input[type="text"]').prop('value');
@@ -74,27 +66,21 @@ describe('Reservation Form React Component Testing', () => {
       wrapper.find('input[type="text"]').simulate('click');
       expect(mockHandler.mock.calls.length).toBe(1);
     });
-
   });
 
   describe('Time select', () => {
-
     test('should have 3 options when given an array of 3 timeslots', () => {
       const wrapper = shallow(<TimeSelect timeslots={['7:00 pm', '7:30 pm', '8:00 pm']}/>);
       const select = wrapper.find('select').children();
       expect(select).toHaveLength(3);
     });
-
   });
 
   describe('Resevation', () => {
-
     test('should have 5 components in the reservation container field', () => {
       const wrapper = shallow(<Reservation hasReservation={true} />);
       const tree = wrapper.find('#reservation-container').children();
       expect(tree).toHaveLength(5); 
     });
-
   });
-
 });

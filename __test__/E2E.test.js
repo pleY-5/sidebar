@@ -15,22 +15,18 @@ beforeAll(async () => {
   page = await browser.newPage();
   await page.setViewport({ width, height });
 });
-
 afterAll(() => {
   browser.close();
 });
 
 describe('End to end tests', () => {
-
   beforeEach(async () => {
     await page.goto(pageUrl, { waitUntil: 'networkidle2' })
   });
-
   test('should have correct reservation header', async () => {
     const title = await page.$eval('#header-title', e => e.innerHTML);
     expect(title).toBe('Make a Reservation');
   });
-
   // test('Check for reservation header', async () => {
   //   const date = '#date-container';
   //   await page.click(date);
@@ -39,11 +35,9 @@ describe('End to end tests', () => {
   //   await page.click('body');
   //   await page.$eval('#calendar-header-title');
   // });
-
   // test('can search', async () => {
   //   const selector = 'input.form-control[type=text]';
   //   await page.click(selector);
   //   await page.type(selector, 'cats');
   // });
-
 });

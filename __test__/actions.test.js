@@ -4,9 +4,7 @@ import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '
 import timeslots from '../client/action/timeslots.js';
 
 describe('Actions', () => {
-
   describe('hasReservation', () => {
-
     test('should be a function', () => {
       expect(typeof hasReservation).toBe('function');
     });
@@ -19,11 +17,9 @@ describe('Actions', () => {
     test('should return object with "hasReservation" key to equal true', () => {
       expect(hasReservation(true).hasReservation).toBe(true);
     });
-
   });
- 
-  describe('selectedDate', () => {
 
+  describe('selectedDate', () => {
     test('should be a function', () => {
       expect(typeof selectedDate).toBe('function');
     });
@@ -36,11 +32,9 @@ describe('Actions', () => {
     test('should return object with "selectedDate" key to equal true', () => {
       expect(selectedDate('September 10, 2018').selectedDate).toBe('September 10, 2018');
     });
-
   });
 
   describe('timeslots', () => {
-
     test('should be a function', () => {
       expect(typeof timeslots).toBe('function');
     });
@@ -53,13 +47,10 @@ describe('Actions', () => {
     test('should return object with "timeslots" key to equal true', () => {
       expect(timeslots(['7:00 PM', '7:30 PM']).timeslots).toEqual(['7:00 PM', '7:30 PM']);
     });
-
   });
 
   describe('calendar', () => {
-
     describe('changeCalendarDate', () => {
-
       test('should be a function', () => {
         expect(typeof changeCalendarDate).toBe('function');
       });
@@ -73,11 +64,8 @@ describe('Actions', () => {
         const date = new Date();
         expect(changeCalendarDate(date).calendarDate).toEqual(date);
       });
-
     });
-
     describe('changeCalendarWeeks', () => {
-
       test('should be a function', () => {
         expect(typeof changeCalendarWeeks).toBe('function');
       });
@@ -91,11 +79,8 @@ describe('Actions', () => {
         const date = new Date();
         expect(changeCalendarWeeks(date).calendarWeeks).toEqual(date);
       });
-
     });
-
     describe('changeDisplayCalendar', () => {
-
       test('should be a function', () => {
         expect(typeof changeDisplayCalendar).toBe('function');
       });
@@ -108,9 +93,6 @@ describe('Actions', () => {
       test('should return object with "changeDisplayCalendar" key to equal true', () => {
         expect(changeDisplayCalendar(true).displayCalendar).toEqual(true);
       });
-
     });
-
   });
-
 });

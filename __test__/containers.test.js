@@ -8,9 +8,7 @@ import CalendarHeaderContainer from '../client/container/CalendarHeaderContainer
 import CalendarBodyContainer from '../client/container/CalendarBodyContainer.jsx';
 
 describe('Container Testing', () => {
-
   describe('Date Select Container', () => {
-
     test('should contain a currentDate prop', () => {
       const wrapper = shallow(<DateSelectContainer store={store}/>);
       const props = wrapper.props();
@@ -33,32 +31,25 @@ describe('Container Testing', () => {
       expect(props.handleDateClick).toBeDefined();
       expect(typeof props.handleDateClick()).toBe('object');
     });
-
-
   });
 
   describe('Reservation Container', () => {
-
     test('should contain a hasReservation prop', () => {
       const wrapper = shallow(<ReservationContainer store={store}/>);
       const props = wrapper.props();
       expect(props.hasReservation).toBeDefined();
     });
-
   });
 
   describe('Time Select Container', () => {
-
     test('should contain a timeslots prop', () => {
       const wrapper = shallow(<TimeSelectContainer store={store}/>);
       const props = wrapper.props();
       expect(props.timeslots).toBeDefined();
     });
-
   });
 
   describe('Calendar Header Container', () => {
-
     test('should contain a calendarDate prop', () => {
       const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
       const props = wrapper.props();
@@ -70,11 +61,15 @@ describe('Container Testing', () => {
       expect(typeof props.handleDecreaseMonthClick).toBe('function');
       expect(typeof props.handleIncreaseMonthClick).toBe('function');
     });
-
+    test('should contains month increase and decrease functions that return a dispatched object', () => {
+      const wrapper = shallow(<CalendarHeaderContainer store={store}/>);
+      const props = wrapper.props();
+      expect(typeof props.handleDecreaseMonthClick()).toBe('object');
+      expect(typeof props.handleIncreaseMonthClick()).toBe('object');
+    });
   });
 
   describe('Calendar Body Container', () => {
-  
     test('should contain a calendarWeeks prop', () => {
       const wrapper = shallow(<CalendarBodyContainer store={store}/>);
       const props = wrapper.props();
@@ -90,7 +85,20 @@ describe('Container Testing', () => {
       const props = wrapper.props();
       expect(props.calendarDate).toBeDefined();
     });
-  
+    test('should contain a handleDateClick prop', () => {
+      const wrapper = shallow(<CalendarBodyContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.handleDateClick).toBeDefined();
+    });
+    test('should have a prop handleDateClick function', () => {
+      const wrapper = shallow(<CalendarBodyContainer store={store}/>);
+      const props = wrapper.props();
+      expect(typeof props.handleDateClick).toBe('function');
+    });
+    test('should have a prop handleDateClick that return a dispatched object', () => {
+      const wrapper = shallow(<CalendarBodyContainer store={store}/>);
+      const props = wrapper.props();
+      expect(typeof props.handleDateClick()).toBe('object');
+    });
   });
-
 });
