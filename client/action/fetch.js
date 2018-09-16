@@ -38,6 +38,7 @@ const fetch = url => {
   return dispatch => {
     return get(url) 
       .then(data => {
+        console.log(data)
         dispatch(changeHasReservation(data.takesReservation));
         dispatch(changeTimeslots(getTimeslots(data)));
         dispatch(changeTodaysHours(data[days[(new Date).getDay()]]));

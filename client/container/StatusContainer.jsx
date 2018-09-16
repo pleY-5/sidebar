@@ -5,7 +5,7 @@ import Status from '../component/Status.jsx';
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const mapStateToProps = state => ({
-  today: state[days[(new Date).getDay()]],
+  hours: state.hours,
   priceRange: state.priceRange,
   healthScore: state.healthScore
 });

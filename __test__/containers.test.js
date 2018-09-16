@@ -6,6 +6,7 @@ import ReservationContainer from '../client/container/ReservationContainer.jsx';
 import TimeSelectContainer from '../client/container/TimeSelectContainer.jsx';
 import CalendarHeaderContainer from '../client/container/CalendarHeaderContainer.jsx';
 import CalendarBodyContainer from '../client/container/CalendarBodyContainer.jsx';
+import StatusContainer from '../client/container/StatusContainer.jsx';
 
 describe('Container Testing', () => {
   describe('Date Select Container', () => {
@@ -99,6 +100,24 @@ describe('Container Testing', () => {
       const wrapper = shallow(<CalendarBodyContainer store={store}/>);
       const props = wrapper.props();
       expect(typeof props.handleDateClick()).toBe('object');
+    });
+  });
+
+  describe('Status Container', () => {
+    test('should contain a hours prop', () => {
+      const wrapper = shallow(<StatusContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.hours).toBeDefined();
+    });
+    test('should contain a priceRange prop', () => {
+      const wrapper = shallow(<StatusContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.priceRange).toBeDefined();
+    });
+    test('should contain a healthScore prop', () => {
+      const wrapper = shallow(<StatusContainer store={store}/>);
+      const props = wrapper.props();
+      expect(props.healthScore).toBeDefined();
     });
   });
 });

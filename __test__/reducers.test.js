@@ -1,10 +1,10 @@
-import selectedDateReducer from '../client/reducers/selectedDate.js';
-import hasReservationReducer from '../client/reducers/hasReservation.js';
-import timeslotsReducer from '../client/reducers/timeslots.js';
+import { hasReservationReducer, selectedDateReducer, timeslotsReducer } from '../client/reducers/reservation.js';
 import { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer } from '../client/reducers/calendar.js';
+import { todaysHoursReducer, priceRangeReducer, healthScoreReducer } from '../client/reducers/status.js';
 import rootReducer from '../client/reducers';
-import { changeHasReservation, changeSelectedDate, changeTimeslots } from '../client/action/reservation';
+import { changeHasReservation, changeSelectedDate, changeTimeslots } from '../client/action/reservation.js';
 import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
+import { changeTodaysHours, changePriceRange, changeHealthScore } from '../client/action/status.js';
 
 describe('Reducers', () => {
   describe('rootReducer', () => {
@@ -22,6 +22,9 @@ describe('Reducers', () => {
       expect(rootReducer(undefined, {}).timeslots).toBeDefined();
       expect(rootReducer(undefined, {}).hasReservation).toBeDefined();
       expect(rootReducer(undefined, {}).displayCalendar).toBeDefined();
+      expect(rootReducer(undefined, {}).hours).toBeDefined();
+      expect(rootReducer(undefined, {}).priceRange).toBeDefined();
+      expect(rootReducer(undefined, {}).healthScore).toBeDefined();
     });
   });
 
@@ -77,6 +80,35 @@ describe('Reducers', () => {
       });
       test('should change state when given "CHANGE_DISPLAY_CALENDAR" action', () => {
         expect(displayCalendarReducer(undefined, changeDisplayCalendar(true))).toBe(true);
+      });
+    });
+  });
+
+  describe('status', () => {
+    describe('todaysHours', () => {
+      test('should have a default state of empty string', () => {
+        expect(todaysHoursReducer(undefined, { type: null })).toBe('');
+      });
+      test('should change state when given "CHANGE_TODAYS_HOURS" action', () => {
+        expect(todaysHoursReducer(undefined, changeTodaysHours('1:00 pm - 2:00 pm'))).toBe('1:00 pm - 2:00 pm');
+      });
+    });
+
+    describe('price range', () => {
+      test('should have a default state of null', () => {
+        expect(priceRangeReducer(undefined, { type: null })).toBe(null);
+      });
+      test('should change state when given "CHANGE_CALENDAR_WEEKS" action', () => {
+        expect(priceRangeReducer(undefined, changePriceRange(1))).toEqual(1);
+      });
+    });
+
+    describe('displayCalendar', () => {
+      test('should have a default state of null', () => {
+        expect(healthScoreReducer(undefined, { type: null })).toEqual(null);
+      });
+      test('should change state when given "CHANGE_DISPLAY_CALENDAR" action', () => {
+        expect(healthScoreReducer(undefined, changeHealthScore(99))).toBe(99);
       });
     });
   });

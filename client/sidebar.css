@@ -4,6 +4,7 @@
   width: 274px;
   height: 140px;
   padding: 14px 11px 11px;
+  margin-bottom: 18px;
 }
 
 select {
@@ -178,7 +179,7 @@ select {
 
 .button {
   font-family: Helvetica;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
   color: white;
   user-select: none;
@@ -301,4 +302,89 @@ th {
 }
 .invalid-date:hover {
   background-color: white;
+}
+
+/************* STATUS WINDOW *************/
+.status-container {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  width: 296px;
+  height: 132px;
+}
+
+.status-hours {
+  text-align: left;
+  font-size: 14px;
+  height: 37px;
+  padding-top: 11px;
+  padding-bottom: 6px;
+  line-height: 19px;
+}
+
+.status-price {
+  text-align: left;
+  font-size: 14px;
+  height: 37px;
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+}
+
+.status-score {
+  text-align: left;
+  font-size: 14px;
+  height: 37px;
+}
+
+.status-clock {
+  user-select: none;
+  position: absolute;
+  height: 23px;
+  width: 25px;
+  left: 8px;
+  top: 16px;
+}
+
+.status-health {
+  user-select: none;
+  position: absolute;
+  height: 24px;
+  width: 21px;
+  left: 10px;
+  bottom: 7px;
+}
+
+.health-score-link {
+  color: #2e72b6;
+  cursor: pointer;
+}
+.health-score-link:hover {
+  text-decoration: underline;
+}
+
+.open {
+  font-size: 12px;
+  color: #5da42f;
+}
+
+.empty-row {
+  user-select: none;
+}
+
+.grey-sign {
+  color: #999999;
+  font-size: 14px;
+}
+
+.green-sign {
+  color: #5da42f;
+  font-size: 14px;
+}
+
+.sign-shift {
+  position: relative;
+  right: 2px;
+  top: 1px;
+  transform: scale(1.08, 0.97);
 }

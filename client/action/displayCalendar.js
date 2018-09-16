@@ -1,4 +1,5 @@
 import { changeDisplayCalendar, changeCalendarDate } from './calendar.js';
+// import { changeTimeslots } from ''
 
 const updateDisplayCalendar = (bool, date) => dispatch => {
   const documentClickHandler = e => {
