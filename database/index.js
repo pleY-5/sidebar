@@ -8,10 +8,7 @@ const Restaurant = db.define('restaurant', {
   name: Sequelize.STRING,
   priceRange: Sequelize.INTEGER, // 0-3
   healthScore: Sequelize.INTEGER, // 50-100
-  hasCertificate: Sequelize.BOOLEAN,
   takesReservation: Sequelize.BOOLEAN,
-  hasTakeout: Sequelize.BOOLEAN,
-  hasDelivery: Sequelize.BOOLEAN,
   Monday: Sequelize.STRING,
   Tuesday: Sequelize.STRING,
   Wednesday: Sequelize.STRING,
@@ -20,21 +17,14 @@ const Restaurant = db.define('restaurant', {
   Saturday: Sequelize.STRING,
   Sunday: Sequelize.STRING
   /******* STRETCH GOALS *******/
+  // hasCertificate: Sequelize.BOOLEAN,
+  // hasTakeout: Sequelize.BOOLEAN,
+  // hasDelivery: Sequelize.BOOLEAN,
   // description: Sequelize.STRING, //
   // firstReviewer: Sequelize.INTEGER, // user_id
   // attributes: Sequelize.INTEGER, // attr_id 
   /******* STRETCH GOALS *******/
 }, { timestamps: false });
-
-const Reservation = db.define('reservation', {
-  date: Sequelize.DATE,
-  time: Sequelize.STRING, // random from array of times
-  numOfPeople: Sequelize.INTEGER,
-  remainingSpots: Sequelize.INTEGER, // starts at 5
-}, { timestamps: false });
-
-Restaurant.hasMany(Reservation, { foreignKey: 'restaurantId' });
-Reservation.belongsTo(Restaurant, {foreignKey: 'reservationId'});
 
 module.exports = {
   db: db,
