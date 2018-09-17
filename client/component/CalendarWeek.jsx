@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../sidebar.css';
 
-const CalendarWeek = ({ calendarWeek, selectedDate, calendarDate, handleDateClick }) => {
+const CalendarWeek = ({ calendarWeek, selectedDate, calendarDate, hoursOfOperation, handleDateClick }) => {
   const selected = new Date(selectedDate);
   const thisYear = new Date().getFullYear();
   const thisMonth = new Date().getMonth();
@@ -15,7 +15,7 @@ const CalendarWeek = ({ calendarWeek, selectedDate, calendarDate, handleDateClic
   return (
     <tr>
       {calendarWeek.map((day, idx) => {
-        let onClick = () => handleDateClick(day, calendarDate);
+        let onClick = () => handleDateClick(day, calendarDate, hoursOfOperation);
         let classes = [styles.calendarDay];
         let text = day;
         if (thisMonth === calMonth && day === today && thisYear === calYear) { 

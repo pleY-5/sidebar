@@ -12,14 +12,11 @@ const updateSelectedDate = (date = new Date()) => {
 const updateCalendarDate = (date = new Date()) => dispatch => dispatch(changeCalendarDate(date));
 
 const updateCalendarWeeks = (date = new Date()) => {
-  const getLastDay = (date) => {
-    let month = date.getMonth();
-    let year = date.getFullYear();
-    return new Date(year, month + 1, 0).getDate();
-  };
+  const month = date.getMonth();
+  const year = date.getFullYear();
+  const lastDay = new Date(year, month + 1, 0).getDate();
   const weeks = [];
   let week = [0, 0, 0, 0, 0, 0, 0];
-  const lastDay = getLastDay(date);
   for (let day = 1; day <= lastDay; day++) {
     date.setDate(day);
     if (!date.getDay()) { week = [0, 0, 0, 0, 0, 0, 0]; }

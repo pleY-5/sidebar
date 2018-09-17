@@ -99,7 +99,15 @@ describe('Container Testing', () => {
     test('should have a prop handleDateClick that return a dispatched object', () => {
       const wrapper = shallow(<CalendarBodyContainer store={store}/>);
       const props = wrapper.props();
-      expect(typeof props.handleDateClick()).toBe('object');
+      expect(typeof props.handleDateClick(15, new Date, [
+        '3:00 pm - 4:00 pm',
+        '3:00 pm - 4:00 pm',
+        '3:00 pm - 4:00 pm',
+        '3:00 pm - 4:00 pm',
+        '3:00 pm - 4:00 pm',
+        '3:00 pm - 4:00 pm',
+        '3:00 pm - 4:00 pm',
+      ])).toBe('object');
     });
   });
 
