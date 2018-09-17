@@ -1,6 +1,6 @@
 const getTimeslots = (hoursOfOperation, date = new Date()) => {
   const timeslots = [];
-  let openCloseTimes = hoursOfOperation[date.getDay()].split(/ - |, /g);
+  const openCloseTimes = hoursOfOperation[date.getDay()].split(/ - |, /g);
   for (let i = 0; i < openCloseTimes.length; i += 2) {
     let open = openCloseTimes[i];
     let close = openCloseTimes[i + 1];
