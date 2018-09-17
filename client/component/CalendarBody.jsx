@@ -1,8 +1,17 @@
 import React from 'react';
-import styles from '../sidebar.css';
+import CalendarWeek from './CalendarWeek.jsx';
 
-const CalendarBody = ({ calendarWeeks }) => (
+const CalendarBody = ({ calendarWeeks, selectedDate, calendarDate, handleDateClick }) => (
   <tbody>
+    {calendarWeeks.map((week, idx) => (
+      <CalendarWeek 
+        key={idx} 
+        calendarWeek={week}
+        selectedDate={selectedDate}
+        calendarDate={calendarDate}
+        handleDateClick={handleDateClick}
+      />
+    ))}
   </tbody>
 );
 

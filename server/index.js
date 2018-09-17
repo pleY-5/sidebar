@@ -14,6 +14,4 @@ app.use('/', router);
 
 app.set('port', process.env.PORT || 7878);
 
-app.listen(app.get('port'), () => {
-  console.log(`app is listening to port ${app.get('port')}`);
-});
+module.exports = app;

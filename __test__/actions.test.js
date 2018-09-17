@@ -1,77 +1,146 @@
-import hasReservation from '../client/action/hasReservation.js';
-import selectedDate from '../client/action/selectedDate.js';
-import calendarDate from '../client/action/calendarDate.js';
-import timeslots from '../client/action/timeslots.js';
+import { changeHasReservation, changeSelectedDate, changeTimeslots } from '../client/action/reservation.js';
+import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
+import { changeTodaysHours, changePriceRange, changeHealthScore } from '../client/action/status.js';
 
 describe('Actions', () => {
-
-  describe('hasReservation', () => {
-
+  describe('changeHasReservation', () => {
     test('should be a function', () => {
-      expect(typeof hasReservation).toBe('function');
+      expect(typeof changeHasReservation).toBe('function');
     });
     test('should return an object', () => {
-      expect(typeof hasReservation(true)).toBe('object');
+      expect(typeof changeHasReservation(true)).toBe('object');
     });
     test('should return object with "type" key to equal "CHANGE_HAS_RESERVATION"', () => {
-      expect(hasReservation(true).type).toBe('CHANGE_HAS_RESERVATION');
+      expect(changeHasReservation(true).type).toBe('CHANGE_HAS_RESERVATION');
     });
-    test('should return object with "hasReservation" key to equal true', () => {
-      expect(hasReservation(true).hasReservation).toBe(true);
+    test('should return object with "changeHasReservation" key to equal true', () => {
+      expect(changeHasReservation(true).hasReservation).toBe(true);
     });
-
   });
- 
-  describe('selectedDate', () => {
 
+  describe('changeSelectedDate', () => {
     test('should be a function', () => {
-      expect(typeof selectedDate).toBe('function');
+      expect(typeof changeSelectedDate).toBe('function');
     });
     test('should return an object', () => {
-      expect(typeof selectedDate('September 10, 2018')).toBe('object');
+      expect(typeof changeSelectedDate('September 10, 2018')).toBe('object');
     });
     test('should return object with "type" key to equal "CHANGE_SELECTED_DATE"', () => {
-      expect(selectedDate('September 10, 2018').type).toBe('CHANGE_SELECTED_DATE');
+      expect(changeSelectedDate('September 10, 2018').type).toBe('CHANGE_SELECTED_DATE');
     });
-    test('should return object with "selectedDate" key to equal true', () => {
-      expect(selectedDate('September 10, 2018').selectedDate).toBe('September 10, 2018');
+    test('should return object with "changeSelectedDate" key to equal true', () => {
+      expect(changeSelectedDate('September 10, 2018').selectedDate).toBe('September 10, 2018');
     });
-
   });
 
-  describe('timeslots', () => {
-
+  describe('changeTimeslots', () => {
     test('should be a function', () => {
-      expect(typeof timeslots).toBe('function');
+      expect(typeof changeTimeslots).toBe('function');
     });
     test('should return an object', () => {
-      expect(typeof timeslots(['7:00 PM', '7:30 PM'])).toBe('object');
+      expect(typeof changeTimeslots(['7:00 PM', '7:30 PM'])).toBe('object');
     });
     test('should return object with "type" key to equal "CHANGE_TIMESLOTS"', () => {
-      expect(timeslots(['7:00 PM', '7:30 PM']).type).toBe('CHANGE_TIMESLOTS');
+      expect(changeTimeslots(['7:00 PM', '7:30 PM']).type).toBe('CHANGE_TIMESLOTS');
     });
-    test('should return object with "timeslots" key to equal true', () => {
-      expect(timeslots(['7:00 PM', '7:30 PM']).timeslots).toEqual(['7:00 PM', '7:30 PM']);
+    test('should return object with "changeTimeslots" key to equal true', () => {
+      expect(changeTimeslots(['7:00 PM', '7:30 PM']).timeslots).toEqual(['7:00 PM', '7:30 PM']);
     });
-
   });
 
-  describe('calendarDate', () => {
+  describe('calendar', () => {
+    describe('changeCalendarDate', () => {
+      test('should be a function', () => {
+        expect(typeof changeCalendarDate).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeCalendarDate()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_CALENDAR_DATE"', () => {
+        expect(changeCalendarDate().type).toBe('CHANGE_CALENDAR_DATE');
+      });
+      test('should return object with "changeCalendarDate" key to equal true', () => {
+        const date = new Date();
+        expect(changeCalendarDate(date).calendarDate).toEqual(date);
+      });
+    });
 
-    test('should be a function', () => {
-      expect(typeof calendarDate).toBe('function');
-    });
-    test('should return an object', () => {
-      expect(typeof calendarDate(['7:00 PM', '7:30 PM'])).toBe('object');
-    });
-    test('should return object with "type" key to equal "CHANGE_CALENDAR_DATE"', () => {
-      expect(calendarDate().type).toBe('CHANGE_CALENDAR_DATE');
-    });
-    test('should return object with "calendarDate" key to equal true', () => {
-      const date = new Date();
-      expect(calendarDate(date).calendarDate).toEqual(date);
+    describe('changeCalendarWeeks', () => {
+      test('should be a function', () => {
+        expect(typeof changeCalendarWeeks).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeCalendarWeeks()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_CALENDAR_WEEKS"', () => {
+        expect(changeCalendarWeeks().type).toBe('CHANGE_CALENDAR_WEEKS');
+      });
+      test('should return object with "changeCalendarWeeks" key to equal true', () => {
+        const date = new Date();
+        expect(changeCalendarWeeks(date).calendarWeeks).toEqual(date);
+      });
     });
 
+    describe('changeDisplayCalendar', () => {
+      test('should be a function', () => {
+        expect(typeof changeDisplayCalendar).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeDisplayCalendar()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_DISPLAY_CALENDAR"', () => {
+        expect(changeDisplayCalendar().type).toBe('CHANGE_DISPLAY_CALENDAR');
+      });
+      test('should return object with "changeDisplayCalendar" key to equal true', () => {
+        expect(changeDisplayCalendar(true).displayCalendar).toEqual(true);
+      });
+    });
   });
 
+  describe('status window', () => {
+    describe('changeTodaysHours', () => {
+      test('should be a function', () => {
+        expect(typeof changeTodaysHours).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeTodaysHours()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_TODAYS_HOURS"', () => {
+        expect(changeTodaysHours().type).toBe('CHANGE_TODAYS_HOURS');
+      });
+      test('should return object with "changeTodaysHours" key to equal 1:00 pm - 3:00 pm', () => {
+        expect(changeTodaysHours('1:00 pm - 3:00 pm').hours).toEqual('1:00 pm - 3:00 pm');
+      });
+    });
+
+    describe('changePriceRange', () => {
+      test('should be a function', () => {
+        expect(typeof changePriceRange).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changePriceRange()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_PRICE_RANGE"', () => {
+        expect(changePriceRange().type).toBe('CHANGE_PRICE_RANGE');
+      });
+      test('should return object with "changePriceRange" key to equal 1', () => {
+        expect(changePriceRange(1).priceRange).toEqual(1);
+      });
+    });
+
+    describe('changeHealthScore', () => {
+      test('should be a function', () => {
+        expect(typeof changeHealthScore).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeHealthScore()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_HEALTH_SCORE"', () => {
+        expect(changeHealthScore().type).toBe('CHANGE_HEALTH_SCORE');
+      });
+      test('should return object with "changeHealthScore" key to equal 99', () => {
+        expect(changeHealthScore(99).healthScore).toEqual(99);
+      });
+    });
+  });
 });
