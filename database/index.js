@@ -29,7 +29,6 @@ const Restaurant = db.define('restaurant', {
 module.exports = {
   db: db,
   Restaurant: Restaurant,
-  Reservation: Reservation
   /******* STRETCH GOALS *******/
   // User: User,
   // HourOfOperation: HourOfOperation,
