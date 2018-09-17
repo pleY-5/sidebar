@@ -7,7 +7,6 @@ const fetch = url => {
   return dispatch => {
     return get(url) 
       .then(data => {
-        console.log(data)
         const hoursOfOperation = [
           data.Sunday,
           data.Monday,

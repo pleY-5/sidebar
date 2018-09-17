@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import CalendarBody from '../component/CalendarBody.jsx';
 import changeDisplayCalendar from '../action/displayCalendar.js';

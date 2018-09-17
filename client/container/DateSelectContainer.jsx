@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import DateSelect from '../component/DateSelect.jsx';
 import updateDisplayCalendar from '../action/displayCalendar.js';

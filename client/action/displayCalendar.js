@@ -1,8 +1,8 @@
 import { changeDisplayCalendar, changeCalendarDate } from './calendar.js';
 
 const updateDisplayCalendar = (bool, date) => dispatch => {
-  const documentClickHandler = e => {
-    if (!document.getElementById('date-container').contains(e.target)) {
+  const documentClickHandler = event => {
+    if (!document.getElementById('date-container').contains(event.target)) {
       document.removeEventListener('click', documentClickHandler);
       dispatch(changeDisplayCalendar(false)); 
     }
