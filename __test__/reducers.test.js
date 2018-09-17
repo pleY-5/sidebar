@@ -1,8 +1,8 @@
-import { hasReservationReducer, selectedDateReducer, timeslotsReducer } from '../client/reducers/reservation.js';
+import { hasReservationReducer, selectedDateReducer, timeslotsReducer, hoursOfOperationReducer } from '../client/reducers/reservation.js';
 import { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer } from '../client/reducers/calendar.js';
 import { todaysHoursReducer, priceRangeReducer, healthScoreReducer } from '../client/reducers/status.js';
 import rootReducer from '../client/reducers';
-import { changeHasReservation, changeSelectedDate, changeTimeslots } from '../client/action/reservation.js';
+import { changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation } from '../client/action/reservation.js';
 import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
 import { changeTodaysHours, changePriceRange, changeHealthScore } from '../client/action/status.js';
 
@@ -20,6 +20,7 @@ describe('Reducers', () => {
       expect(rootReducer(undefined, {}).calendarDate).toBeDefined();
       expect(rootReducer(undefined, {}).calendarWeeks).toBeDefined();
       expect(rootReducer(undefined, {}).timeslots).toBeDefined();
+      expect(rootReducer(undefined, {}).hoursOfOperation).toBeDefined();
       expect(rootReducer(undefined, {}).hasReservation).toBeDefined();
       expect(rootReducer(undefined, {}).displayCalendar).toBeDefined();
       expect(rootReducer(undefined, {}).hours).toBeDefined();
@@ -51,7 +52,16 @@ describe('Reducers', () => {
       expect(timeslotsReducer(undefined, { type: null })).toEqual([]);
     });
     test('should change state when given "CHANGE_TIMESLOTS" action', () => {
-      expect(timeslotsReducer(undefined, changeTimeslots(['8:00 PM']))).toEqual(['8:00 PM']);
+      expect(timeslotsReducer(undefined, changeTimeslots(['8:00 pm']))).toEqual(['8:00 pm']);
+    });
+  });
+
+  describe('hoursOfOperation', () => {
+    test('should have a default state of empty array', () => {
+      expect(hoursOfOperationReducer(undefined, { type: null })).toEqual([]);
+    });
+    test('should change state when given "CHANGE_HOURS_OF_OPERATION" action', () => {
+      expect(hoursOfOperationReducer(undefined, changeHoursOfOperation(['8:00 pm - 9:00 pm']))).toEqual(['8:00 pm - 9:00 pm']);
     });
   });
 

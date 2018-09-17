@@ -1,4 +1,4 @@
-import { changeHasReservation, changeSelectedDate, changeTimeslots } from '../client/action/reservation.js';
+import { changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation } from '../client/action/reservation.js';
 import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
 import { changeTodaysHours, changePriceRange, changeHealthScore } from '../client/action/status.js';
 
@@ -38,13 +38,28 @@ describe('Actions', () => {
       expect(typeof changeTimeslots).toBe('function');
     });
     test('should return an object', () => {
-      expect(typeof changeTimeslots(['7:00 PM', '7:30 PM'])).toBe('object');
+      expect(typeof changeTimeslots(['7:00 pm', '7:30 pm'])).toBe('object');
     });
     test('should return object with "type" key to equal "CHANGE_TIMESLOTS"', () => {
-      expect(changeTimeslots(['7:00 PM', '7:30 PM']).type).toBe('CHANGE_TIMESLOTS');
+      expect(changeTimeslots(['7:00 pm', '7:30 pm']).type).toBe('CHANGE_TIMESLOTS');
     });
     test('should return object with "changeTimeslots" key to equal true', () => {
-      expect(changeTimeslots(['7:00 PM', '7:30 PM']).timeslots).toEqual(['7:00 PM', '7:30 PM']);
+      expect(changeTimeslots(['7:00 pm', '7:30 pm']).timeslots).toEqual(['7:00 pm', '7:30 pm']);
+    });
+  });
+
+  describe('changeHoursOfOperation', () => {
+    test('should be a function', () => {
+      expect(typeof changeHoursOfOperation).toBe('function');
+    });
+    test('should return an object', () => {
+      expect(typeof changeHoursOfOperation(['7:00 pm - 7:30 pm'])).toBe('object');
+    });
+    test('should return object with "type" key to equal "CHANGE_HOURS_OF_OPERATION"', () => {
+      expect(changeHoursOfOperation(['7:00 pm - 7:30 pm']).type).toBe('CHANGE_HOURS_OF_OPERATION');
+    });
+    test('should return object with "changeHoursOfOperation" key to equal true', () => {
+      expect(changeHoursOfOperation(['7:00 pm - 7:30 pm']).hoursOfOperation).toEqual(['7:00 pm - 7:30 pm']);
     });
   });
 

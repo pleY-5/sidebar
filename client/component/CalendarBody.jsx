@@ -1,7 +1,7 @@
 import React from 'react';
 import CalendarWeek from './CalendarWeek.jsx';
 
-const CalendarBody = ({ calendarWeeks, selectedDate, calendarDate, handleDateClick }) => (
+const CalendarBody = ({calendarWeeks, selectedDate, calendarDate, hoursOfOperation, handleDateClick }) => (
   <tbody>
     {calendarWeeks.map((week, idx) => (
       <CalendarWeek 
@@ -9,6 +9,7 @@ const CalendarBody = ({ calendarWeeks, selectedDate, calendarDate, handleDateCli
         calendarWeek={week}
         selectedDate={selectedDate}
         calendarDate={calendarDate}
+        hoursOfOperation={hoursOfOperation}
         handleDateClick={handleDateClick}
       />
     ))}

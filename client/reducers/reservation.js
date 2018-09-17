@@ -19,4 +19,11 @@ const timeslotsReducer = (state = [], action) => {
   return state;
 };
 
-export { hasReservationReducer, selectedDateReducer, timeslotsReducer };
+const hoursOfOperationReducer = (state = [], action) => {
+  if (action.type === 'CHANGE_HOURS_OF_OPERATION') {
+    return action.hoursOfOperation;
+  }
+  return state;
+};
+
+export { hasReservationReducer, selectedDateReducer, timeslotsReducer, hoursOfOperationReducer };
