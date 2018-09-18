@@ -1,16 +1,26 @@
-const changeTodaysHours = (hours) => ({
+const changeTodaysHours = hours => ({
   type: 'CHANGE_TODAYS_HOURS',
-  hours
+  hours,
 });
 
-const changePriceRange = (priceRange) => ({
+const changePriceRange = priceRange => ({
   type: 'CHANGE_PRICE_RANGE',
-  priceRange
+  priceRange,
 });
 
-const changeHealthScore = (healthScore) => ({
+const changeHealthScore = healthScore => ({
   type: 'CHANGE_HEALTH_SCORE',
-  healthScore
+  healthScore,
 });
 
-export { changeTodaysHours, changePriceRange, changeHealthScore };
+const changeIsOpen = bool => ({
+  type: 'CHANGE_IS_OPEN',
+  isOpen: bool,
+});
+
+export {
+  changeTodaysHours,
+  changePriceRange,
+  changeHealthScore,
+  changeIsOpen,
+};

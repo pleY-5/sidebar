@@ -4,10 +4,10 @@ import CalendarBodyContainer from '../container/CalendarBodyContainer.jsx';
 import styles from '../sidebar.css';
 
 const Calendar = () => (
-  <div className={styles.calendarContainer} id='calendar-container'>
+  <div className={styles.calendarContainer} id="calendar-container">
     <table>
-      <CalendarHeaderContainer/>
-      <CalendarBodyContainer/>
+      <CalendarHeaderContainer />
+      <CalendarBodyContainer />
     </table>
   </div>
 );

@@ -1,10 +1,18 @@
-import { hasReservationReducer, selectedDateReducer, timeslotsReducer, hoursOfOperationReducer } from '../client/reducers/reservation.js';
-import { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer } from '../client/reducers/calendar.js';
-import { todaysHoursReducer, priceRangeReducer, healthScoreReducer } from '../client/reducers/status.js';
+import {
+  hasReservationReducer, selectedDateReducer, timeslotsReducer, hoursOfOperationReducer,
+} from '../client/reducers/reservation';
+import { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer } from '../client/reducers/calendar';
+import {
+  todaysHoursReducer, priceRangeReducer, healthScoreReducer, isOpenReducer,
+} from '../client/reducers/status';
 import rootReducer from '../client/reducers';
-import { changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation } from '../client/action/reservation.js';
-import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
-import { changeTodaysHours, changePriceRange, changeHealthScore } from '../client/action/status.js';
+import {
+  changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation,
+} from '../client/action/reservation';
+import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar';
+import {
+  changeTodaysHours, changePriceRange, changeHealthScore, changeIsOpen,
+} from '../client/action/status';
 
 describe('Reducers', () => {
   describe('rootReducer', () => {
@@ -26,6 +34,7 @@ describe('Reducers', () => {
       expect(rootReducer(undefined, {}).hours).toBeDefined();
       expect(rootReducer(undefined, {}).priceRange).toBeDefined();
       expect(rootReducer(undefined, {}).healthScore).toBeDefined();
+      expect(rootReducer(undefined, {}).isOpen).toBeDefined();
     });
   });
 
@@ -34,7 +43,7 @@ describe('Reducers', () => {
       expect(selectedDateReducer(undefined, { type: null })).toBe('');
     });
     test('should change state when given "CHANGE_CURRENT_DATE" action', () => {
-      expect(selectedDateReducer(undefined, changeSelectedDate ('September 20, 2018'))).toBe('September 20, 2018');
+      expect(selectedDateReducer(undefined, changeSelectedDate('September 20, 2018'))).toBe('September 20, 2018');
     });
   });
 
@@ -113,12 +122,21 @@ describe('Reducers', () => {
       });
     });
 
-    describe('displayCalendar', () => {
+    describe('healthScore', () => {
       test('should have a default state of null', () => {
         expect(healthScoreReducer(undefined, { type: null })).toEqual(null);
       });
       test('should change state when given "CHANGE_DISPLAY_CALENDAR" action', () => {
         expect(healthScoreReducer(undefined, changeHealthScore(99))).toBe(99);
+      });
+    });
+
+    describe('isOpen', () => {
+      test('should have a default state of null', () => {
+        expect(isOpenReducer(undefined, { type: null })).toEqual(false);
+      });
+      test('should change state when given "CHANGE_IS_OPEN" action', () => {
+        expect(isOpenReducer(undefined, changeIsOpen(true))).toBe(true);
       });
     });
   });

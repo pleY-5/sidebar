@@ -26,4 +26,9 @@ const hoursOfOperationReducer = (state = [], action) => {
   return state;
 };
 
-export { hasReservationReducer, selectedDateReducer, timeslotsReducer, hoursOfOperationReducer };
+export {
+  hasReservationReducer,
+  selectedDateReducer,
+  timeslotsReducer,
+  hoursOfOperationReducer
+};

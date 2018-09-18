@@ -19,4 +19,8 @@ const displayCalendarReducer = (state = false, action) => {
   return state;
 };
 
-export { calendarDateReducer, calendarWeeksReducer, displayCalendarReducer };
+export {
+  calendarDateReducer,
+  calendarWeeksReducer,
+  displayCalendarReducer
+};

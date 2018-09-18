@@ -1,6 +1,12 @@
-import { changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation } from '../client/action/reservation.js';
-import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
-import { changeTodaysHours, changePriceRange, changeHealthScore } from '../client/action/status.js';
+import {
+  changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation,
+} from '../client/action/reservation';
+import {
+  changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar,
+} from '../client/action/calendar';
+import {
+  changeTodaysHours, changePriceRange, changeHealthScore, changeIsOpen,
+} from '../client/action/status';
 
 describe('Actions', () => {
   describe('changeHasReservation', () => {
@@ -125,6 +131,21 @@ describe('Actions', () => {
       });
       test('should return object with "changeTodaysHours" key to equal 1:00 pm - 3:00 pm', () => {
         expect(changeTodaysHours('1:00 pm - 3:00 pm').hours).toEqual('1:00 pm - 3:00 pm');
+      });
+    });
+
+    describe('changeIsOpen', () => {
+      test('should be a function', () => {
+        expect(typeof changeIsOpen).toBe('function');
+      });
+      test('should return an object', () => {
+        expect(typeof changeIsOpen()).toBe('object');
+      });
+      test('should return object with "type" key to equal "CHANGE_IS_OPEN"', () => {
+        expect(changeIsOpen().type).toBe('CHANGE_IS_OPEN');
+      });
+      test('should return object with "changeIsOpen" key to equal true', () => {
+        expect(changeIsOpen(true).isOpen).toEqual(true);
       });
     });
 

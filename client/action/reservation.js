@@ -1,21 +1,26 @@
-const changeHasReservation = (bool) => ({
+const changeHasReservation = bool => ({
   type: 'CHANGE_HAS_RESERVATION',
-  hasReservation: bool
+  hasReservation: bool,
 });
 
-const changeSelectedDate = (selectedDate) => ({
+const changeSelectedDate = selectedDate => ({
   type: 'CHANGE_SELECTED_DATE',
-  selectedDate
+  selectedDate,
 });
 
-const changeTimeslots = (timeslots) => ({
+const changeTimeslots = timeslots => ({
   type: 'CHANGE_TIMESLOTS',
-  timeslots
+  timeslots,
 });
 
-const changeHoursOfOperation = (hoursOfOperation) => ({
+const changeHoursOfOperation = hoursOfOperation => ({
   type: 'CHANGE_HOURS_OF_OPERATION',
-  hoursOfOperation
+  hoursOfOperation,
 });
 
-export { changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation };
+export {
+  changeHasReservation,
+  changeSelectedDate,
+  changeTimeslots,
+  changeHoursOfOperation,
+};
