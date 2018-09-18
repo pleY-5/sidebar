@@ -327,6 +327,7 @@ th {
 
 .status-hours b {
   letter-spacing: -0.5px;
+  word-spacing: 0.5px;
 }
 
 .status-icon-row {
