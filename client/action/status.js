@@ -13,4 +13,9 @@ const changeHealthScore = (healthScore) => ({
   healthScore
 });
 
-export { changeTodaysHours, changePriceRange, changeHealthScore };
+const changeIsOpen = (bool) => ({
+  type: 'CHANGE_IS_OPEN',
+  isOpen: bool
+});
+
+export { changeTodaysHours, changePriceRange, changeHealthScore, changeIsOpen };
