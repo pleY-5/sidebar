@@ -6,12 +6,10 @@ const app = express();
 const router = require('./routes.js');
 
 app.get('/:id', (req, res, next) => {
-  if (req.params.id < 1 
-    || req.params.id > 100
-    || !req.params.id.match(/\d+/)) {
-      return res.sendStatus(404); 
-    }
-  next();
+  if (req.params.id > 0 && req.params.id <= 100){
+    return next();
+  }
+  res.sendStatus(404); 
 });
 
 app.use('/:id', express.static('public'));
