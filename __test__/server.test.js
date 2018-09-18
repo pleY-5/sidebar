@@ -15,7 +15,7 @@ describe('Server tests', () => {
       done();
     });
   });
-  test('should return undefined when give an invalid id', done => {
+  test('should return status code 404 when given an invalid id', done => {
     request(app).get('/101').then(res => {
       expect(res.statusCode).toBe(404);
       done();
