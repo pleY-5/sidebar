@@ -1,20 +1,20 @@
-const changeCalendarDate = (calendarDate) => ({
+const changeCalendarDate = calendarDate => ({
   type: 'CHANGE_CALENDAR_DATE',
-  calendarDate
+  calendarDate,
 });
 
-const changeCalendarWeeks = (calendarWeeks) => ({
+const changeCalendarWeeks = calendarWeeks => ({
   type: 'CHANGE_CALENDAR_WEEKS',
-  calendarWeeks
+  calendarWeeks,
 });
 
-const changeDisplayCalendar = (bool) => ({
+const changeDisplayCalendar = bool => ({
   type: 'CHANGE_DISPLAY_CALENDAR',
-  displayCalendar: bool
+  displayCalendar: bool,
 });
 
 export {
   changeCalendarDate,
   changeCalendarWeeks,
-  changeDisplayCalendar
+  changeDisplayCalendar,
 };

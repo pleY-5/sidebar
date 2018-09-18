@@ -1,10 +1,10 @@
 import React from 'react';
+import path from 'path';
 import store from '../store';
 import { updateSelectedDate, updateCalendarDate, updateCalendarWeeks } from '../action/updateDate.js';
 import fetch from '../action/fetch.js';
 import ReservationContainer from '../container/ReservationContainer.jsx';
-import Status from '../component/Status.jsx';
-import path from 'path';
+import Status from './Status.jsx';
 
 class Sidebar extends React.Component {
   componentDidMount() {

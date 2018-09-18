@@ -1,5 +1,6 @@
-import styles from '../sidebar.css';
+import PropTypes from 'prop-types';
 import React from 'react';
+import styles from '../sidebar.css';
 import ReservationHeader from './ReservationHeader.jsx';
 import NumOfPeopleSelect from './NumOfPeopleSelect.jsx';
 import FindTable from './FindTable.jsx';
@@ -9,7 +10,7 @@ import TimeSelectContainer from '../container/TimeSelectContainer.jsx';
 const Reservation = ({ hasReservation }) => (
   <div>
     {hasReservation && (
-      <div className={styles.reservationContainer} id='reservation-container'>
+      <div className={styles.reservationContainer} id="reservation-container">
         <ReservationHeader />
         <DateSelectContainer />
         <TimeSelectContainer />
@@ -21,3 +22,7 @@ const Reservation = ({ hasReservation }) => (
 );
 
 export default Reservation;
+
+Reservation.propTypes = {
+  hasReservation: PropTypes.bool.isRequired,
+};

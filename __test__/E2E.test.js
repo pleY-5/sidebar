@@ -1,4 +1,5 @@
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
+
 const pageUrl = 'http://127.0.0.1:7878/1';
 
 let page;
@@ -10,7 +11,7 @@ beforeAll(async () => {
   browser = await puppeteer.launch({
     // headless: false,
     slowMo: 80,
-    args: [`--window-size=${width},${height}`, '--no-sanbox', '–disable-setuid-sandbox']
+    args: [`--window-size=${width},${height}`, '--no-sanbox', '–disable-setuid-sandbox'],
   });
   page = await browser.newPage();
   await page.setViewport({ width, height });
@@ -21,7 +22,7 @@ afterAll(() => {
 
 describe('End to end tests', () => {
   beforeEach(async () => {
-    await page.goto(pageUrl, { waitUntil: 'networkidle2' })
+    await page.goto(pageUrl, { waitUntil: 'networkidle2' });
   });
   test('should have correct reservation header', async () => {
     const title = await page.$eval('#header-title', e => e.innerHTML);

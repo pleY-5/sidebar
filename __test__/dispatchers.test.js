@@ -1,16 +1,12 @@
-import fetch from '../client/action/fetch.js'
-import { updateCalendarDate, updateSelectedDate, updateCalendarWeeks } from '../client/action/updateDate.js'
-import updateDisplayCalendar from '../client/action/displayCalendar.js'
 import fetchMock from 'fetch-mock';
+import fetch from '../client/action/fetch';
+import { updateCalendarDate, updateSelectedDate, updateCalendarWeeks } from '../client/action/updateDate';
+import updateDisplayCalendar from '../client/action/displayCalendar';
 
 describe('Dispatchers', () => {
-  const reducer = jest.fn().mockImplementation(action => {
-    return { lastAction: action.type };
-  });
+  const reducer = jest.fn().mockImplementation(action => ({ lastAction: action.type }));
   const store = {};
-  store.dispatch = jest.fn().mockImplementation(callback => {
-    return callback(data => reducer(data));
-  });
+  store.dispatch = jest.fn().mockImplementation(callback => callback(data => reducer(data)));
 
   describe('fetch', () => {
     test('should be a function', () => {
@@ -37,7 +33,7 @@ describe('Dispatchers', () => {
       expect(typeof updateSelectedDate()).toBe('function');
     });
     test('should dispatch changeSelectedDate', () => {
-      let result = store.dispatch(updateSelectedDate(new Date('September 20, 2018')));
+      const result = store.dispatch(updateSelectedDate(new Date('September 20, 2018')));
       expect(reducer).toBeCalled();
       expect(result.lastAction).toBe('CHANGE_SELECTED_DATE');
     });
@@ -48,7 +44,7 @@ describe('Dispatchers', () => {
       expect(typeof updateCalendarDate()).toBe('function');
     });
     test('should dispatch changeSelectedDate', () => {
-      let result = store.dispatch(updateCalendarDate(new Date('September 20, 2018')));
+      const result = store.dispatch(updateCalendarDate(new Date('September 20, 2018')));
       expect(reducer).toBeCalled();
       expect(result.lastAction).toBe('CHANGE_CALENDAR_DATE');
     });
@@ -59,7 +55,7 @@ describe('Dispatchers', () => {
       expect(typeof updateCalendarWeeks()).toBe('function');
     });
     test('should dispatch changeSelectedDate', () => {
-      let result = store.dispatch(updateCalendarWeeks(new Date('September 20, 2018')));
+      const result = store.dispatch(updateCalendarWeeks(new Date('September 20, 2018')));
       expect(reducer).toBeCalled();
       expect(result.lastAction).toBe('CHANGE_CALENDAR_WEEKS');
     });
@@ -70,7 +66,7 @@ describe('Dispatchers', () => {
       expect(typeof updateDisplayCalendar()).toBe('function');
     });
     test('should dispatch changeSelectedDate', () => {
-      let result = store.dispatch(updateDisplayCalendar(true));
+      const result = store.dispatch(updateDisplayCalendar(true));
       expect(reducer).toBeCalled();
       expect(result.lastAction).toBe('CHANGE_DISPLAY_CALENDAR');
     });

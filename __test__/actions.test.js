@@ -1,6 +1,12 @@
-import { changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation } from '../client/action/reservation.js';
-import { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar } from '../client/action/calendar.js';
-import { changeTodaysHours, changePriceRange, changeHealthScore, changeIsOpen } from '../client/action/status.js';
+import {
+  changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation,
+} from '../client/action/reservation';
+import {
+  changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar,
+} from '../client/action/calendar';
+import {
+  changeTodaysHours, changePriceRange, changeHealthScore, changeIsOpen,
+} from '../client/action/status';
 
 describe('Actions', () => {
   describe('changeHasReservation', () => {
