@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import StatusHealth from '../component/StatusHealth.jsx';
+import StatusHealth from '../component/StatusHealth';
 
 const mapStateToProps = state => ({
-  healthScore: state.healthScore
+  healthScore: state.healthScore,
 });
 
 export default connect(mapStateToProps)(StatusHealth);

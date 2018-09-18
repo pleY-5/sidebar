@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CalendarWeek from './CalendarWeek.jsx';
+import CalendarWeek from './CalendarWeek';
 
 const CalendarBody = ({
   calendarWeeks,

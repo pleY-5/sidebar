@@ -98,7 +98,7 @@ const businessNames = [
   'Sea Hut',
   'Chicago Brewing Company',
   'Port of Subs',
-  'Chef\'s Cafe'
+  'Chef\'s Cafe',
 ];
 
 module.exports = businessNames.map(name => name.toLowerCase());

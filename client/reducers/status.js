@@ -30,5 +30,5 @@ export {
   todaysHoursReducer,
   priceRangeReducer,
   healthScoreReducer,
-  isOpenReducer
+  isOpenReducer,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
-import StatusHoursContainer from '../container/StatusHoursContainer.jsx';
-import StatusPriceRangeContainer from '../container/StatusPriceRangeContainer.jsx';
-import StatusHealthContainer from '../container/StatusHealthContainer.jsx';
+import StatusHoursContainer from '../container/StatusHoursContainer';
+import StatusPriceRangeContainer from '../container/StatusPriceRangeContainer';
+import StatusHealthContainer from '../container/StatusHealthContainer';
 import styles from '../sidebar.css';
 
 const Status = () => (
