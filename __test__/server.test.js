@@ -16,9 +16,8 @@ describe('Server tests', () => {
     });
   });
   test('should return undefined when give an invalid id', done => {
-    request(app).get('/restaurants/101').then(res => {
-      expect(res.statusCode).toBe(200);
-      expect(res.body[0]).toBe(undefined);
+    request(app).get('/101').then(res => {
+      expect(res.statusCode).toBe(404);
       done();
     });
   });
