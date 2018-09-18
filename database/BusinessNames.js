@@ -101,4 +101,4 @@ const businessNames = [
   'Chef\'s Cafe'
 ];
 
-module.exports = businessNames;
+module.exports = businessNames.map(name => name.toLowerCase());

@@ -2,7 +2,15 @@ const { Restaurant, Reservation } = require('../database');
 
 const model = {
   restaurants: {
-    get: (id) => Restaurant.findAll({ where: { id }})
+    get: (nameOrId) => {
+      if (isNaN(nameOrId)) {
+        const name = nameOrId;
+        return Restaurant.findAll({ where: { name }})
+      } else {
+        const id = nameOrId;
+        return Restaurant.findAll({ where: { id }})
+      }
+    }
   }
 };
 
