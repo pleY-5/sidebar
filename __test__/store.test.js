@@ -31,4 +31,7 @@ describe('Store', () => {
   test('should have a state with a healthScore field', () => {
     expect(store.getState().healthScore).toBeDefined();
   }); 
+  test('should have a state with a isOpen field', () => {
+    expect(store.getState().isOpen).toBeDefined();
+  }); 
 });

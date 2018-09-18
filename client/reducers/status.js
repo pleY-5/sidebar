@@ -19,4 +19,11 @@ const healthScoreReducer = (state = null, action) => {
   return state;
 };
 
-export { todaysHoursReducer, priceRangeReducer, healthScoreReducer };
+const isOpenReducer = (state = false, action) => {
+  if (action.type === 'CHANGE_IS_OPEN') {
+    return action.isOpen;
+  }
+  return state;
+};
+
+export { todaysHoursReducer, priceRangeReducer, healthScoreReducer, isOpenReducer };
