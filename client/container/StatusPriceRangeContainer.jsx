@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import StatusPriceRange from '../component/StatusPriceRange.jsx';
+import StatusPriceRange from '../component/StatusPriceRange';
 
 const mapStateToProps = state => ({
   priceRange: state.priceRange,

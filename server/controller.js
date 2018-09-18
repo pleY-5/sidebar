@@ -6,8 +6,8 @@ const controller = {
       model.restaurants.get(req.params.nameOrId)
         .then(data => res.send(data))
         .catch(err => res.send(err));
-    }
-  }
+    },
+  },
 };
 
 module.exports = controller;

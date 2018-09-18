@@ -20,5 +20,9 @@ export default StatusHealth;
 
 
 StatusHealth.propTypes = {
-  healthScore: PropTypes.number.isRequired,
+  healthScore: PropTypes.number,
+};
+
+StatusHealth.defaultProps = {
+  healthScore: null,
 };

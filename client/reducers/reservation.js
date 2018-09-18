@@ -30,5 +30,5 @@ export {
   hasReservationReducer,
   selectedDateReducer,
   timeslotsReducer,
-  hoursOfOperationReducer
+  hoursOfOperationReducer,
 };

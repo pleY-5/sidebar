@@ -1,6 +1,6 @@
 import React from 'react';
-import CalendarHeaderContainer from '../container/CalendarHeaderContainer.jsx';
-import CalendarBodyContainer from '../container/CalendarBodyContainer.jsx';
+import CalendarHeaderContainer from '../container/CalendarHeaderContainer';
+import CalendarBodyContainer from '../container/CalendarBodyContainer';
 import styles from '../sidebar.css';
 
 const Calendar = () => (

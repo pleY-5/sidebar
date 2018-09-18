@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../sidebar.css';
-import ReservationHeader from './ReservationHeader.jsx';
-import NumOfPeopleSelect from './NumOfPeopleSelect.jsx';
-import FindTable from './FindTable.jsx';
-import DateSelectContainer from '../container/DateSelectContainer.jsx';
-import TimeSelectContainer from '../container/TimeSelectContainer.jsx';
+import ReservationHeader from './ReservationHeader';
+import NumOfPeopleSelect from './NumOfPeopleSelect';
+import FindTable from './FindTable';
+import DateSelectContainer from '../container/DateSelectContainer';
+import TimeSelectContainer from '../container/TimeSelectContainer';
 
 const Reservation = ({ hasReservation }) => (
   <div>

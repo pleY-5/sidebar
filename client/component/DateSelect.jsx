@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../sidebar.css';
-import Calendar from './Calendar.jsx';
+import Calendar from './Calendar';
 
 const DateSelect = ({ selectedDate, displayCalendar, handleDateClick }) => (
   <div className={styles.dateContainer} id="date-container">

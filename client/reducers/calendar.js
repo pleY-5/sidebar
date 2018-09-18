@@ -22,5 +22,5 @@ const displayCalendarReducer = (state = false, action) => {
 export {
   calendarDateReducer,
   calendarWeeksReducer,
-  displayCalendarReducer
+  displayCalendarReducer,
 };
