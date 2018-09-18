@@ -18,4 +18,9 @@ const changeHoursOfOperation = (hoursOfOperation) => ({
   hoursOfOperation
 });
 
-export { changeHasReservation, changeSelectedDate, changeTimeslots, changeHoursOfOperation };
+export {
+  changeHasReservation,
+  changeSelectedDate,
+  changeTimeslots,
+  changeHoursOfOperation
+};

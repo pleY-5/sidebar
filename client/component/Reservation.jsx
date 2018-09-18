@@ -10,11 +10,11 @@ const Reservation = ({ hasReservation }) => (
   <div>
     {hasReservation && (
       <div className={styles.reservationContainer} id='reservation-container'>
-        <ReservationHeader/>
-        <DateSelectContainer/>
-        <TimeSelectContainer/>
-        <NumOfPeopleSelect/>
-        <FindTable/>
+        <ReservationHeader />
+        <DateSelectContainer />
+        <TimeSelectContainer />
+        <NumOfPeopleSelect />
+        <FindTable />
       </div>
     )}
   </div>

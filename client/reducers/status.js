@@ -26,4 +26,9 @@ const isOpenReducer = (state = false, action) => {
   return state;
 };
 
-export { todaysHoursReducer, priceRangeReducer, healthScoreReducer, isOpenReducer };
+export {
+  todaysHoursReducer,
+  priceRangeReducer,
+  healthScoreReducer,
+  isOpenReducer
+};

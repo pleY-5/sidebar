@@ -5,7 +5,8 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 const updateSelectedDate = (date = new Date()) => {
-  let formattedDate = `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  let formattedDate = `${days[date.getDay()]}, ${months[date.getMonth()]} ` +
+                      `${date.getDate()}, ${date.getFullYear()}`;
   return dispatch => dispatch(changeSelectedDate(formattedDate));
 };
 
@@ -28,4 +29,8 @@ const updateCalendarWeeks = (date = new Date()) => {
   return dispatch => dispatch(changeCalendarWeeks(weeks));
 };
 
-export { updateSelectedDate, updateCalendarDate, updateCalendarWeeks };
+export {
+  updateSelectedDate,
+  updateCalendarDate,
+  updateCalendarWeeks
+};

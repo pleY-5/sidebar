@@ -13,4 +13,8 @@ const changeDisplayCalendar = (bool) => ({
   displayCalendar: bool
 });
 
-export { changeCalendarDate, changeCalendarWeeks, changeDisplayCalendar };
+export {
+  changeCalendarDate,
+  changeCalendarWeeks,
+  changeDisplayCalendar
+};
