@@ -1,4 +1,5 @@
 import React from 'react';
+import StatusHoursContainer from '../container/StatusHoursContainer.jsx'
 import styles from '../sidebar.css';
 
 const price = ['under $10', '$11-30', '$31-60', 'above $61'];
@@ -12,23 +13,8 @@ const Status = ({ hours, priceRange, healthScore }) => {
     <div className={styles.statusContainer}>
       <table>
         <tbody>
-          <tr>
-            <td className={styles.emptyRow}>
-              <img src='images/clock.png' className={styles.statusClock}/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </td>
-            <td className={styles.statusHours}>
-              Today&nbsp;&nbsp;
-              <b>
-                {hours.split(', ')[0]}<br/>
-                {hours.split(', ')[1]}
-                {hours.split(', ')[1] !== undefined && (<b>&nbsp;&nbsp;</b>)}
-              </b>
-              <b className={styles.open}>Open now</b>
-            </td>
-            <td className={styles.emptyRow}>&nbsp;&nbsp;</td>
-          </tr>
-          <tr>
+          <StatusHoursContainer />
+          <tr className={styles.statusIconRow}>
             <td>
               <div className={styles.signShift}>
                 {dollarSigns.map((sign, idx) => (
@@ -41,7 +27,7 @@ const Status = ({ hours, priceRange, healthScore }) => {
               <b>{price[priceRange]}</b>
             </td>
           </tr>
-          <tr>
+          <tr className={styles.statusIconRow}>
             <td><img src='images/health.png' className={styles.statusHealth}/></td>
             <td className={styles.statusScore}>
               <b className={styles.healthScoreLink}>Health Score</b>

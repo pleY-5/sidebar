@@ -7,6 +7,7 @@ import TimeSelectContainer from '../client/container/TimeSelectContainer.jsx';
 import CalendarHeaderContainer from '../client/container/CalendarHeaderContainer.jsx';
 import CalendarBodyContainer from '../client/container/CalendarBodyContainer.jsx';
 import StatusContainer from '../client/container/StatusContainer.jsx';
+import StatusHoursContainer from '../client/container/StatusHoursContainer.jsx';
 
 describe('Container Testing', () => {
   describe('Date Select Container', () => {
@@ -112,10 +113,17 @@ describe('Container Testing', () => {
   });
 
   describe('Status Container', () => {
-    test('should contain a hours prop', () => {
-      const wrapper = shallow(<StatusContainer store={store}/>);
-      const props = wrapper.props();
-      expect(props.hours).toBeDefined();
+    describe('Status Hour Container', () => {
+      test('should contain a hours prop', () => {
+        const wrapper = shallow(<StatusHoursContainer store={store}/>);
+        const props = wrapper.props();
+        expect(props.hours).toBeDefined();
+      });
+      test('should contain a isOpen prop', () => {
+        const wrapper = shallow(<StatusHoursContainer store={store}/>);
+        const props = wrapper.props();
+        expect(props.isOpen).toBeDefined();
+      });
     });
     test('should contain a priceRange prop', () => {
       const wrapper = shallow(<StatusContainer store={store}/>);
