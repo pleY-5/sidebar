@@ -6,8 +6,9 @@ import ReservationContainer from '../client/container/ReservationContainer.jsx';
 import TimeSelectContainer from '../client/container/TimeSelectContainer.jsx';
 import CalendarHeaderContainer from '../client/container/CalendarHeaderContainer.jsx';
 import CalendarBodyContainer from '../client/container/CalendarBodyContainer.jsx';
-import StatusContainer from '../client/container/StatusContainer.jsx';
 import StatusHoursContainer from '../client/container/StatusHoursContainer.jsx';
+import StatusPriceRangeContainer from '../client/container/StatusPriceRangeContainer.jsx';
+import StatusHealthContainer from '../client/container/StatusHealthContainer.jsx';
 
 describe('Container Testing', () => {
   describe('Date Select Container', () => {
@@ -125,15 +126,19 @@ describe('Container Testing', () => {
         expect(props.isOpen).toBeDefined();
       });
     });
-    test('should contain a priceRange prop', () => {
-      const wrapper = shallow(<StatusContainer store={store}/>);
-      const props = wrapper.props();
-      expect(props.priceRange).toBeDefined();
+    describe('Status Price Range Container', () => {
+      test('should contain a priceRange prop', () => {
+        const wrapper = shallow(<StatusPriceRangeContainer store={store}/>);
+        const props = wrapper.props();
+        expect(props.priceRange).toBeDefined();
+      });
     });
-    test('should contain a healthScore prop', () => {
-      const wrapper = shallow(<StatusContainer store={store}/>);
-      const props = wrapper.props();
-      expect(props.healthScore).toBeDefined();
+    describe('Status Health Score Container', () => {
+      test('should contain a healthScore prop', () => {
+        const wrapper = shallow(<StatusHealthContainer store={store}/>);
+        const props = wrapper.props();
+        expect(props.healthScore).toBeDefined();
+      });
     });
   });
 });
