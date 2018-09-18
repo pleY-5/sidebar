@@ -1,24 +1,24 @@
 module.exports = {
-  'verbose': true,
-  'setupFiles': [
-    '<rootDir>/__test__/jestSetup.js'
+  verbose: true,
+  setupFiles: [
+    '<rootDir>/__test__/jestSetup.js',
   ],
-  'transform': {
+  transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
-  'moduleNameMapper': {
-    '\\.css$': 'identity-obj-proxy'
+  moduleNameMapper: {
+    '\\.css$': 'identity-obj-proxy',
   },
-  'collectCoverage': true,
-  'collectCoverageFrom': [
-    '**/*.{js,jsx}'
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '**/*.{js,jsx}',
   ],
-  'coveragePathIgnorePatterns': [
+  coveragePathIgnorePatterns: [
     '/node_modules/',
     '/coverage/',
     'config.js',
     'rc.js',
     'bundle.js',
-    '/database/'
-  ]
+    '/database/',
+  ],
 };
