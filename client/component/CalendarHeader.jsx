@@ -66,7 +66,7 @@ const CalendarHeader = ({
 export default CalendarHeader;
 
 CalendarHeader.propTypes = {
-  calendarDate: PropTypes.string.isRequired,
+  calendarDate: PropTypes.instanceOf(Date).isRequired,
   handleIncreaseMonthClick: PropTypes.func.isRequired,
   handleDecreaseMonthClick: PropTypes.func.isRequired,
 };

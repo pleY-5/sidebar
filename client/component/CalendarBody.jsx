@@ -28,7 +28,7 @@ export default CalendarBody;
 CalendarBody.propTypes = {
   calendarWeeks: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
   selectedDate: PropTypes.string.isRequired,
-  calendarDate: PropTypes.string.isRequired,
+  calendarDate: PropTypes.instanceOf(Date).isRequired,
   hoursOfOperation: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleDateClick: PropTypes.func.isRequired,
 };
