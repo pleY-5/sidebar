@@ -7,14 +7,6 @@
   margin-bottom: 18px;
 }
 
-.reservation-select {
-  -webkit-appearance: none;
-  outline: none;
-  border: none;
-  background-color: white;
-  font-size: 14px;
-}
-
 /************* RESERVATION HEADER *************/
 .header-container {
   height: 35px;
@@ -138,7 +130,11 @@
   bottom: 3px;
 }
 
-.select {
+.reservation-select {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  background-color: white;
   width: 100%;
   height: 100%;
   letter-spacing: -0.5px;
