@@ -4,7 +4,7 @@ import styles from '../sidebar.css';
 const NumOfPeopleSelect = () => (
   <span className={styles.peopleContainer}>
     <img src="images/people.PNG" className={styles.peopleIcon} alt="#" />
-    <select defaultValue="two" className={styles.select}>
+    <select defaultValue="two" className={styles.reservationSelect}>
       <option value="one">1 person</option>
       <option value="two">2 people</option>
       <option value="three">3 people</option>
