@@ -11,7 +11,7 @@ const router = require('./routes.js');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:8080' }));
+app.get(cors({ origin: 'http://localhost:8080' }));
 
 app.get('/:nameOrId', (req, res, next) => {
   const id = parseInt(req.params.nameOrId, 10);
