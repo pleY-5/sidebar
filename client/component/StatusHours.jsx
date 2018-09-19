@@ -6,8 +6,8 @@ const StatusHours = ({ hours, isOpen }) => (
   <tr>
     <td className={styles.statusIconRow}>
       {isOpen
-        ? <img src="images/openClock.png" className={styles.statusClock} alt="#" />
-        : <img src="images/closeClock.png" className={styles.statusClock} alt="#" />}
+        ? <img src="http://localhost:7878/images/openClock.png" className={styles.statusClock} alt="#" />
+        : <img src="http://localhost:7878/images/closeClock.png" className={styles.statusClock} alt="#" />}
     </td>
     <td className={styles.statusHours} id="status-hours">
       Today&nbsp;&nbsp;

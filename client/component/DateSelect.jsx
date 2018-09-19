@@ -5,7 +5,7 @@ import Calendar from './Calendar';
 
 const DateSelect = ({ selectedDate, displayCalendar, handleDateClick }) => (
   <div className={styles.dateContainer} id="date-container">
-    <img src="images/calendar.PNG" className={styles.dateIcon} alt="#" />
+    <img src="http://localhost:7878/images/calendar.PNG" className={styles.dateIcon} alt="#" />
     <input
       type="text"
       value={selectedDate}
@@ -14,7 +14,7 @@ const DateSelect = ({ selectedDate, displayCalendar, handleDateClick }) => (
       onClick={() => handleDateClick(displayCalendar, selectedDate)}
       id="date-text"
     />
-    <img src="images/downarrow.PNG" className={styles.dateArrowIcon} alt="#" />
+    <img src="http://localhost:7878/images/downarrow.PNG" className={styles.dateArrowIcon} alt="#" />
     {displayCalendar && <Calendar />}
   </div>
 );

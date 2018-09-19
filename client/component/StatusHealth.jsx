@@ -4,7 +4,7 @@ import styles from '../sidebar.css';
 
 const StatusHealth = ({ healthScore }) => (
   <tr className={styles.statusIconRow}>
-    <td><img src="images/health.png" className={styles.statusHealth} alt="#" /></td>
+    <td><img src="http://localhost:7878/images/health.png" className={styles.statusHealth} alt="#" /></td>
     <td className={styles.statusScore}>
       <b className={styles.healthScoreLink}>Health Score</b>
       <b id="health-score">

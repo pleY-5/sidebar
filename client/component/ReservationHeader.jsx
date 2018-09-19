@@ -4,7 +4,7 @@ import styles from '../sidebar.css';
 const ReservationHeader = () => (
   <div className={styles.headerContainer}>
     <h3 className={styles.header}>
-      <img src="images/header.PNG" className={styles.headerIcon} alt="#" />
+      <img src="http://localhost:7878/images/header.PNG" className={styles.headerIcon} alt="#" />
       <span
         className={styles.headerTitle}
         id="header-title"
