@@ -7,7 +7,7 @@
   margin-bottom: 18px;
 }
 
-select {
+.reservation-select {
   -webkit-appearance: none;
   outline: none;
   border: none;

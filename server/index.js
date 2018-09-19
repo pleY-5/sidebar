@@ -1,11 +1,17 @@
 const express = require('express');
-const morgan = require('morgan');
 
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const names = require('../database/businessNames');
 
 const app = express();
 const router = require('./routes.js');
+
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cors({ origin: 'http://localhost:8080' }));
 
 app.get('/:nameOrId', (req, res, next) => {
   const id = parseInt(req.params.nameOrId, 10);
@@ -17,9 +23,6 @@ app.get('/:nameOrId', (req, res, next) => {
 });
 
 app.use('/:nameOrId', express.static('public'));
-
-app.use(morgan('dev'));
-app.use(bodyParser.json());
 
 app.use('/', router);
 

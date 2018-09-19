@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
     store.dispatch(updateSelectedDate());
     store.dispatch(updateCalendarDate());
     store.dispatch(updateCalendarWeeks());
-    store.dispatch(fetch(`http://localhost:7878/restaurants/${path.basename(window.location.pathname)}`));
+    store.dispatch(fetch(`http://localhost:7878/restaurants/${path.basename(window.location.pathname)}/`));
   }
 
   render() {
