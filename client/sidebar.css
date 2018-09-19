@@ -327,7 +327,6 @@ th {
 
 .status-hours b {
   letter-spacing: -0.5px;
-  word-spacing: 0.5px;
 }
 
 .status-icon-row {
@@ -360,7 +359,7 @@ th {
 
 .empty-row {
   user-select: none;
-  width: 13px;
+  width: 11px;
 }
 
 .status-score {
