@@ -327,7 +327,6 @@ th {
 }
 
 .status-icon-row {
-  user-select: none;
   width: 46px;
   padding-top: 5px;
 }
