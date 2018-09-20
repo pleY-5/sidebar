@@ -155,11 +155,11 @@
 /************* BUTTON *************/
 .button-container {
   width: 272px;
-  height: 21px;
+  height: 24px;
   border: 1px solid #28781E;
   border-radius: 4px;
+  padding-top: 4px;
   text-align: center;
-  padding-top: 7px;
   background-color: #3cb52e;
   cursor: pointer;
   box-shadow: 0px 1px 0px #c5c5c5;
