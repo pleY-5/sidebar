@@ -18,7 +18,7 @@ const getIsOpen = (openHours) => {
   const currTime = currHour + currMin / 60;
   for (let i = 0; i < openCloseTimes.length; i += 2) {
     if (currTime >= openCloseTimes[i]
-        || currTime <= openCloseTimes[i + 1]) {
+        && currTime <= openCloseTimes[i + 1]) {
       isOpen = true;
     }
   }
