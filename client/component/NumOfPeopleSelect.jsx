@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../sidebar.css';
 
 const NumOfPeopleSelect = () => (
-  <span className={styles.peopleContainer}>
+  <div className={styles.peopleContainer}>
     <img src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/people.PNG" className={styles.peopleIcon} alt="#" />
     <select defaultValue="two" className={styles.reservationSelect}>
       <option value="one">1 person</option>
@@ -12,7 +12,7 @@ const NumOfPeopleSelect = () => (
       <option value="five">5 people</option>
     </select>
     <img src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/downarrow.PNG" className={styles.arrowIcon} alt="#" />
-  </span>
+  </div>
 );
 
 export default NumOfPeopleSelect;

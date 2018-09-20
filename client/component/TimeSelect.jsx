@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from '../sidebar.css';
 
 const TimeSelect = ({ timeslots }) => (
-  <span className={styles.timeContainer}>
+  <div className={styles.timeContainer}>
     <img src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/time.PNG" className={styles.icon} alt="#" />
     <select defaultValue="7:00 pm" className={styles.reservationSelect}>
       {timeslots.map((timeSlot) => {
@@ -14,7 +14,7 @@ const TimeSelect = ({ timeslots }) => (
       })}
     </select>
     <img src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/downarrow.PNG" className={styles.arrowIcon} alt="#" />
-  </span>
+  </div>
 );
 
 export default TimeSelect;
