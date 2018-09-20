@@ -24,7 +24,7 @@ const CalendarHeader = ({
 }) => (
   <thead>
     <tr>
-      <th className={styles.scaleX}>
+      <th className={`${styles.scaleX} ${styles.calendarTh}`}>
         <input
           type="button"
           value="<<"
@@ -34,13 +34,13 @@ const CalendarHeader = ({
         />
       </th>
       <th
-        className={styles.calendarHeaderTitle}
+        className={`${styles.calendarHeaderTitle} ${styles.calendarTh}`}
         id="calendar-header-title"
         colSpan="5"
       >
         {`${months[calendarDate.getMonth()]} ${calendarDate.getFullYear()}`}
       </th>
-      <th className={styles.scaleX}>
+      <th className={`${styles.scaleX} ${styles.calendarTh}`}>
         <input
           type="button"
           value=">>"
@@ -53,7 +53,7 @@ const CalendarHeader = ({
     <tr id={styles.days}>
       {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, idx) => (
         <th
-          className={styles.daysOfWeek}
+          className={`${styles.daysOfWeek} ${styles.calendarTh}`}
           key={idx}
         >
           {day}
