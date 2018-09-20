@@ -218,13 +218,13 @@
 	margin-left: -11px;
 }
 
-.calendar-table {
+table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
 }
 
-.calendar-th {
+th {
   cursor: default;
 }
 

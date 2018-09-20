@@ -5,7 +5,7 @@ import styles from '../sidebar.css';
 
 const Calendar = () => (
   <div className={styles.calendarContainer} id="calendar-container">
-    <table className={styles.calendarTable}>
+    <table className={styles.sidebarTable}>
       <CalendarHeaderContainer />
       <CalendarBodyContainer />
     </table>

@@ -6,7 +6,7 @@ import styles from '../sidebar.css';
 
 const Status = () => (
   <div className={styles.statusContainer}>
-    <table>
+    <table className={styles.sidebarTable}>
       <tbody>
         <StatusHoursContainer />
         <StatusPriceRangeContainer />
