@@ -16,10 +16,10 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <span>
+      <div>
         <ReservationContainer />
         <Status />
-      </span>
+      </div>
     );
   }
 }
