@@ -23,7 +23,8 @@ app.get('/:nameOrId', (req, res, next) => {
 
 app.use('/:nameOrId', express.static('public'));
 
-app.use('/', cors({ origin: 'http://localhost:8080' }), router);
+app.use('/api/sidebar', router);
+app.use('/', router);
 
 app.set('port', process.env.PORT || 7878);
 

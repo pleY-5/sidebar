@@ -114,7 +114,7 @@ const data = [];
 const open = ['7:00 am', '7:30 am', '8:00 am', '8:30 am', '9:00 am', '9:30 am', '10:00 am'];
 const midDayClose = ['1:30 pm', '2:00 pm', '2:30 pm'];
 const midDayOpen = ['4:00 pm', '4:30 pm', '5:30 pm', '6:00 pm'];
-const close = ['10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm', '12:00 am'];
+const close = ['10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm'];
 
 for (let i = 0; i < 100; i += 1) {
   let weekday;
