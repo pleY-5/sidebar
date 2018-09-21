@@ -18,7 +18,6 @@ const StatusHealth = ({ healthScore }) => (
 
 export default StatusHealth;
 
-
 StatusHealth.propTypes = {
   healthScore: PropTypes.number,
 };

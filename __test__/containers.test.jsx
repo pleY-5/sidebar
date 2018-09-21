@@ -9,6 +9,7 @@ import CalendarBodyContainer from '../client/container/CalendarBodyContainer';
 import StatusHoursContainer from '../client/container/StatusHoursContainer';
 import StatusPriceRangeContainer from '../client/container/StatusPriceRangeContainer';
 import StatusHealthContainer from '../client/container/StatusHealthContainer';
+import WeeklyHoursContainer from '../client/container/WeeklyHoursContainer';
 
 describe('Container Testing', () => {
   describe('Date Select Container', () => {
@@ -139,6 +140,19 @@ describe('Container Testing', () => {
         const props = wrapper.props();
         expect(props.healthScore).toBeDefined();
       });
+    });
+  });
+
+  describe('Weekly Hours Container', () => {
+    test('should contain a hours of operation prop', () => {
+      const wrapper = shallow(<WeeklyHoursContainer store={store} />);
+      const props = wrapper.props();
+      expect(props.hoursOfOperation).toBeDefined();
+    });
+    test('should contain a is open prop', () => {
+      const wrapper = shallow(<WeeklyHoursContainer store={store} />);
+      const props = wrapper.props();
+      expect(props.isOpen).toBeDefined();
     });
   });
 });

@@ -109,11 +109,12 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <img
+          alt="#"
           className="peopleIcon"
-          src="images/people.PNG"
+          src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/people.PNG"
         />,
         <select
-          className="select"
+          className="reservationSelect"
           defaultValue="two"
         >
           <option
@@ -143,8 +144,9 @@ ShallowWrapper {
           </option>
         </select>,
         <img
+          alt="#"
           className="arrowIcon"
-          src="images/downarrow.PNG"
+          src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/downarrow.PNG"
         />,
       ],
       "className": "peopleContainer",
@@ -156,8 +158,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "#",
           "className": "peopleIcon",
-          "src": "images/people.PNG",
+          "src": "https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/people.PNG",
         },
         "ref": null,
         "rendered": null,
@@ -195,7 +198,7 @@ ShallowWrapper {
               5 people
             </option>,
           ],
-          "className": "select",
+          "className": "reservationSelect",
           "defaultValue": "two",
         },
         "ref": null,
@@ -268,15 +271,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "#",
           "className": "arrowIcon",
-          "src": "images/downarrow.PNG",
+          "src": "https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/downarrow.PNG",
         },
         "ref": null,
         "rendered": null,
         "type": "img",
       },
     ],
-    "type": "span",
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -286,11 +290,12 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
+            alt="#"
             className="peopleIcon"
-            src="images/people.PNG"
+            src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/people.PNG"
           />,
           <select
-            className="select"
+            className="reservationSelect"
             defaultValue="two"
           >
             <option
@@ -320,8 +325,9 @@ ShallowWrapper {
             </option>
           </select>,
           <img
+            alt="#"
             className="arrowIcon"
-            src="images/downarrow.PNG"
+            src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/downarrow.PNG"
           />,
         ],
         "className": "peopleContainer",
@@ -333,8 +339,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "#",
             "className": "peopleIcon",
-            "src": "images/people.PNG",
+            "src": "https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/people.PNG",
           },
           "ref": null,
           "rendered": null,
@@ -372,7 +379,7 @@ ShallowWrapper {
                 5 people
               </option>,
             ],
-            "className": "select",
+            "className": "reservationSelect",
             "defaultValue": "two",
           },
           "ref": null,
@@ -445,15 +452,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "#",
             "className": "arrowIcon",
-            "src": "images/downarrow.PNG",
+            "src": "https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/downarrow.PNG",
           },
           "ref": null,
           "rendered": null,
           "type": "img",
         },
       ],
-      "type": "span",
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -499,8 +507,9 @@ ShallowWrapper {
         className="header"
       >
         <img
+          alt="#"
           className="headerIcon"
-          src="images/header.PNG"
+          src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/header.PNG"
         />
         <span
           className="headerTitle"
@@ -519,8 +528,9 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
+            alt="#"
             className="headerIcon"
-            src="images/header.PNG"
+            src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/header.PNG"
           />,
           <span
             className="headerTitle"
@@ -538,8 +548,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "#",
             "className": "headerIcon",
-            "src": "images/header.PNG",
+            "src": "https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/header.PNG",
           },
           "ref": null,
           "rendered": null,
@@ -573,8 +584,9 @@ ShallowWrapper {
           className="header"
         >
           <img
+            alt="#"
             className="headerIcon"
-            src="images/header.PNG"
+            src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/header.PNG"
           />
           <span
             className="headerTitle"
@@ -593,8 +605,9 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <img
+              alt="#"
               className="headerIcon"
-              src="images/header.PNG"
+              src="https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/header.PNG"
             />,
             <span
               className="headerTitle"
@@ -612,8 +625,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "alt": "#",
               "className": "headerIcon",
-              "src": "images/header.PNG",
+              "src": "https://s3-us-west-1.amazonaws.com/yelpreactorsidebaricons/header.PNG",
             },
             "ref": null,
             "rendered": null,

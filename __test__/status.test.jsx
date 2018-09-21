@@ -50,7 +50,7 @@ describe('Status Window', () => {
     test('should have expected health score when passed in', () => {
       const wrapper = shallow(<StatusHealth healthScore={92} />);
       const healthScore = wrapper.find('#health-score').text();
-      expect(healthScore).toContain('92 out of 100');
+      expect(healthScore).toContain('92');
     });
   });
 });

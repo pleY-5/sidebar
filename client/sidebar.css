@@ -412,7 +412,7 @@ th {
 
 /************* HOURS *************/
 .bold-hours {
-  width: 60px;
+  width: 50px;
   font-weight: 700;
   font-size: 14px;
   text-align: left;
@@ -429,10 +429,38 @@ th {
 .hours-table-body {
   text-align: left;
   font-size: 14px;
+  width: 129px;
 }
 
 .hours-empty-row {
   padding: 0;
   margin: 0;
   font-size: 12px;
+  user-select: none;
+}
+
+.edit-info {
+  color: #0372bc;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  vertical-align: center;
+}
+
+.edit-info:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: left;
+  padding-left: 40px;
+  padding-top: 5px;
+}
+
+.edit-img {
+  position: relative;
+  top: 3px;
+  width: 17px;
+  height: auto;
+  padding-right: 5px;
 }
