@@ -7,6 +7,12 @@
   margin-bottom: 18px;
 }
 
+.outer-container {
+  border: 1px solid white;
+  padding-top: 28px;
+  padding-bottom: 27px;
+}
+
 /************* RESERVATION HEADER *************/
 .header-container {
   height: 35px;
@@ -402,4 +408,31 @@ th {
   position: relative;
   right: 2px;
   top: 1px;
+}
+
+/************* HOURS *************/
+.bold-hours {
+  width: 60px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 40px;
+  color: #333;
+}
+
+.hours-table-head {
+  text-align: left;
+  padding-left: 40px;
+  color: #d32300;
+}
+
+.hours-table-body {
+  text-align: left;
+  font-size: 14px;
+}
+
+.hours-empty-row {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
 }
