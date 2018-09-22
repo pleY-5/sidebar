@@ -29,8 +29,8 @@ const WeeklyHours = ({ hoursOfOperation, isOpen }) => {
           <tr key={idx}>
             <td className={styles.boldHours}>{days[idx]}</td>
             <td className={styles.hoursTableBody}>{hours[0]}</td>
-            {idx === today && isOpen && <td className={styles.open}>Open now</td>}
-            {idx === today && !isOpen && <td className={styles.close}>Closed now</td>}
+            {idx === today && isOpen && <td className={styles.openHours}>Open now</td>}
+            {idx === today && !isOpen && <td className={styles.closeHours}>Closed now</td>}
           </tr>
           {hours[1] && (
             <tr>

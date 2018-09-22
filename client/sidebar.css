@@ -413,6 +413,7 @@ th {
 /************* HOURS *************/
 .bold-hours {
   width: 50px;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
   text-align: left;
@@ -424,12 +425,14 @@ th {
   text-align: left;
   padding-left: 40px;
   color: #d32300;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .hours-table-body {
   text-align: left;
   font-size: 14px;
   width: 129px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .hours-empty-row {
@@ -455,6 +458,7 @@ th {
   text-align: left;
   padding-left: 40px;
   padding-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .edit-img {
@@ -463,4 +467,22 @@ th {
   width: 17px;
   height: auto;
   padding-right: 5px;
+}
+
+.open-hours {
+  font-size: 12px;
+  font-weight: 700;
+  color: #5da42f;
+  letter-spacing: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.close-hours {
+  font-size: 12px;
+  font-weight: 700;
+  color: #d32300;
+  letter-spacing: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
 }
