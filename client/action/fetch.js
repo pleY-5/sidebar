@@ -27,6 +27,7 @@ const getIsOpen = (openHours) => {
 
 const fetch = url => dispatch => get(url)
   .then((data) => {
+    console.log('sidebar: ', data);
     const hoursOfOperation = [
       data.Sunday,
       data.Monday,
