@@ -7,6 +7,25 @@ const controller = {
         .then(data => res.send(data))
         .catch(err => res.send(err));
     },
+    // post: (req, res) => {
+    //   model.restaurants.post()
+    //   .then()
+    // },
+    post: (req, res) => {
+      model.restaurants.post()
+        .then(res.send({
+          message: 'Restaurant posted successfully!',
+        }))
+        .catch(err => res.catch(err));
+    },
+    delete: (req, res) => {
+      model.restaurants.delete(req.params.nameOrId)
+        .then(res.send({
+          message: 'Restaurant deleted successfully!',
+        })
+          .catch(err => res.status('505').send(err)));
+    },
+
   },
 };
 
