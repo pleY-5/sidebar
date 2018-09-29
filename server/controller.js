@@ -7,10 +7,6 @@ const controller = {
         .then(data => res.send(data))
         .catch(err => res.send(err));
     },
-    // post: (req, res) => {
-    //   model.restaurants.post()
-    //   .then()
-    // },
     post: (req, res) => {
       model.restaurants.post()
         .then(res.send({
@@ -23,7 +19,7 @@ const controller = {
         .then(res.send({
           message: 'Restaurant deleted successfully!',
         })
-          .catch(err => res.status('505').send(err)));
+          .catch(err => res.status(505).send(err)));
     },
 
   },

@@ -1,21 +1,15 @@
 const fs = require('fs');
-// const path = require('path');
 const stringify = require('csv-stringify');
-// const parse = require('csv-parse');
-
 
 const generateRandomInt = (max, min = 0) => min + Math.floor(Math.random() * Math.floor(max - min));
 
 const generateRandomBoolean = (max = 2) => Math.floor(Math.random() * Math.floor(max));
-
-let
 
 const generateMillionNames = (letter) => {
   const allPossibilities = [];
 
   const open = ['7:00 am', '7:30 am', '8:00 am', '8:30 am', '9:00 am', '9:30 am', '10:00 am'];
   const midDayClose = ['1:30 pm', '2:00 pm', '2:30 pm'];
-  // const midDayOpen = ['4:00 pm', '4:30 pm', '5:30 pm', '6:00 pm'];
   const close = ['10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm'];
 
   for (let i = 0; i < 1000000; i++) {
@@ -52,14 +46,19 @@ const generateMillionNames = (letter) => {
   return allPossibilities;
 };
 
+let t0;
+let t1;
+let t2;
+
 const genTenMillionEntries = (num = 0) => {
   const letters = 'abcdefghij'.split('');
   if (num === 0) {
-    stringify(generateMillionNames(letters[num]), { boolean: true }, (err, data) => {
+    t0 = Date.now();
+    stringify(generateMillionNames(letters[num]), (err, data) => {
       if (err) {
         console.log(err);
       } else {
-        fs.writeFile('tenMillionData.csv', data, (err) => {
+        fs.writeFile('tenMillion.csv', data, (err) => {
           if (err) {
             console.log(err);
           }
@@ -68,14 +67,16 @@ const genTenMillionEntries = (num = 0) => {
       }
     });
   } else if (num === 10) {
-    console.log('done');
+    t1 = Date.now();
+    console.log(`Time finished: ${t1 - t0} milliseconds`);
   } else {
-    console.log('num right now', num);
-    stringify(generateMillionNames(letters[num]), { boolean: true }, (err, data) => {
+    t2 = Date.now();
+    console.log(`${num} million records at ${t2 - t0} milliseconds`);
+    stringify(generateMillionNames(letters[num]), (err, data) => {
       if (err) {
         console.log(err);
       } else {
-        fs.appendFile('tenMillionData.csv', data, (err) => {
+        fs.appendFile('tenMillion.csv', data, (err) => {
           if (err) {
             console.log(err);
           }
