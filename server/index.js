@@ -1,24 +1,22 @@
+require('newrelic');
 const express = require('express');
+// const request = require('superagent');
+// const PORT = process.env.PORT;
+// const redis = require('redis');
+
+// const REDIS_PORT = process.env.REDIS_PORT || 6379;
+
+const app = express();
+// if you'd like to select database 3, instead of 0 (default), call
+// client.select(3, function() { /* ... */ });
 
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-const names = require('../database/businessNames.js');
-
-const app = express();
 const router = require('./routes.js');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-
-app.get('/:nameOrId', (req, res, next) => {
-  const id = parseInt(req.params.nameOrId, 10);
-  const name = req.params.nameOrId.toLowerCase();
-  if (isNaN(id)) {
-    if (names.includes(name)) { return next(); }
-  } else if (id > 0 && id <= 100) { return next(); }
-  return res.sendStatus(404);
-});
 
 app.use('/:nameOrId', express.static('public'));
 

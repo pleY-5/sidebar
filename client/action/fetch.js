@@ -27,24 +27,25 @@ const getIsOpen = (openHours) => {
 
 const fetch = url => dispatch => get(url)
   .then((data) => {
-    console.log('sidebar: ', data);
+    console.log('sidebar:', data);
     const hoursOfOperation = [
-      data.Sunday,
-      data.Monday,
-      data.Tuesday,
-      data.Wednesday,
-      data.Thursday,
-      data.Friday,
-      data.Saturday,
+      data.sunday,
+      data.monday,
+      data.tuesday,
+      data.wednesday,
+      data.thursday,
+      data.friday,
+      data.saturday,
     ];
+    const boolean = data.takesreservation === 1;
     const todaysHours = hoursOfOperation[(new Date()).getDay()];
     const isOpen = getIsOpen(todaysHours);
-    dispatch(changeHasReservation(data.takesReservation));
+    dispatch(changeHasReservation(boolean));
     dispatch(changeTimeslots(getTimeslots(hoursOfOperation)));
     dispatch(changeHoursOfOperation(hoursOfOperation));
     dispatch(changeTodaysHours(todaysHours));
-    dispatch(changePriceRange(data.priceRange));
-    dispatch(changeHealthScore(data.healthScore));
+    dispatch(changePriceRange(data.pricerange));
+    dispatch(changeHealthScore(data.healthscore));
     dispatch(changeIsOpen(isOpen));
   });
 

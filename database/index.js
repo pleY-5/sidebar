@@ -1,24 +1,18 @@
-const Sequelize = require('sequelize');
-
-const db = new Sequelize('YelpReactorSidebar', 'root', '', {
-  dialect: 'mysql',
+const knex = require('knex')({
+  client: 'pg',
+  connection: {
+    host: 'localhost',
+    user: 'rubylee',
+    password: 'postgres',
+    database: 'hiyelp',
+  },
+  pool: { min: 0, max: 20 },
 });
 
-const Restaurant = db.define('restaurant', {
-  name: Sequelize.STRING,
-  priceRange: Sequelize.INTEGER, // 0-3
-  healthScore: Sequelize.INTEGER, // 50-100
-  takesReservation: Sequelize.BOOLEAN,
-  Monday: Sequelize.STRING,
-  Tuesday: Sequelize.STRING,
-  Wednesday: Sequelize.STRING,
-  Thursday: Sequelize.STRING,
-  Friday: Sequelize.STRING,
-  Saturday: Sequelize.STRING,
-  Sunday: Sequelize.STRING,
-}, { timestamps: false });
+// const knex = require('knex')({
+//   client: 'pg',
+//   connection: 'postgres://rubylee:postgres@localhost:5432/hiyelp',
+//   pool: { min: 0, max: 20 },
+// });
 
-module.exports = {
-  db,
-  Restaurant,
-};
+module.exports = knex;

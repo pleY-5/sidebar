@@ -1,54 +1,28 @@
-const { Restaurant } = require('../database');
+const knex = require('../database/index.js');
 
 const model = {
   restaurants: {
     get: (nameOrId) => {
       if (isNaN(nameOrId)) {
         const name = nameOrId;
-        return Restaurant.findAll({ where: { name } });
+        return knex('restaurants').where('name', name);
       }
       const id = nameOrId;
-      return Restaurant.findAll({ where: { id } });
+      return knex('restaurants').where('id', id);
     },
-    delete: (nameOrId) => {
-      if (isNaN(nameOrId)) {
-        const name = nameOrId;
-        Restaurant.destroy({ where: { name } });
-      }
-      const id = nameOrId;
-      return Restaurant.destroy({ where: { id } });
-    },
-    post: () => {
-      Restaurant.build({
-        name: 'Marukami',
-        priceRange: 2, // 0-3
-        healthScore: 75, // 50-100
-        takesReservation: false,
-        Monday: '9:00 am - 10:00 pm',
-        Tuesday: '9:00 am - 10:00 pm',
-        Wednesday: '9:00 am - 10:00 pm',
-        Thursday: '9:00 am - 10:00 pm',
-        Friday: '9:00 am - 10:00 pm',
-        Saturday: '9:00 am - 10:00 pm',
-        Sunday: '9:00 am - 10:00 pm',
-      }, { timestamps: true })
-        .save();
-    },
-    put: () => {
-      Restaurant.update({
-        name: 'MariaCafe',
-        priceRange: 1, // 0-3
-        healthScore: 50, // 50-100
-        takesReservation: false,
-        Monday: '11:00 am - 3:00 pm',
-        Tuesday: '11:00 am - 3:00 pm',
-        Wednesday: '11:00 am - 3:00 pm',
-        Thursday: '11:00 am - 3:00 pm',
-        Friday: '11:00 am - 3:00 pm',
-        Saturday: '11:00 am - 3:00 pm',
-        Sunday: '11:00 am - 3:00 pm',
-      }, { timestamps: true });
-    },
+    post: req => knex('restaurants').insert({
+      name: req.name,
+      priceRange: req.pricerange,
+      healthScore: req.healthscore,
+      takesReservation: req.takesreservation,
+      Monday: req.monday,
+      Tuesday: req.tuesday,
+      Wednesday: req.wednesday,
+      Thursday: req.thursday,
+      Friday: req.friday,
+      Saturday: req.saturday,
+      Sunday: req.sunday,
+    }),
   },
 };
 
