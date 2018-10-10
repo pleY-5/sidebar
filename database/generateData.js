@@ -12,7 +12,7 @@ const generateMillionNames = (letter) => {
   const midDayClose = ['1:30 pm', '2:00 pm', '2:30 pm'];
   const close = ['10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm'];
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 1000000; i++) {
     let weekday;
     let weekend;
     if (generateRandomBoolean()) {
@@ -27,7 +27,7 @@ const generateMillionNames = (letter) => {
     }
 
     allPossibilities.push({
-      id: i + 1,
+      // id: i + 1,
       name: `TuLan${i}${letter}`.split(' ').join(''),
       priceRange: generateRandomInt(4),
       healthScore: generateRandomInt(101, 50),
@@ -56,7 +56,7 @@ const genTenMillionEntries = (num = 0) => {
       if (err) {
         console.log(err);
       } else {
-        fs.writeFile('hundredRecords.csv', data, (err) => {
+        fs.writeFile('tenmillionRecords.csv', data, (err) => {
           if (err) {
             console.log(err);
           }
@@ -74,7 +74,7 @@ const genTenMillionEntries = (num = 0) => {
       if (err) {
         console.log(err);
       } else {
-        fs.appendFile('hundredRecords.csv', data, (err) => {
+        fs.appendFile('tenMillionRecords.csv', data, (err) => {
           if (err) {
             console.log(err);
           }

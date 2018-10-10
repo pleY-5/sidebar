@@ -19,11 +19,9 @@ const cache = (req, res, next) => {
 const controller = {
   restaurants: {
     get: (req, res) => {
-      // const { nameOrId } = req.params.nameOrId;
       model.restaurants.get(req.params.nameOrId)
         .then((data) => {
-          console.log('data', data);
-          client.set(req.params.nameOrId, JSON.stringify(data));
+          client.setex(req.params.nameOrId, 100000, JSON.stringify(data));
           res.send(data);
         })
         .catch(err => res.send(err));
