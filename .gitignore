@@ -12,10 +12,13 @@ pids
 logs
 *.log
 
+
 database/newtenMillion.csv
 database/NewIDTenMillion.csv
 database/hundredRecords.csv
 database/test.js
+public/bundle.js
+public/bundle.js.gz
 
 newrelic.js
 

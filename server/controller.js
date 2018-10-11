@@ -26,7 +26,8 @@ const controller = {
       model.restaurants.get(req.params.nameOrId)
         .then((data) => {
           // client.setex(req.params.nameOrId, 100000, JSON.stringify(data));
-          res.send(data);
+          res.sendFile('../public/loaderio-7e70dcee6351c8c38041763c268f00f9.txt');
+          // res.send(data);
         })
         .catch(err => res.send(err));
     },
