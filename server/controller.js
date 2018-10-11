@@ -1,10 +1,14 @@
 const redis = require('redis');
 const model = require('./model.js');
+require('dotenv').config();
 
-const client = redis.createClient();
+const client = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
+// const client = redis.createClient();
 
 const cache = (req, res, next) => {
-  const { nameOrId } = req.params.nameOrId;
+  const {
+    nameOrId
+  } = req.params.nameOrId;
   client.get(nameOrId, (err, data) => {
     if (err) res.status(500).send(err);
 

@@ -1,10 +1,13 @@
+require('dotenv').config();
+
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host: 'localhost',
-    user: 'rubylee',
-    password: 'postgres',
-    database: 'hiyelp',
+    host: process.env.SERVER_HOST,
+    // user: 'rubylee',
+    user: process.env.SERVER_USER,
+    password: process.env.SERVER_PW,
+    database: process.env.SERVER_DB,
   },
   pool: {
     min: 0,
