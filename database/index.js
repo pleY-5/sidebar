@@ -4,7 +4,6 @@ const knex = require('knex')({
   client: 'pg',
   connection: {
     host: process.env.SERVER_HOST,
-    // user: 'rubylee',
     user: process.env.SERVER_USER,
     password: process.env.SERVER_PW,
     database: process.env.SERVER_DB,
